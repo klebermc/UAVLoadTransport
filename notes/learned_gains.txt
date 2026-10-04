@@ -1,0 +1,49 @@
+Z bom
+29.1383      18.5878      16.8792
+
+excelente
+Z:26.3889      22.8237      20.4994
+
+Y bom
+Y:9.7648    0.068438      4.2135
+
+
+X:6.6057     0.05773      2.6513
+Y:7.3575     0.86188      2.6758
+
+
+Aprendido a partir do modelo simulado 0 CARLA
+X 3.249 0.4509 2.000
+Y 2.748 0.3484 4.752
+Z 45    3.511  25.02
+
+X 9.44 0.23 2.36
+Y 9.33 0.18 1.54
+Z 58.09 1.65 26.16
+
+03/02/2017
+CARLA - VREP
+PZ = 58.136 
+IZ = 41.966 
+DZ = 14.214 
+
+CARLA INNER CONTROLLERS embeded on V-REP
+pitch
+P = 4.383
+I = 0.010 
+D = 0.793
+
+roll
+P = 4.555
+I = 0.009 
+D = 0.706
+
+yaw
+P = 14.701 
+I = 0.012
+D = 4.438
+
+Aprendido a partir do modelo simulado - FALA
+X:9.2        0.16        3.45
+Y:8.9        0.04         3.5
+Z:53          5.2         26.7

@@ -1,0 +1,27 @@
+Erro medio quadratico para o transporte de duas peças
+
+Controlador PID sintonizado via LA
+X_mse =  0.0111
+X_RMSE =  0.1052
+0.0255
+
+Y_mse =  0.0626
+Y_RMSE =  0.2503
+0.0907
+
+Z_mse =   0.0146
+Z_RMSE =  0.1209
+
+Integral esforço controle roll = 0.0093
+
+Controlador PID sintonizado na mão
+X_mse = 0.0081
+X_RMSE = 0.0901
+
+Y_mse =  0.0554
+Y_RMSE =  0.2353
+
+Z_mse =  0.0283
+Z_RMSE =  0.1682
+
+Integral esforço controle roll = 0.0090

@@ -1,0 +1,15 @@
+# MATLAB / Simulink
+*.asv
+*.m~
+*.autosave
+slprj/
+*_rtw/
+*.slxc
+
+# Paper videos are published on YouTube, not kept in git
+videos/
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/

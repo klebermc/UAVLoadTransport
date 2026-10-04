@@ -1,0 +1,33 @@
+
+Load 0 -------------------------------------------------                   
+				 RMS
+              X         y       z       Control effort   
+pid classico 0.0453   0.0964   0.0433       0.0060       
+PID fala     0.0348   0.0396   0.0177       0.0158     
+
+
+Load 250 -------------------------------------------------
+                X         y       z   Control effort  
+pid classi    0.0452  0.0963   0.0435   0.0053 
+PID fala      0.0347  0.0395   0.0184   0.0114
+
+
+Load 250 desbalanceado -----------------------------------
+              Control effort     X         y       z
+pid classico     0.0052      0.0452  0.0963  0.0435
+PID fala         0.0135      0.0347  0.0395  0.0184
+
+
+Load 250 desbalanceado 25% --------------------------------
+              Control effort     X         y       z
+pid classico     0.0052      0.0452  0.0963  0.0435
+PID fala         0.0104      0.0346  0.0396  0.0184
+
+Load 250 desbalanceado 50% --------------------------------
+                 X         y       z       Control effort
+pid classico   0.0452   0.0963 0.0435   0.0051
+PID fala       0.0344   0.0398 0.0184   0.0097
+
+Ixx = 0.0455;
+Iyy = 0.0152;
+

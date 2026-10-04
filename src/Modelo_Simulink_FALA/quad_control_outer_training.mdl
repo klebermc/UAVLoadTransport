@@ -1,0 +1,5633 @@
+Model {
+  Name			  "quad_control_outer_training"
+  Version		  8.7
+  MdlSubVersion		  1
+  SavedCharacterEncoding  "UTF-8"
+  GraphicalInterface {
+    NumRootInports	    0
+    NumRootOutports	    3
+    Outport {
+      Name		      "X_response"
+      BusObject		      ""
+      BusOutputAsStruct	      "off"
+      UnitExpr		      "inherit"
+    }
+    Outport {
+      Name		      "Y_response"
+      BusObject		      ""
+      BusOutputAsStruct	      "off"
+      UnitExpr		      "inherit"
+    }
+    Outport {
+      Name		      "Z_response"
+      BusObject		      ""
+      BusOutputAsStruct	      "off"
+      UnitExpr		      "inherit"
+    }
+    ParameterArgumentNames  ""
+    ComputedModelVersion    "1.136"
+    NumModelReferences	    0
+    NumTestPointedSignals   0
+    NumProvidedFunctions    0
+    NumRequiredFunctions    0
+  }
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime off
+  DisableAllScopes	  off
+  DataTypeOverride	  "UseLocalSettings"
+  DataTypeOverrideAppliesTo "AllNumericTypes"
+  MinMaxOverflowLogging	  "UseLocalSettings"
+  MinMaxOverflowArchiveMode "Overwrite"
+  FPTRunName		  "Run 1"
+  MaxMDLFileLineLength	  120
+  InitFcn		  "% load parameters of the default quadrotor\ndisp('Quadrotor parameters loaded by InitFcn')\nmdl_quadroto"
+  "r\n\n% --- Outer loop gains --------\n%P_X = 3.25;\n%I_X = 0.45;\n%D_X = 2;\n\n%P_Y = 2.75;\n%I_Y = 0.35;\n%D_Y = 4."
+  "75;\n\n%P_Z = 45;\n%I_Z = 3.5;\n%D_Z = 25;\n% --------------------------\n\nrand_ang = pi + (-pi-pi).*rand(1,1);"
+  LastSavedArchitecture	  "glnxa64"
+  Object {
+    $PropName		    "BdWindowsInfo"
+    $ObjectID		    1
+    $ClassName		    "Simulink.BDWindowsInfo"
+    Object {
+      $PropName		      "WindowsInfo"
+      $ObjectID		      2
+      $ClassName	      "Simulink.WindowInfo"
+      IsActive		      [1]
+      Location		      [53.0, 24.0, 1313.0, 744.0]
+      Object {
+	$PropName		"ModelBrowserInfo"
+	$ObjectID		3
+	$ClassName		"Simulink.ModelBrowserInfo"
+	Visible			[0]
+	DockPosition		"Left"
+	Width			[50]
+	Height			[50]
+	Filter			[9]
+      }
+      Object {
+	$PropName		"ExplorerBarInfo"
+	$ObjectID		4
+	$ClassName		"Simulink.ExplorerBarInfo"
+	Visible			[1]
+      }
+      Object {
+	$PropName		"EditorsInfo"
+	$ObjectID		5
+	$ClassName		"Simulink.EditorInfo"
+	IsActive		[1]
+	ViewObjType		"SimulinkTopLevel"
+	LoadSaveID		"0"
+	Extents			[1279.0, 599.0]
+	ZoomFactor		[0.73713066475165889]
+	Offset			[-143.99256220023983, -6.6845070818345107]
+      }
+    }
+  }
+  Created		  "Sat Mar 20 12:13:00 2010"
+  Creator		  "corkep"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "kleber"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Thu Feb 09 18:14:35 2017"
+  RTWModifiedTimeStamp	  408518686
+  ModelVersionFormat	  "1.%<AutoIncrement:136>"
+  ConfigurationManager	  "none"
+  SampleTimeColors	  off
+  SampleTimeAnnotations	  off
+  LibraryLinkDisplay	  "user"
+  WideLines		  on
+  ShowLineDimensions	  on
+  ShowPortDataTypes	  off
+  ShowEditTimeErrors	  on
+  ShowEditTimeWarnings	  off
+  ShowEditTimeAdvisorChecks off
+  ShowPortUnits		  off
+  ShowDesignRanges	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowSignalResolutionIcons on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  VariantCondition	  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  ShowVisualizeInsertedRTB on
+  ShowMarkup		  on
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  FunctionConnectors	  off
+  BrowserLookUnderMasks	  off
+  SimulationMode	  "normal"
+  PauseTimes		  "5"
+  NumberOfSteps		  1
+  SnapshotBufferSize	  10
+  SnapshotInterval	  10
+  NumberOfLastSnapshots	  0
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  AccelSystemTargetFile	  "accel.tlc"
+  AccelTemplateMakefile	  "accel_default_tmf"
+  AccelMakeCommand	  "make_rtw"
+  TryForcingSFcnDF	  off
+  Object {
+    $PropName		    "DataLoggingOverride"
+    $ObjectID		    6
+    $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
+    model_		    "quad_control_outer_training"
+    Array {
+      Type		      "Cell"
+      Dimension		      1
+      Cell		      "quad_control_outer_training"
+      PropName		      "logAsSpecifiedByModels_"
+    }
+    Array {
+      Type		      "Cell"
+      Dimension		      1
+      Cell		      ""
+      PropName		      "logAsSpecifiedByModelsSSIDs_"
+    }
+  }
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      7
+      Version		      "1.16.2"
+      Array {
+	Type			"Handle"
+	Dimension		9
+	Simulink.SolverCC {
+	  $ObjectID		  8
+	  Version		  "1.16.2"
+	  StartTime		  "0.0"
+	  StopTime		  "40"
+	  AbsTol		  "auto"
+	  FixedStep		  "0.01"
+	  InitialStep		  "auto"
+	  MaxNumMinSteps	  "-1"
+	  MaxOrder		  5
+	  ZcThreshold		  "auto"
+	  ConsecutiveZCsStepRelTol "10*128*eps"
+	  MaxConsecutiveZCs	  "1000"
+	  ExtrapolationOrder	  4
+	  NumberNewtonIterations  1
+	  MaxStep		  "0.1"
+	  MinStep		  "auto"
+	  MaxConsecutiveMinStep	  "1"
+	  RelTol		  "1e-3"
+	  SolverMode		  "Auto"
+	  EnableConcurrentExecution off
+	  ConcurrentTasks	  off
+	  Solver		  "ode45"
+	  SolverName		  "ode45"
+	  SolverJacobianMethodControl "auto"
+	  ShapePreserveControl	  "DisableAll"
+	  ZeroCrossControl	  "UseLocalSettings"
+	  ZeroCrossAlgorithm	  "Nonadaptive"
+	  AlgebraicLoopSolver	  "TrustRegion"
+	  SolverInfoToggleStatus  off
+	  IsAutoAppliedInSIP	  off
+	  SolverResetMethod	  "Fast"
+	  PositivePriorityOrder	  off
+	  AutoInsertRateTranBlk	  off
+	  SampleTimeConstraint	  "Unconstrained"
+	  InsertRTBMode		  "Whenever possible"
+	}
+	Simulink.DataIOCC {
+	  $ObjectID		  9
+	  Version		  "1.16.2"
+	  Decimation		  "1"
+	  ExternalInput		  "[t, u]"
+	  FinalStateName	  "xFinal"
+	  InitialState		  "xInitial"
+	  LimitDataPoints	  on
+	  MaxDataPoints		  "1000"
+	  LoadExternalInput	  off
+	  LoadInitialState	  off
+	  SaveFinalState	  off
+	  SaveCompleteFinalSimState off
+	  SaveFormat		  "Array"
+	  SignalLoggingSaveFormat "ModelDataLogs"
+	  SaveOutput		  on
+	  SaveState		  off
+	  SignalLogging		  on
+	  DSMLogging		  on
+	  InspectSignalLogs	  off
+	  VisualizeSimOutput	  on
+	  StreamToWorkspace	  off
+	  StreamVariableName	  "streamout"
+	  SaveTime		  on
+	  ReturnWorkspaceOutputs  off
+	  StateSaveName		  "xout"
+	  TimeSaveName		  "tout"
+	  OutputSaveName	  "yout"
+	  SignalLoggingName	  "logsout"
+	  DSMLoggingName	  "dsmout"
+	  OutputOption		  "RefineOutputTimes"
+	  OutputTimes		  "[]"
+	  ReturnWorkspaceOutputsName "out"
+	  Refine		  "1"
+	  LoggingToFile		  off
+	  LoggingFileName	  "out.mat"
+	  LoggingIntervals	  "[-inf, inf]"
+	}
+	Simulink.OptimizationCC {
+	  $ObjectID		  10
+	  Version		  "1.16.2"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    7
+	    Cell		    "BooleansAsBitfields"
+	    Cell		    "PassReuseOutputArgsAs"
+	    Cell		    "PassReuseOutputArgsThreshold"
+	    Cell		    "ZeroExternalMemoryAtStartup"
+	    Cell		    "ZeroInternalMemoryAtStartup"
+	    Cell		    "OptimizeModelRefInitCode"
+	    Cell		    "NoFixptDivByZeroProtection"
+	    PropName		    "DisabledProps"
+	  }
+	  BlockReduction	  on
+	  BooleanDataType	  on
+	  ConditionallyExecuteInputs on
+	  DefaultParameterBehavior "Tunable"
+	  UseDivisionForNetSlopeComputation "off"
+	  UseFloatMulNetSlope	  off
+	  DefaultUnderspecifiedDataType	"double"
+	  UseSpecifiedMinMax	  off
+	  InlineInvariantSignals  off
+	  OptimizeBlockIOStorage  on
+	  BufferReuse		  on
+	  EnhancedBackFolding	  off
+	  CachingGlobalReferences off
+	  GlobalBufferReuse	  on
+	  StrengthReduction	  off
+	  ExpressionFolding	  on
+	  BooleansAsBitfields	  off
+	  BitfieldContainerType	  "uint_T"
+	  EnableMemcpy		  on
+	  MemcpyThreshold	  64
+	  PassReuseOutputArgsAs	  "Structure reference"
+	  PassReuseOutputArgsThreshold 12
+	  ExpressionDepthLimit	  2147483647
+	  LocalBlockOutputs	  on
+	  RollThreshold		  5
+	  StateBitsets		  off
+	  DataBitsets		  off
+	  ActiveStateOutputEnumStorageType "Native Integer"
+	  ZeroExternalMemoryAtStartup on
+	  ZeroInternalMemoryAtStartup on
+	  InitFltsAndDblsToZero	  off
+	  NoFixptDivByZeroProtection off
+	  EfficientFloat2IntCast  off
+	  EfficientMapNaN2IntZero on
+	  OptimizeModelRefInitCode off
+	  LifeSpan		  "inf"
+	  MaxStackSize		  "Inherit from target"
+	  BufferReusableBoundary  on
+	  SimCompilerOptimization "off"
+	  AccelVerboseBuild	  off
+	}
+	Simulink.DebuggingCC {
+	  $ObjectID		  11
+	  Version		  "1.16.2"
+	  RTPrefix		  "error"
+	  ConsistencyChecking	  "none"
+	  ArrayBoundsChecking	  "none"
+	  SignalInfNanChecking	  "none"
+	  SignalRangeChecking	  "none"
+	  ReadBeforeWriteMsg	  "UseLocalSettings"
+	  WriteAfterWriteMsg	  "UseLocalSettings"
+	  WriteAfterReadMsg	  "UseLocalSettings"
+	  AlgebraicLoopMsg	  "warning"
+	  ArtificialAlgebraicLoopMsg "warning"
+	  SaveWithDisabledLinksMsg "warning"
+	  SaveWithParameterizedLinksMsg	"warning"
+	  CheckSSInitialOutputMsg on
+	  UnderspecifiedInitializationDetection	"Classic"
+	  MergeDetectMultiDrivingBlocksExec "none"
+	  CheckExecutionContextPreStartOutputMsg off
+	  CheckExecutionContextRuntimeOutputMsg	off
+	  SignalResolutionControl "UseLocalSettings"
+	  BlockPriorityViolationMsg "warning"
+	  MinStepSizeMsg	  "warning"
+	  TimeAdjustmentMsg	  "none"
+	  MaxConsecutiveZCsMsg	  "error"
+	  MaskedZcDiagnostic	  "warning"
+	  IgnoredZcDiagnostic	  "warning"
+	  SolverPrmCheckMsg	  "warning"
+	  InheritedTsInSrcMsg	  "warning"
+	  MultiTaskDSMMsg	  "error"
+	  MultiTaskCondExecSysMsg "error"
+	  MultiTaskRateTransMsg	  "error"
+	  SingleTaskRateTransMsg  "none"
+	  TasksWithSamePriorityMsg "warning"
+	  SigSpecEnsureSampleTimeMsg "warning"
+	  CheckMatrixSingularityMsg "none"
+	  IntegerOverflowMsg	  "warning"
+	  Int32ToFloatConvMsg	  "warning"
+	  ParameterDowncastMsg	  "error"
+	  ParameterOverflowMsg	  "error"
+	  ParameterUnderflowMsg	  "none"
+	  ParameterPrecisionLossMsg "warning"
+	  ParameterTunabilityLossMsg "warning"
+	  FixptConstUnderflowMsg  "none"
+	  FixptConstOverflowMsg	  "none"
+	  FixptConstPrecisionLossMsg "none"
+	  UnderSpecifiedDataTypeMsg "none"
+	  UnnecessaryDatatypeConvMsg "none"
+	  VectorMatrixConversionMsg "none"
+	  InvalidFcnCallConnMsg	  "error"
+	  FcnCallInpInsideContextMsg "UseLocalSettings"
+	  SignalLabelMismatchMsg  "none"
+	  UnconnectedInputMsg	  "warning"
+	  UnconnectedOutputMsg	  "warning"
+	  UnconnectedLineMsg	  "warning"
+	  SFcnCompatibilityMsg	  "none"
+	  FrameProcessingCompatibilityMsg "error"
+	  UniqueDataStoreMsg	  "none"
+	  BusObjectLabelMismatch  "warning"
+	  RootOutportRequireBusObject "warning"
+	  AssertControl		  "UseLocalSettings"
+	  AllowSymbolicDim	  on
+	  ModelReferenceIOMsg	  "none"
+	  ModelReferenceMultiInstanceNormalModeStructChecksumCheck "error"
+	  ModelReferenceVersionMismatchMessage "none"
+	  ModelReferenceIOMismatchMessage "none"
+	  UnknownTsInhSupMsg	  "warning"
+	  ModelReferenceDataLoggingMessage "warning"
+	  ModelReferenceSymbolNameMessage "warning"
+	  ModelReferenceExtraNoncontSigs "error"
+	  StateNameClashWarn	  "warning"
+	  SimStateInterfaceChecksumMismatchMsg "warning"
+	  SimStateOlderReleaseMsg "error"
+	  InitInArrayFormatMsg	  "warning"
+	  StrictBusMsg		  "ErrorLevel1"
+	  BusNameAdapt		  "WarnAndRepair"
+	  NonBusSignalsTreatedAsBus "none"
+	  SymbolicDimMinMaxWarning "warning"
+	  LossOfSymbolicDimsSimulationWarning "warning"
+	  LossOfSymbolicDimsCodeGenerationWarning "error"
+	  BlockIODiagnostic	  "none"
+	  SFUnusedDataAndEventsDiag "warning"
+	  SFUnexpectedBacktrackingDiag "warning"
+	  SFInvalidInputDataAccessInChartInitDiag "warning"
+	  SFNoUnconditionalDefaultTransitionDiag "warning"
+	  SFTransitionOutsideNaturalParentDiag "warning"
+	  SFUnconditionalTransitionShadowingDiag "warning"
+	  SFUndirectedBroadcastEventsDiag "warning"
+	  SFTransitionActionBeforeConditionDiag	"warning"
+	  SFOutputUsedAsStateInMooreChartDiag "error"
+	  IntegerSaturationMsg	  "warning"
+	  AllowedUnitSystems	  "all"
+	  UnitsInconsistencyMsg	  "warning"
+	  AllowAutomaticUnitConversions	on
+	}
+	Simulink.HardwareCC {
+	  $ObjectID		  12
+	  Version		  "1.16.2"
+	  ProdBitPerChar	  8
+	  ProdBitPerShort	  16
+	  ProdBitPerInt		  32
+	  ProdBitPerLong	  32
+	  ProdBitPerLongLong	  64
+	  ProdBitPerFloat	  32
+	  ProdBitPerDouble	  64
+	  ProdBitPerPointer	  32
+	  ProdLargestAtomicInteger "Char"
+	  ProdLargestAtomicFloat  "None"
+	  ProdIntDivRoundTo	  "Undefined"
+	  ProdEndianess		  "Unspecified"
+	  ProdWordSize		  32
+	  ProdShiftRightIntArith  on
+	  ProdLongLongMode	  off
+	  ProdHWDeviceType	  "32-bit Generic"
+	  TargetBitPerChar	  8
+	  TargetBitPerShort	  16
+	  TargetBitPerInt	  32
+	  TargetBitPerLong	  32
+	  TargetBitPerLongLong	  64
+	  TargetBitPerFloat	  32
+	  TargetBitPerDouble	  64
+	  TargetBitPerPointer	  32
+	  TargetLargestAtomicInteger "Char"
+	  TargetLargestAtomicFloat "None"
+	  TargetShiftRightIntArith on
+	  TargetLongLongMode	  off
+	  TargetIntDivRoundTo	  "Undefined"
+	  TargetEndianess	  "Unspecified"
+	  TargetWordSize	  32
+	  TargetPreprocMaxBitsSint 32
+	  TargetPreprocMaxBitsUint 32
+	  TargetHWDeviceType	  "Specified"
+	  TargetUnknown		  off
+	  ProdEqTarget		  on
+	  UseEmbeddedCoderFeatures on
+	  UseSimulinkCoderFeatures on
+	}
+	Simulink.ModelReferenceCC {
+	  $ObjectID		  13
+	  Version		  "1.16.2"
+	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
+	  EnableRefExpFcnMdlSchedulingChecks on
+	  CheckModelReferenceTargetMessage "error"
+	  EnableParallelModelReferenceBuilds off
+	  ParallelModelReferenceErrorOnInvalidPool on
+	  ParallelModelReferenceMATLABWorkerInit "None"
+	  ModelReferenceNumInstancesAllowed "Multi"
+	  PropagateVarSize	  "Infer from blocks in model"
+	  ModelReferencePassRootInputsByReference on
+	  ModelReferenceMinAlgLoopOccurrences off
+	  PropagateSignalLabelsOutOfModel off
+	  SupportModelReferenceSimTargetCustomCode off
+	}
+	Simulink.SFSimCC {
+	  $ObjectID		  14
+	  Version		  "1.16.2"
+	  SFSimEcho		  on
+	  SimCtrlC		  on
+	  SimIntegrity		  on
+	  SimUseLocalCustomCode	  off
+	  SimParseCustomCode	  on
+	  SimBuildMode		  "sf_incremental_build"
+	  SimGenImportedTypeDefs  off
+	}
+	Simulink.RTWCC {
+	  $BackupClass		  "Simulink.RTWCC"
+	  $ObjectID		  15
+	  Version		  "1.16.2"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    6
+	    Cell		    "IncludeHyperlinkInReport"
+	    Cell		    "GenerateTraceInfo"
+	    Cell		    "GenerateTraceReport"
+	    Cell		    "GenerateTraceReportSl"
+	    Cell		    "GenerateTraceReportSf"
+	    Cell		    "GenerateTraceReportEml"
+	    PropName		    "DisabledProps"
+	  }
+	  SystemTargetFile	  "grt.tlc"
+	  HardwareBoard		  "None"
+	  TLCOptions		  ""
+	  GenCodeOnly		  off
+	  MakeCommand		  "make_rtw"
+	  GenerateMakefile	  on
+	  PackageGeneratedCodeAndArtifacts off
+	  TemplateMakefile	  "grt_default_tmf"
+	  PostCodeGenCommand	  ""
+	  Description		  ""
+	  GenerateReport	  off
+	  SaveLog		  off
+	  RTWVerbose		  on
+	  RetainRTWFile		  off
+	  ProfileTLC		  off
+	  TLCDebug		  off
+	  TLCCoverage		  off
+	  TLCAssert		  off
+	  RTWUseLocalCustomCode	  off
+	  RTWUseSimCustomCode	  off
+	  Toolchain		  "Automatically locate an installed toolchain"
+	  BuildConfiguration	  "Faster Builds"
+	  IncludeHyperlinkInReport off
+	  LaunchReport		  off
+	  PortableWordSizes	  off
+	  CreateSILPILBlock	  "None"
+	  CodeExecutionProfiling  off
+	  CodeExecutionProfileVariable "executionProfile"
+	  CodeProfilingSaveOptions "SummaryOnly"
+	  CodeProfilingInstrumentation off
+	  SILDebugging		  off
+	  TargetLang		  "C"
+	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
+	  GenerateTraceInfo	  off
+	  GenerateTraceReport	  off
+	  GenerateTraceReportSl	  off
+	  GenerateTraceReportSf	  off
+	  GenerateTraceReportEml  off
+	  GenerateWebview	  off
+	  GenerateCodeMetricsReport off
+	  GenerateCodeReplacementReport	off
+	  GenerateMissedCodeReplacementReport off
+	  RTWCompilerOptimization "off"
+	  RTWCustomCompilerOptimizations ""
+	  CheckMdlBeforeBuild	  "Off"
+	  SharedConstantsCachingThreshold 1024
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    2
+	    Simulink.CodeAppCC {
+	      $ObjectID		      16
+	      Version		      "1.16.2"
+	      Array {
+		Type			"Cell"
+		Dimension		19
+		Cell			"IgnoreCustomStorageClasses"
+		Cell			"IgnoreTestpoints"
+		Cell			"InsertBlockDesc"
+		Cell			"SFDataObjDesc"
+		Cell			"SimulinkDataObjDesc"
+		Cell			"DefineNamingRule"
+		Cell			"SignalNamingRule"
+		Cell			"ParamNamingRule"
+		Cell			"InlinedPrmAccess"
+		Cell			"CustomSymbolStr"
+		Cell			"CustomSymbolStrGlobalVar"
+		Cell			"CustomSymbolStrType"
+		Cell			"CustomSymbolStrField"
+		Cell			"CustomSymbolStrFcn"
+		Cell			"CustomSymbolStrFcnArg"
+		Cell			"CustomSymbolStrBlkIO"
+		Cell			"CustomSymbolStrTmpVar"
+		Cell			"CustomSymbolStrMacro"
+		Cell			"ReqsInCode"
+		PropName		"DisabledProps"
+	      }
+	      ForceParamTrailComments off
+	      GenerateComments	      on
+	      CommentStyle	      "Auto"
+	      IgnoreCustomStorageClasses on
+	      IgnoreTestpoints	      off
+	      IncHierarchyInIds	      off
+	      MaxIdLength	      31
+	      PreserveName	      off
+	      PreserveNameWithParent  off
+	      ShowEliminatedStatement off
+	      OperatorAnnotations     off
+	      IncAutoGenComments      off
+	      SimulinkDataObjDesc     off
+	      SFDataObjDesc	      off
+	      MATLABFcnDesc	      off
+	      IncDataTypeInIds	      off
+	      MangleLength	      1
+	      CustomSymbolStrGlobalVar "$R$N$M"
+	      CustomSymbolStrType     "$N$R$M_T"
+	      CustomSymbolStrField    "$N$M"
+	      CustomSymbolStrFcn      "$R$N$M$F"
+	      CustomSymbolStrFcnArg   "rt$I$N$M"
+	      CustomSymbolStrBlkIO    "rtb_$N$M"
+	      CustomSymbolStrTmpVar   "$N$M"
+	      CustomSymbolStrMacro    "$R$N$M"
+	      CustomSymbolStrUtil     "$N$C"
+	      DefineNamingRule	      "None"
+	      ParamNamingRule	      "None"
+	      SignalNamingRule	      "None"
+	      InsertBlockDesc	      off
+	      InsertPolySpaceComments off
+	      SimulinkBlockComments   on
+	      MATLABSourceComments    off
+	      EnableCustomComments    off
+	      InternalIdentifier      "Shortened"
+	      InlinedPrmAccess	      "Literals"
+	      ReqsInCode	      off
+	      UseSimReservedNames     off
+	    }
+	    Simulink.GRTTargetCC {
+	      $BackupClass	      "Simulink.TargetCC"
+	      $ObjectID		      17
+	      Version		      "1.16.2"
+	      Array {
+		Type			"Cell"
+		Dimension		15
+		Cell			"GeneratePreprocessorConditionals"
+		Cell			"IncludeMdlTerminateFcn"
+		Cell			"SupportNonInlinedSFcns"
+		Cell			"SuppressErrorStatus"
+		Cell			"ERTCustomFileBanners"
+		Cell			"GenerateSampleERTMain"
+		Cell			"GenerateTestInterfaces"
+		Cell			"ModelStepFunctionPrototypeControlCompliant"
+		Cell			"CPPClassGenCompliant"
+		Cell			"SupportContinuousTime"
+		Cell			"PurelyIntegerCode"
+		Cell			"PortableWordSizes"
+		Cell			"SupportComplex"
+		Cell			"SupportAbsoluteTime"
+		Cell			"GenerateAllocFcn"
+		PropName		"DisabledProps"
+	      }
+	      TargetFcnLib	      "ansi_tfl_table_tmw.mat"
+	      TargetLibSuffix	      ""
+	      GenFloatMathFcnCalls    "NOT IN USE"
+	      TargetLangStandard      "C89/C90 (ANSI)"
+	      CodeReplacementLibrary  "None"
+	      UtilityFuncGeneration   "Auto"
+	      ERTMultiwordTypeDef     "System defined"
+	      ERTMultiwordLength      256
+	      MultiwordLength	      2048
+	      GenerateFullHeader      on
+	      InferredTypesCompatibility off
+	      GenerateSampleERTMain   off
+	      GenerateTestInterfaces  off
+	      ModelReferenceCompliant on
+	      ParMdlRefBuildCompliant on
+	      CompOptLevelCompliant   on
+	      ConcurrentExecutionCompliant on
+	      IncludeMdlTerminateFcn  on
+	      GeneratePreprocessorConditionals "Disable all"
+	      CombineOutputUpdateFcns off
+	      CombineSignalStateStructs	off
+	      SuppressErrorStatus     off
+	      ERTFirstTimeCompliant   off
+	      IncludeFileDelimiter    "Auto"
+	      ERTCustomFileBanners    off
+	      SupportAbsoluteTime     on
+	      LogVarNameModifier      "rt_"
+	      MatFileLogging	      on
+	      MultiInstanceERTCode    off
+	      CodeInterfacePackaging  "Nonreusable function"
+	      SupportNonFinite	      on
+	      SupportComplex	      on
+	      PurelyIntegerCode	      off
+	      SupportContinuousTime   on
+	      SupportNonInlinedSFcns  on
+	      SupportVariableSizeSignals off
+	      ParenthesesLevel	      "Nominal"
+	      CastingMode	      "Nominal"
+	      MATLABClassNameForMDSCustomization "Simulink.SoftwareTarget.GRTCustomization"
+	      ModelStepFunctionPrototypeControlCompliant off
+	      CPPClassGenCompliant    on
+	      AutosarCompliant	      off
+	      GRTInterface	      on
+	      GenerateAllocFcn	      off
+	      UseToolchainInfoCompliant	on
+	      GenerateSharedConstants on
+	      UseMalloc		      off
+	      ExtMode		      off
+	      ExtModeStaticAlloc      off
+	      ExtModeTesting	      off
+	      ExtModeStaticAllocSize  1000000
+	      ExtModeTransport	      0
+	      ExtModeMexFile	      "ext_comm"
+	      ExtModeIntrfLevel	      "Level1"
+	      RTWCAPISignals	      off
+	      RTWCAPIParams	      off
+	      RTWCAPIStates	      off
+	      RTWCAPIRootIO	      off
+	      GenerateASAP2	      off
+	      MultiInstanceErrorCode  "Error"
+	    }
+	    PropName		    "Components"
+	  }
+	}
+	SlCovCC.ConfigComp {
+	  $ObjectID		  18
+	  Version		  "1.16.2"
+	  Description		  "Simulink Coverage Configuration Component"
+	  Name			  "Simulink Coverage"
+	  CovEnable		  off
+	  CovScope		  "EntireSystem"
+	  CovIncludeTopModel	  on
+	  RecordCoverage	  off
+	  CovPath		  "/"
+	  CovSaveName		  "covdata"
+	  CovMetricSettings	  "dw"
+	  CovNameIncrementing	  off
+	  CovHtmlReporting	  on
+	  CovForceBlockReductionOff on
+	  CovEnableCumulative	  on
+	  CovSaveCumulativeToWorkspaceVar on
+	  CovSaveSingleToWorkspaceVar on
+	  CovCumulativeVarName	  "covCumulativeData"
+	  CovCumulativeReport	  off
+	  CovSaveOutputData	  on
+	  CovOutputDir		  "slcov_output/$ModelName$"
+	  CovDataFileName	  "$ModelName$_cvdata"
+	  CovReportOnPause	  on
+	  CovModelRefEnable	  "Off"
+	  CovExternalEMLEnable	  off
+	  CovSFcnEnable		  off
+	  CovBoundaryAbsTol	  1e-05
+	  CovBoundaryRelTol	  0.01
+	  CovUseTimeInterval	  off
+	  CovStartTime		  0
+	  CovStopTime		  0
+	}
+	PropName		"Components"
+      }
+      Name		      "Configuration"
+      CurrentDlgPage	      "Solver"
+      ConfigPrmDlgPosition     [ 320, 71, 1296, 633 ] 
+    }
+    PropName		    "ConfigurationSets"
+  }
+  Simulink.ConfigSet {
+    $PropName		    "ActiveConfigurationSet"
+    $ObjectID		    7
+  }
+  Object {
+    $PropName		    "DataTransfer"
+    $ObjectID		    19
+    $ClassName		    "Simulink.GlobalDataTransfer"
+    DefaultTransitionBetweenSyncTasks "Ensure deterministic transfer (maximum delay)"
+    DefaultTransitionBetweenAsyncTasks "Ensure data integrity only"
+    DefaultTransitionBetweenContTasks "Ensure deterministic transfer (minimum delay)"
+    DefaultExtrapolationMethodBetweenContTasks "None"
+    AutoInsertRateTranBlk   [0]
+  }
+  ExplicitPartitioning	  off
+  BlockDefaults {
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+    BlockRotation	    0
+    BlockMirror		    off
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    UseDisplayTextAsClickCallback off
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  MaskDefaults {
+    SelfModifiable	    "off"
+    IconFrame		    "on"
+    IconOpaque		    "opaque"
+    RunInitForIconRedraw    "off"
+    IconRotate		    "none"
+    PortRotate		    "default"
+    IconUnits		    "autoscale"
+  }
+  MaskParameterDefaults {
+    Evaluate		    "on"
+    Tunable		    "on"
+    NeverSave		    "off"
+    Internal		    "off"
+    ReadOnly		    "off"
+    Enabled		    "on"
+    Visible		    "on"
+    ToolTip		    "on"
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      BusCreator
+      DisplayOption	      "none"
+      OutDataTypeStr	      "Inherit: auto"
+      NonVirtualBus	      off
+    }
+    Block {
+      BlockType		      BusSelector
+      OutputSignals	      "signal1,signal2,signal3"
+      OutputAsBus	      off
+    }
+    Block {
+      BlockType		      Constant
+      Value		      "1"
+      VectorParams1D	      on
+      SamplingMode	      "Sample based"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Inherit from 'Constant value'"
+      LockScale		      off
+      SampleTime	      "inf"
+      FramePeriod	      "inf"
+      PreserveConstantTs      off
+    }
+    Block {
+      BlockType		      Demux
+      Outputs		      "4"
+      DisplayOption	      "none"
+      BusSelectionMode	      off
+    }
+    Block {
+      BlockType		      DiscretePulseGenerator
+      PulseType		      "Sample based"
+      TimeSource	      "Use simulation time"
+      Amplitude		      "1"
+      Period		      "2"
+      PulseWidth	      "1"
+      PhaseDelay	      "0"
+      SampleTime	      "1"
+      VectorParams1D	      on
+    }
+    Block {
+      BlockType		      FromWorkspace
+      VariableName	      "simulink_input"
+      OutDataTypeStr	      "Inherit: auto"
+      SampleTime	      "-1"
+      Interpolate	      on
+      ZeroCross		      off
+      OutputAfterFinalValue   "Extrapolation"
+    }
+    Block {
+      BlockType		      Gain
+      Gain		      "1"
+      Multiplication	      "Element-wise(K.*u)"
+      ParamMin		      "[]"
+      ParamMax		      "[]"
+      ParamDataTypeStr	      "Inherit: Same as input"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Same as input"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Inport
+      Port		      "1"
+      OutputFunctionCall      off
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      LockScale		      off
+      BusOutputAsStruct	      off
+      Unit		      "inherit"
+      PortDimensions	      "-1"
+      VarSizeSig	      "Inherit"
+      SampleTime	      "-1"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      LatchByDelayingOutsideSignal off
+      LatchInputForFeedbackSignals off
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Integrator
+      ExternalReset	      "none"
+      InitialConditionSource  "internal"
+      InitialCondition	      "0"
+      LimitOutput	      off
+      UpperSaturationLimit    "inf"
+      LowerSaturationLimit    "-inf"
+      WrapState		      off
+      WrappedStateUpperValue  "pi"
+      WrappedStateLowerValue  "-pi"
+      ShowSaturationPort      off
+      ShowStatePort	      off
+      AbsoluteTolerance	      "auto"
+      IgnoreLimit	      off
+      ZeroCross		      on
+      ContinuousStateAttributes	"''"
+    }
+    Block {
+      BlockType		      Mux
+      Inputs		      "4"
+      DisplayOption	      "none"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      NonVirtualBus	      off
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      LockScale		      off
+      BusOutputAsStruct	      off
+      Unit		      "inherit"
+      PortDimensions	      "-1"
+      VarSizeSig	      "Inherit"
+      SampleTime	      "-1"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      SourceOfInitialOutputValue "Dialog"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      Product
+      Inputs		      "2"
+      Multiplication	      "Element-wise(.*)"
+      CollapseMode	      "All dimensions"
+      CollapseDim	      "1"
+      InputSameDT	      on
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Same as first input"
+      LockScale		      off
+      RndMeth		      "Zero"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      S-Function
+      FunctionName	      "system"
+      SFunctionModules	      "''"
+      PortCounts	      "[]"
+    }
+    Block {
+      BlockType		      Saturate
+      UpperLimitSource	      "Dialog"
+      UpperLimit	      "0.5"
+      LowerLimitSource	      "Dialog"
+      LowerLimit	      "-0.5"
+      LinearizeAsGain	      on
+      ZeroCross		      on
+      SampleTime	      "-1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Same as input"
+      LockScale		      off
+      RndMeth		      "Floor"
+    }
+    Block {
+      BlockType		      Scope
+      DefaultConfigurationName "Simulink.scopes.TimeScopeBlockCfg"
+      NumInputPorts	      "1"
+      Floating		      off
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      "FromPortIcon"
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      TreatAsAtomicUnit	      off
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      CheckFcnCallInpInsideContextMsg off
+      SystemSampleTime	      "-1"
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      FunctionInterfaceSpec   "void_void"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      DataTypeOverrideAppliesTo	"AllNumericTypes"
+      MinMaxOverflowLogging   "UseLocalSettings"
+      Opaque		      off
+      MaskHideContents	      off
+      SFBlockType	      "NONE"
+      GeneratePreprocessorConditionals off
+      TreatAsGroupedWhenPropagatingVariantConditions on
+      ContentPreviewEnabled   off
+      IsWebBlock	      off
+    }
+    Block {
+      BlockType		      Sum
+      IconShape		      "rectangular"
+      Inputs		      "++"
+      CollapseMode	      "All dimensions"
+      CollapseDim	      "1"
+      InputSameDT	      on
+      AccumDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Same as first input"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Terminator
+    }
+    Block {
+      BlockType		      TransferFcn
+      Numerator		      "[1]"
+      Denominator	      "[1 2 1]"
+      AbsoluteTolerance	      "auto"
+      ContinuousStateAttributes	"''"
+      Realization	      "auto"
+    }
+  }
+  System {
+    Name		    "quad_control_outer_training"
+    Location		    [53, 24, 1366, 768]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "A4"
+    PaperUnits		    "centimeters"
+    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
+    TiledPageScale	    1
+    ShowPageBoundaries	    off
+    ZoomFactor		    "74"
+    ReportName		    "simulink-default.rpt"
+    SIDHighWatermark	    "517"
+    Block {
+      BlockType		      BusSelector
+      Name		      "Bus\nSelector"
+      SID		      "450"
+      Ports		      [1, 3]
+      Position		      [1310, 454, 1315, 586]
+      ZOrder		      163
+      ShowName		      off
+      OutputSignals	      "roll,pitch,yaw"
+      Port {
+	PortNumber		1
+	Name			"<roll>"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+      Port {
+	PortNumber		2
+	Name			"<pitch>"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+      Port {
+	PortNumber		3
+	Name			"<yaw>"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Control Mixer"
+      SID		      "93"
+      Ports		      [4, 1]
+      Position		      [865, 243, 990, 622]
+      ZOrder		      -8
+      DropShadow	      on
+      AncestorBlock	      "roblocks/Dynamics/Control Mixer 4"
+      LibraryVersion	      "*1.69"
+      RequestExecContextInheritance off
+      Variant		      off
+      Object {
+	$PropName		"MaskObject"
+	$ObjectID		20
+	$ClassName		"Simulink.Mask"
+	Description		"Quadrotor control mixer"
+	Help			"Determine rotor speeds based on desired torques and thrust.\n \n<b>Inputs::</b>\n \ntau pitch (1x1)  desired "
+	"pitching torque [Nm]\ntau roll (1x1)   desired rolling torque [Nm]\ntau yaw (1x1)    desired yawing torque [Nm]\nT (1"
+	"x1)          desired thrust [N]\n \n<b>Outputs::</b>\n \nw1 (1x1) angular velocity of rotor 1 [rad]\nw2 (1x1) angular"
+	" velocity of rotor 2 [rad]\nw3 (1x1) angular velocity of rotor 3 [rad]\nw4 (1x1) angular velocity of rotor 4 [rad]\n "
+	"\n<b>Notes::</b>\n \n- Assumes the rotor labelling convention of RVC Fig 4.16.\n- The quadrotor is underactuated and "
+	"has only 4 inputs.\n"
+      }
+      System {
+	Name			"Control Mixer"
+	Location		[-8, 0, 1603, 876]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	SIDHighWatermark	"296"
+	SIDPrevWatermark	"294"
+	Block {
+	  BlockType		  Inport
+	  Name			  "tau pitch"
+	  SID			  "93:156"
+	  Position		  [265, 168, 295, 182]
+	  ZOrder		  -1
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "tau roll"
+	  SID			  "93:157"
+	  Position		  [265, 213, 295, 227]
+	  ZOrder		  -2
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "tau yaw"
+	  SID			  "93:158"
+	  Position		  [265, 338, 295, 352]
+	  ZOrder		  -3
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "T"
+	  SID			  "93:159"
+	  Position		  [265, 423, 295, 437]
+	  ZOrder		  -4
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Gain1"
+	  SID			  "93:160"
+	  Position		  [950, 295, 980, 325]
+	  ZOrder		  -5
+	  ShowName		  off
+	  Gain			  "-1"
+	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Gain2"
+	  SID			  "93:161"
+	  Position		  [950, 205, 980, 235]
+	  ZOrder		  -6
+	  ShowName		  off
+	  Gain			  "-1"
+	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux1"
+	  SID			  "93:250"
+	  Ports			  [4, 1]
+	  Position		  [1080, 151, 1085, 334]
+	  ZOrder		  1
+	  ShowName		  off
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Saturate
+	  Name			  "Saturation1"
+	  SID			  "93:163"
+	  Ports			  [1, 1]
+	  Position		  [830, 205, 860, 235]
+	  ZOrder		  -8
+	  ShowName		  off
+	  InputPortMap		  "u0"
+	  UpperLimit		  "1000"
+	  LowerLimit		  "700"
+	}
+	Block {
+	  BlockType		  Saturate
+	  Name			  "Saturation2"
+	  SID			  "93:164"
+	  Ports			  [1, 1]
+	  Position		  [830, 160, 860, 190]
+	  ZOrder		  -9
+	  ShowName		  off
+	  InputPortMap		  "u0"
+	  UpperLimit		  "1000"
+	  LowerLimit		  "700"
+	}
+	Block {
+	  BlockType		  Saturate
+	  Name			  "Saturation3"
+	  SID			  "93:165"
+	  Ports			  [1, 1]
+	  Position		  [830, 250, 860, 280]
+	  ZOrder		  -10
+	  ShowName		  off
+	  InputPortMap		  "u0"
+	  UpperLimit		  "1000"
+	  LowerLimit		  "700"
+	}
+	Block {
+	  BlockType		  Saturate
+	  Name			  "Saturation4"
+	  SID			  "93:166"
+	  Ports			  [1, 1]
+	  Position		  [830, 295, 860, 325]
+	  ZOrder		  -11
+	  ShowName		  off
+	  InputPortMap		  "u0"
+	  UpperLimit		  "1000"
+	  LowerLimit		  "700"
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum1"
+	  SID			  "93:167"
+	  Ports			  [2, 1]
+	  Position		  [610, 165, 630, 185]
+	  ZOrder		  -12
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "|++"
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum10"
+	  SID			  "93:168"
+	  Ports			  [2, 1]
+	  Position		  [690, 210, 710, 230]
+	  ZOrder		  -13
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "|++"
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum11"
+	  SID			  "93:169"
+	  Ports			  [2, 1]
+	  Position		  [715, 255, 735, 275]
+	  ZOrder		  -14
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "|++"
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum12"
+	  SID			  "93:170"
+	  Ports			  [2, 1]
+	  Position		  [740, 300, 760, 320]
+	  ZOrder		  -15
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "|++"
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum2"
+	  SID			  "93:296"
+	  Ports			  [2, 1]
+	  Position		  [480, 420, 500, 440]
+	  ZOrder		  5
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "|++"
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum3"
+	  SID			  "93:171"
+	  Ports			  [2, 1]
+	  Position		  [585, 210, 605, 230]
+	  ZOrder		  -16
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "|--"
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum5"
+	  SID			  "93:172"
+	  Ports			  [2, 1]
+	  Position		  [560, 255, 580, 275]
+	  ZOrder		  -17
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "|-+"
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum7"
+	  SID			  "93:173"
+	  Ports			  [2, 1]
+	  Position		  [535, 300, 555, 320]
+	  ZOrder		  -18
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "|+-"
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum9"
+	  SID			  "93:174"
+	  Ports			  [2, 1]
+	  Position		  [660, 165, 680, 185]
+	  ZOrder		  -19
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "|++"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "w0"
+	  SID			  "93:295"
+	  Position		  [265, 510, 420, 540]
+	  ZOrder		  4
+	  ForegroundColor	  "red"
+	  DropShadow		  on
+	  Value			  "sqrt(quad.M*quad.g/4/quad.b)"
+	  SampleTime		  "0"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "omega"
+	  SID			  "93:176"
+	  Position		  [1175, 238, 1205, 252]
+	  ZOrder		  -21
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  ZOrder		  1
+	  SrcBlock		  "Mux1"
+	  SrcPort		  1
+	  DstBlock		  "omega"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  2
+	  SrcBlock		  "Gain2"
+	  SrcPort		  1
+	  DstBlock		  "Mux1"
+	  DstPort		  2
+	}
+	Line {
+	  ZOrder		  3
+	  SrcBlock		  "tau yaw"
+	  SrcPort		  1
+	  Points		  [245, 0]
+	  Branch {
+	    ZOrder		    47
+	    DstBlock		    "Sum7"
+	    DstPort		    2
+	  }
+	  Branch {
+	    ZOrder		    5
+	    Points		    [25, 0]
+	    Branch {
+	      ZOrder		      48
+	      DstBlock		      "Sum5"
+	      DstPort		      2
+	    }
+	    Branch {
+	      ZOrder		      7
+	      Points		      [25, 0]
+	      Branch {
+		ZOrder			49
+		DstBlock		"Sum3"
+		DstPort			2
+	      }
+	      Branch {
+		ZOrder			9
+		Points			[25, 0]
+		DstBlock		"Sum1"
+		DstPort			2
+	      }
+	    }
+	  }
+	}
+	Line {
+	  ZOrder		  10
+	  SrcBlock		  "Saturation2"
+	  SrcPort		  1
+	  DstBlock		  "Mux1"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  11
+	  SrcBlock		  "Saturation1"
+	  SrcPort		  1
+	  DstBlock		  "Gain2"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  12
+	  SrcBlock		  "Saturation3"
+	  SrcPort		  1
+	  DstBlock		  "Mux1"
+	  DstPort		  3
+	}
+	Line {
+	  ZOrder		  13
+	  SrcBlock		  "Saturation4"
+	  SrcPort		  1
+	  DstBlock		  "Gain1"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  14
+	  SrcBlock		  "tau pitch"
+	  SrcPort		  1
+	  Points		  [170, 0]
+	  Branch {
+	    ZOrder		    53
+	    Points		    [0, 90]
+	    DstBlock		    "Sum5"
+	    DstPort		    1
+	  }
+	  Branch {
+	    ZOrder		    46
+	    DstBlock		    "Sum1"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  ZOrder		  17
+	  SrcBlock		  "Sum1"
+	  SrcPort		  1
+	  DstBlock		  "Sum9"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  18
+	  SrcBlock		  "Sum3"
+	  SrcPort		  1
+	  DstBlock		  "Sum10"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  19
+	  SrcBlock		  "Sum5"
+	  SrcPort		  1
+	  DstBlock		  "Sum11"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  20
+	  SrcBlock		  "Sum7"
+	  SrcPort		  1
+	  DstBlock		  "Sum12"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  21
+	  SrcBlock		  "Sum9"
+	  SrcPort		  1
+	  DstBlock		  "Saturation2"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  24
+	  SrcBlock		  "Sum10"
+	  SrcPort		  1
+	  DstBlock		  "Saturation1"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  27
+	  SrcBlock		  "Sum11"
+	  SrcPort		  1
+	  DstBlock		  "Saturation3"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  30
+	  SrcBlock		  "Sum12"
+	  SrcPort		  1
+	  DstBlock		  "Saturation4"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  40
+	  SrcBlock		  "tau roll"
+	  SrcPort		  1
+	  Points		  [155, 0]
+	  Branch {
+	    ZOrder		    54
+	    Points		    [0, 90]
+	    DstBlock		    "Sum7"
+	    DstPort		    1
+	  }
+	  Branch {
+	    ZOrder		    45
+	    DstBlock		    "Sum3"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  ZOrder		  44
+	  SrcBlock		  "Gain1"
+	  SrcPort		  1
+	  DstBlock		  "Mux1"
+	  DstPort		  4
+	}
+	Line {
+	  ZOrder		  79
+	  SrcBlock		  "Sum2"
+	  SrcPort		  1
+	  Points		  [165, 0]
+	  Branch {
+	    ZOrder		    86
+	    DstBlock		    "Sum9"
+	    DstPort		    2
+	  }
+	  Branch {
+	    ZOrder		    85
+	    Points		    [30, 0]
+	    Branch {
+	      ZOrder		      84
+	      Points		      [25, 0]
+	      Branch {
+		ZOrder			81
+		DstBlock		"Sum11"
+		DstPort			2
+	      }
+	      Branch {
+		ZOrder			80
+		Points			[25, 0]
+		DstBlock		"Sum12"
+		DstPort			2
+	      }
+	    }
+	    Branch {
+	      ZOrder		      83
+	      DstBlock		      "Sum10"
+	      DstPort		      2
+	    }
+	  }
+	}
+	Line {
+	  ZOrder		  87
+	  SrcBlock		  "T"
+	  SrcPort		  1
+	  DstBlock		  "Sum2"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  88
+	  SrcBlock		  "w0"
+	  SrcPort		  1
+	  Points		  [65, 0]
+	  DstBlock		  "Sum2"
+	  DstPort		  2
+	}
+      }
+    }
+    Block {
+      BlockType		      Demux
+      Name		      "Demux1"
+      SID		      "487"
+      Ports		      [1, 3]
+      Position		      [238, 165, 292, 170]
+      ZOrder		      185
+      BlockRotation	      270
+      BlockMirror	      on
+      NamePlacement	      "alternate"
+      ShowName		      off
+      Outputs		      "3"
+      DisplayOption	      "bar"
+    }
+    Block {
+      BlockType		      Demux
+      Name		      "Demux2"
+      SID		      "396"
+      Ports		      [1, 3]
+      Position		      [1223, 175, 1267, 180]
+      ZOrder		      137
+      BlockRotation	      270
+      BlockMirror	      on
+      NamePlacement	      "alternate"
+      ShowName		      off
+      Outputs		      "3"
+      DisplayOption	      "bar"
+      Port {
+	PortNumber		1
+	Name			"Ref_X"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+      Port {
+	PortNumber		2
+	Name			"Ref_Y"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+      Port {
+	PortNumber		3
+	Name			"Ref_Z"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Inner Controller"
+      SID		      "162"
+      Ports		      [6, 3]
+      Position		      [690, 240, 800, 525]
+      ZOrder		      5
+      RequestExecContextInheritance off
+      Variant		      off
+      System {
+	Name			"Inner Controller"
+	Location		[53, 24, 1366, 768]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"112"
+	Block {
+	  BlockType		  Inport
+	  Name			  "Ref Pitch"
+	  SID			  "163"
+	  Position		  [300, 63, 330, 77]
+	  ZOrder		  2
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Ref Roll"
+	  SID			  "197"
+	  Position		  [300, 228, 330, 242]
+	  ZOrder		  28
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Ref Yaw"
+	  SID			  "209"
+	  Position		  [300, 418, 330, 432]
+	  ZOrder		  38
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Pitch/Pitch_rate"
+	  SID			  "183"
+	  Position		  [300, 133, 330, 147]
+	  ZOrder		  19
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Roll/Roll_rate"
+	  SID			  "196"
+	  Position		  [300, 313, 330, 327]
+	  ZOrder		  27
+	  Port			  "5"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Yaw/Yaw_rate"
+	  SID			  "208"
+	  Position		  [300, 483, 330, 497]
+	  ZOrder		  37
+	  Port			  "6"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  BusSelector
+	  Name			  "Bus\nSelector3"
+	  SID			  "192"
+	  Ports			  [1, 2]
+	  Position		  [400, 109, 405, 171]
+	  ZOrder		  25
+	  ShowName		  off
+	  OutputSignals		  "pitch,dpitch"
+	  Port {
+	    PortNumber		    1
+	    Name		    "<pitch>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    2
+	    Name		    "<dpitch>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  BusSelector
+	  Name			  "Bus\nSelector4"
+	  SID			  "193"
+	  Ports			  [1, 2]
+	  Position		  [400, 289, 405, 351]
+	  ZOrder		  26
+	  ShowName		  off
+	  OutputSignals		  "roll,droll"
+	  Port {
+	    PortNumber		    1
+	    Name		    "<roll>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    2
+	    Name		    "<droll>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  BusSelector
+	  Name			  "Bus\nSelector5"
+	  SID			  "5"
+	  Ports			  [1, 2]
+	  Position		  [400, 453, 405, 522]
+	  ZOrder		  34
+	  ShowName		  off
+	  OutputSignals		  "yaw,dyaw"
+	  Port {
+	    PortNumber		    1
+	    Name		    "<yaw>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    2
+	    Name		    "<dyaw>"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "D_pr"
+	  SID			  "28"
+	  Position		  [470, 135, 515, 175]
+	  ZOrder		  15
+	  Gain			  "0.1"
+	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "D_pr1"
+	  SID			  "186"
+	  Position		  [470, 315, 515, 355]
+	  ZOrder		  23
+	  Gain			  "0.1"
+	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "D_yaw"
+	  SID			  "30"
+	  Position		  [460, 485, 500, 525]
+	  ZOrder		  33
+	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux"
+	  SID			  "400"
+	  Ports			  [2, 1]
+	  Position		  [790, 61, 795, 119]
+	  ZOrder		  40
+	  ShowName		  off
+	  Inputs		  "2"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux1"
+	  SID			  "455"
+	  Ports			  [2, 1]
+	  Position		  [800, 231, 805, 289]
+	  ZOrder		  43
+	  ShowName		  off
+	  Inputs		  "2"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux2"
+	  SID			  "476"
+	  Ports			  [2, 1]
+	  Position		  [815, 426, 820, 484]
+	  ZOrder		  46
+	  ShowName		  off
+	  Inputs		  "2"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "P_pr"
+	  SID			  "36"
+	  Position		  [595, 49, 645, 91]
+	  ZOrder		  14
+	  Gain			  "-400"
+	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "P_pr1"
+	  SID			  "187"
+	  Position		  [595, 214, 645, 256]
+	  ZOrder		  22
+	  Gain			  "-400"
+	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "P_yaw"
+	  SID			  "38"
+	  Position		  [580, 402, 630, 448]
+	  ZOrder		  32
+	  Gain			  "-100"
+	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Scope
+	  Name			  "Pitch"
+	  SID			  "399"
+	  Ports			  [2]
+	  Position		  [850, 66, 870, 164]
+	  ZOrder		  39
+	  ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extmgr."
+	  "Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('Sources"
+	  "','WiredSimulink',true,'DataLoggingLimitDataPoints',true,'DataLoggingSaveFormat','Array','DataLoggingDecimation','1"
+	  "','DataLoggingDecimateData',true),extmgr.Configuration('Visuals','Time Domain',true,'SerializedDisplays',{struct('M"
+	  "inYLimReal','-0.0125','MaxYLimReal','0.0175','YLabelReal','','MinYLimMag','0','MaxYLimMag','10','LegendVisibility',"
+	  "'off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.68627"
+	  "4509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.41176"
+	  "4705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921"
+	  "569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache'"
+	  ",{{}},'UserDefinedChannelNames',{{}},'NumLines',2,'LineNames',{{'Ref Pitch','<pitch>'}},'ShowContent',true,'Placeme"
+	  "nt',1),struct('MinYLimReal','-0.7','MaxYLimReal','0.6','YLabelReal','','MinYLimMag','0','MaxYLimMag','10','LegendVi"
+	  "sibility','off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.6862745098039"
+	  "22 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1"
+	  ";1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.27"
+	  "4509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LineProper"
+	  "tiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',1,'LineNames',{{'P_pr'}},'ShowContent',true,'Placement',2"
+	  ")},'DisplayPropertyDefaults',struct('MinYLimReal','-0.0125','MaxYLimReal','0.0175','YLabelReal','','MinYLimMag','0'"
+	  ",'MaxYLimMag','10','LegendVisibility','off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'Axe"
+	  "sTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.07450980"
+	  "39215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.07450980392"
+	  "15686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title',"
+	  "'%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',0,'LineNames',{{[]}},'ShowCon"
+	  "tent',true,'Placement',1),'DisplayLayoutDimensions',[2 1]),extmgr.Configuration('Tools','Plot Navigation',true,'Onc"
+	  "eAtStop',false),extmgr.Configuration('Tools','Measurements',true,'Version','2016a')),'Version','2016a','Location',["
+	  "54 78 1367 767])"
+	  NumInputPorts		  "2"
+	}
+	Block {
+	  BlockType		  Scope
+	  Name			  "Roll"
+	  SID			  "456"
+	  Ports			  [2]
+	  Position		  [850, 236, 870, 334]
+	  ZOrder		  42
+	  ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extmgr."
+	  "Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('Sources"
+	  "','WiredSimulink',true,'DataLoggingLimitDataPoints',true,'DataLoggingSaveFormat','Array','DataLoggingDecimation','1"
+	  "','DataLoggingDecimateData',true),extmgr.Configuration('Visuals','Time Domain',true,'SerializedDisplays',{struct('M"
+	  "inYLimReal','-0.01734','MaxYLimReal','0.01577','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','0.01734','Legen"
+	  "dVisibility','off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.6862745098"
+	  "03922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.62352941176470"
+	  "6 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0"
+	  ".274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePro"
+	  "pertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',2,'LineNames',{{'Ref Roll','<roll>'}},'ShowContent',tr"
+	  "ue,'Placement',1),struct('MinYLimReal','-5.23317','MaxYLimReal','5.91532','YLabelReal','','MinYLimMag','0','MaxYLim"
+	  "Mag','10','LegendVisibility','off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColo"
+	  "r',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 "
+	  "0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.7"
+	  "17647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<Signal"
+	  "Label>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',1,'LineNames',{{'P_pr1'}},'ShowContent"
+	  "',true,'Placement',2)},'DisplayPropertyDefaults',struct('YLabelReal','','LegendVisibility','off','XGrid',true,'YGri"
+	  "d',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.68627450980"
+	  "3922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372"
+	  "549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647"
+	  " 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChanne"
+	  "lNames',{{}},'NumLines',0,'LineNames',{{[]}},'ShowContent',true,'Placement',1),'DisplayLayoutDimensions',[2 1]),ext"
+	  "mgr.Configuration('Tools','Plot Navigation',true,'OnceAtStop',false,'PreviousAutoscale','XY'),extmgr.Configuration("
+	  "'Tools','Measurements',true,'Version','2016a')),'Version','2016a','Location',[54 78 1367 767])"
+	  NumInputPorts		  "2"
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum1"
+	  SID			  "188"
+	  Ports			  [2, 1]
+	  Position		  [545, 225, 565, 245]
+	  ZOrder		  21
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "|+-"
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum16"
+	  SID			  "56"
+	  Ports			  [2, 1]
+	  Position		  [545, 60, 565, 80]
+	  ZOrder		  13
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "|+-"
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum19"
+	  SID			  "59"
+	  Ports			  [2, 1]
+	  Position		  [440, 60, 460, 80]
+	  ZOrder		  12
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "|+-"
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum2"
+	  SID			  "189"
+	  Ports			  [2, 1]
+	  Position		  [440, 225, 460, 245]
+	  ZOrder		  20
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "|+-"
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum4"
+	  SID			  "60"
+	  Ports			  [2, 1]
+	  Position		  [530, 415, 550, 435]
+	  ZOrder		  30
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "|+-"
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum5"
+	  SID			  "206"
+	  Ports			  [2, 1]
+	  Position		  [425, 415, 445, 435]
+	  ZOrder		  35
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "|+-"
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Scope
+	  Name			  "yaw"
+	  SID			  "477"
+	  Ports			  [2]
+	  Position		  [865, 431, 885, 529]
+	  ZOrder		  45
+	  ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extmgr."
+	  "Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('Sources"
+	  "','WiredSimulink',true,'DataLoggingVariableName','ScopeData1','DataLoggingLimitDataPoints',true,'DataLoggingSaveFor"
+	  "mat','Array','DataLoggingDecimation','1','DataLoggingDecimateData',true),extmgr.Configuration('Visuals','Time Domai"
+	  "n',true,'SerializedDisplays',{struct('MinYLimReal','-0.03214','MaxYLimReal','0.02077','YLabelReal','','MinYLimMag',"
+	  "'0.00000','MaxYLimMag','0.03214','LegendVisibility','off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor"
+	  "',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666"
+	  "667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608"
+	  " 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.65098039215"
+	  "6863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',2,'LineNames',{"
+	  "{'Ref Yaw','<yaw>'}},'ShowContent',true,'Placement',1),struct('MinYLimReal','-3.77778','MaxYLimReal','2.90017','YLa"
+	  "belReal','','MinYLimMag','0','MaxYLimMag','10','LegendVisibility','off','XGrid',true,'YGrid',true,'PlotMagPhase',fa"
+	  "lse,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0"
+	  ".0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.8"
+	  "31372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686"
+	  " 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',1"
+	  ",'LineNames',{{'P_yaw'}},'ShowContent',true,'Placement',2)},'DisplayPropertyDefaults',struct('YLabelReal','','Legen"
+	  "dVisibility','off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.6862745098"
+	  "03922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.62352941176470"
+	  "6 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0"
+	  ".274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePro"
+	  "pertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',0,'LineNames',{{[]}},'ShowContent',true,'Placement',1)"
+	  ",'DisplayLayoutDimensions',[2 1]),extmgr.Configuration('Tools','Plot Navigation',true,'OnceAtStop',false,'PreviousA"
+	  "utoscale','XY'),extmgr.Configuration('Tools','Measurements',true,'Version','2016a')),'Version','2016a','Location',["
+	  "54 78 1367 767])"
+	  NumInputPorts		  "2"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "tau_pitch"
+	  SID			  "181"
+	  Position		  [675, 63, 705, 77]
+	  ZOrder		  -40
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "tau_roll"
+	  SID			  "190"
+	  Position		  [675, 228, 705, 242]
+	  ZOrder		  16
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "tau_yaw"
+	  SID			  "207"
+	  Position		  [660, 418, 690, 432]
+	  ZOrder		  36
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  ZOrder		  20
+	  SrcBlock		  "Sum19"
+	  SrcPort		  1
+	  DstBlock		  "Sum16"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  21
+	  SrcBlock		  "Sum16"
+	  SrcPort		  1
+	  DstBlock		  "P_pr"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  26
+	  SrcBlock		  "P_pr"
+	  SrcPort		  1
+	  Points		  [8, 0]
+	  Branch {
+	    ZOrder		    79
+	    Points		    [0, 70]
+	    DstBlock		    "Pitch"
+	    DstPort		    2
+	  }
+	  Branch {
+	    ZOrder		    77
+	    DstBlock		    "tau_pitch"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  ZOrder		  23
+	  SrcBlock		  "D_pr"
+	  SrcPort		  1
+	  Points		  [35, 0]
+	  DstBlock		  "Sum16"
+	  DstPort		  2
+	}
+	Line {
+	  Name			  "<dpitch>"
+	  ZOrder		  46
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bus\nSelector3"
+	  SrcPort		  2
+	  DstBlock		  "D_pr"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "<pitch>"
+	  ZOrder		  47
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bus\nSelector3"
+	  SrcPort		  1
+	  Points		  [40, 0; 0, -20]
+	  Branch {
+	    ZOrder		    115
+	    DstBlock		    "Sum19"
+	    DstPort		    2
+	  }
+	  Branch {
+	    ZOrder		    76
+	    DstBlock		    "Mux"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  ZOrder		  33
+	  SrcBlock		  "Sum2"
+	  SrcPort		  1
+	  DstBlock		  "Sum1"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  34
+	  SrcBlock		  "Sum1"
+	  SrcPort		  1
+	  DstBlock		  "P_pr1"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  35
+	  SrcBlock		  "P_pr1"
+	  SrcPort		  1
+	  Points		  [6, 0]
+	  Branch {
+	    ZOrder		    118
+	    Points		    [0, 75]
+	    DstBlock		    "Roll"
+	    DstPort		    2
+	  }
+	  Branch {
+	    ZOrder		    117
+	    DstBlock		    "tau_roll"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  ZOrder		  36
+	  SrcBlock		  "D_pr1"
+	  SrcPort		  1
+	  Points		  [35, 0]
+	  DstBlock		  "Sum1"
+	  DstPort		  2
+	}
+	Line {
+	  Name			  "<droll>"
+	  ZOrder		  48
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bus\nSelector4"
+	  SrcPort		  2
+	  DstBlock		  "D_pr1"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  51
+	  SrcBlock		  "Ref Pitch"
+	  SrcPort		  1
+	  Points		  [79, 0]
+	  Branch {
+	    ZOrder		    70
+	    Points		    [0, -34; 351, 0; 0, 39]
+	    DstBlock		    "Mux"
+	    DstPort		    1
+	  }
+	  Branch {
+	    ZOrder		    69
+	    DstBlock		    "Sum19"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  ZOrder		  44
+	  SrcBlock		  "Pitch/Pitch_rate"
+	  SrcPort		  1
+	  DstBlock		  "Bus\nSelector3"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  45
+	  SrcBlock		  "Roll/Roll_rate"
+	  SrcPort		  1
+	  DstBlock		  "Bus\nSelector4"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "<roll>"
+	  ZOrder		  50
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bus\nSelector4"
+	  SrcPort		  1
+	  Points		  [40, 0; 0, -30]
+	  Branch {
+	    ZOrder		    114
+	    DstBlock		    "Mux1"
+	    DstPort		    2
+	  }
+	  Branch {
+	    ZOrder		    113
+	    DstBlock		    "Sum2"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  ZOrder		  52
+	  SrcBlock		  "Ref Roll"
+	  SrcPort		  1
+	  Points		  [84, 0]
+	  Branch {
+	    ZOrder		    112
+	    Points		    [0, -27; 364, 0; 0, 37]
+	    DstBlock		    "Mux1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    ZOrder		    111
+	    DstBlock		    "Sum2"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  Name			  "<yaw>"
+	  ZOrder		  59
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bus\nSelector5"
+	  SrcPort		  1
+	  Points		  [25, 0]
+	  Branch {
+	    ZOrder		    153
+	    DstBlock		    "Sum5"
+	    DstPort		    2
+	  }
+	  Branch {
+	    ZOrder		    152
+	    DstBlock		    "Mux2"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  ZOrder		  54
+	  SrcBlock		  "Sum4"
+	  SrcPort		  1
+	  DstBlock		  "P_yaw"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "<dyaw>"
+	  ZOrder		  55
+	  Labels		  [0, 0]
+	  SrcBlock		  "Bus\nSelector5"
+	  SrcPort		  2
+	  DstBlock		  "D_yaw"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  56
+	  SrcBlock		  "D_yaw"
+	  SrcPort		  1
+	  Points		  [35, 0]
+	  DstBlock		  "Sum4"
+	  DstPort		  2
+	}
+	Line {
+	  ZOrder		  60
+	  SrcBlock		  "Sum5"
+	  SrcPort		  1
+	  DstBlock		  "Sum4"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  64
+	  SrcBlock		  "P_yaw"
+	  SrcPort		  1
+	  Points		  [4, 0]
+	  Branch {
+	    ZOrder		    155
+	    Points		    [0, 80]
+	    DstBlock		    "yaw"
+	    DstPort		    2
+	  }
+	  Branch {
+	    ZOrder		    154
+	    DstBlock		    "tau_yaw"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  ZOrder		  65
+	  SrcBlock		  "Yaw/Yaw_rate"
+	  SrcPort		  1
+	  DstBlock		  "Bus\nSelector5"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  66
+	  SrcBlock		  "Ref Yaw"
+	  SrcPort		  1
+	  Points		  [73, 0]
+	  Branch {
+	    ZOrder		    150
+	    Points		    [0, -37; 353, 0; 0, 52]
+	    DstBlock		    "Mux2"
+	    DstPort		    1
+	  }
+	  Branch {
+	    ZOrder		    149
+	    DstBlock		    "Sum5"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  ZOrder		  68
+	  SrcBlock		  "Mux"
+	  SrcPort		  1
+	  DstBlock		  "Pitch"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  110
+	  SrcBlock		  "Mux1"
+	  SrcPort		  1
+	  DstBlock		  "Roll"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  148
+	  SrcBlock		  "Mux2"
+	  SrcPort		  1
+	  DstBlock		  "yaw"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      Mux
+      Name		      "Mux1"
+      SID		      "281"
+      Ports		      [2, 1]
+      Position		      [1310, 241, 1315, 279]
+      ZOrder		      38
+      ShowName		      off
+      Inputs		      "2"
+      DisplayOption	      "bar"
+    }
+    Block {
+      BlockType		      Mux
+      Name		      "Mux10"
+      SID		      "446"
+      Ports		      [3, 1]
+      Position		      [1455, 450, 1460, 590]
+      ZOrder		      158
+      ShowName		      off
+      Inputs		      "3"
+      DisplayOption	      "bar"
+    }
+    Block {
+      BlockType		      Mux
+      Name		      "Mux2"
+      SID		      "283"
+      Ports		      [2, 1]
+      Position		      [1310, 296, 1315, 334]
+      ZOrder		      81
+      ShowName		      off
+      Inputs		      "2"
+      DisplayOption	      "bar"
+    }
+    Block {
+      BlockType		      Mux
+      Name		      "Mux3"
+      SID		      "284"
+      Ports		      [2, 1]
+      Position		      [1310, 351, 1315, 389]
+      ZOrder		      82
+      ShowName		      off
+      Inputs		      "2"
+      DisplayOption	      "bar"
+    }
+    Block {
+      BlockType		      Mux
+      Name		      "Mux4"
+      SID		      "383"
+      Ports		      [3, 1]
+      Position		      [173, 165, 227, 170]
+      ZOrder		      124
+      BlockRotation	      270
+      ShowName		      off
+      Inputs		      "3"
+      DisplayOption	      "bar"
+    }
+    Block {
+      BlockType		      Mux
+      Name		      "Mux5"
+      SID		      "480"
+      Ports		      [2, 1]
+      Position		      [590, 144, 595, 191]
+      ZOrder		      183
+      ShowName		      off
+      Inputs		      "2"
+      DisplayOption	      "bar"
+    }
+    Block {
+      BlockType		      Mux
+      Name		      "Mux6"
+      SID		      "486"
+      RequirementInfo	      "{}  %GIDa_c1e701bd_0944_43f7_91ee_3360df493ed1"
+      Ports		      [3, 1]
+      Position		      [1150, 175, 1200, 180]
+      ZOrder		      184
+      BlockRotation	      270
+      ShowName		      off
+      Inputs		      "3"
+      DisplayOption	      "bar"
+    }
+    Block {
+      BlockType		      Mux
+      Name		      "Mux9"
+      SID		      "445"
+      Ports		      [3, 1]
+      Position		      [1455, 360, 1460, 430]
+      ZOrder		      159
+      ShowName		      off
+      Inputs		      "3"
+      DisplayOption	      "bar"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Outer Control Loop"
+      SID		      "401"
+      Ports		      [7, 4]
+      Position		      [310, 221, 450, 589]
+      ZOrder		      151
+      RequestExecContextInheritance off
+      Variant		      off
+      System {
+	Name			"Outer Control Loop"
+	Location		[53, 24, 1366, 768]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"87"
+	Block {
+	  BlockType		  Inport
+	  Name			  "actual_Xi"
+	  SID			  "482"
+	  Position		  [190, 213, 220, 227]
+	  ZOrder		  440
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "actual_Yi"
+	  SID			  "485"
+	  Position		  [965, 218, 995, 232]
+	  ZOrder		  443
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "actual_Zi"
+	  SID			  "484"
+	  Position		  [190, 578, 220, 592]
+	  ZOrder		  442
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "desired_Xi"
+	  SID			  "405"
+	  Position		  [190, 48, 220, 62]
+	  ZOrder		  56
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "desired_Yi"
+	  SID			  "404"
+	  Position		  [965, 53, 995, 67]
+	  ZOrder		  58
+	  Port			  "5"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "desired_Zi"
+	  SID			  "483"
+	  Position		  [190, 413, 220, 427]
+	  ZOrder		  441
+	  Port			  "6"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Desired_Yaw"
+	  SID			  "407"
+	  Position		  [965, 448, 995, 462]
+	  ZOrder		  360
+	  Port			  "7"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  TransferFcn
+	  Name			  "Band-limited\nDeriv ative1"
+	  SID			  "409"
+	  Position		  [1135, 206, 1180, 244]
+	  ZOrder		  434
+	  Numerator		  "[1 0]"
+	  Denominator		  "[0.1 1]"
+	}
+	Block {
+	  BlockType		  TransferFcn
+	  Name			  "Band-limited\nDerivative2"
+	  SID			  "410"
+	  Position		  [370, 201, 415, 239]
+	  ZOrder		  412
+	  Numerator		  "[1 0]"
+	  Denominator		  "[0.1 1]"
+	}
+	Block {
+	  BlockType		  TransferFcn
+	  Name			  "Band-limited\nDerivative3"
+	  SID			  "411"
+	  Position		  [365, 566, 410, 604]
+	  ZOrder		  257
+	  Numerator		  "[1 0]"
+	  Denominator		  "[0.1 1]"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "D_X"
+	  SID			  "414"
+	  Position		  [465, 200, 510, 240]
+	  ZOrder		  380
+	  Gain			  "D_X"
+	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "D_Y"
+	  SID			  "413"
+	  Position		  [1230, 205, 1275, 245]
+	  ZOrder		  433
+	  Gain			  "D_Y"
+	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "D_Z"
+	  SID			  "412"
+	  Position		  [470, 565, 515, 605]
+	  ZOrder		  256
+	  Gain			  "D_Z"
+	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Degrees to\nRadians"
+	  SID			  "461"
+	  Ports			  [1, 1]
+	  Position		  [1530, 75, 1560, 105]
+	  ZOrder		  436
+	  LibraryVersion	  "1.58"
+	  SourceBlock		  "simulink_extras/Transformations/Degrees to\nRadians"
+	  SourceType		  "DegreesToRadians"
+	  ContentPreviewEnabled	  off
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Degrees to\nRadians1"
+	  SID			  "462"
+	  Ports			  [1, 1]
+	  Position		  [785, 75, 815, 105]
+	  ZOrder		  437
+	  LibraryVersion	  "1.58"
+	  SourceBlock		  "simulink_extras/Transformations/Degrees to\nRadians"
+	  SourceType		  "DegreesToRadians"
+	  ContentPreviewEnabled	  off
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "I_X"
+	  SID			  "423"
+	  Position		  [460, 119, 510, 161]
+	  ZOrder		  378
+	  Gain			  "I_X"
+	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "I_Y"
+	  SID			  "424"
+	  Position		  [1225, 124, 1275, 166]
+	  ZOrder		  431
+	  Gain			  "I_Y"
+	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "I_Z"
+	  SID			  "421"
+	  Position		  [465, 484, 515, 526]
+	  ZOrder		  254
+	  Gain			  "I_Z"
+	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Integrator
+	  Name			  "Integrator\nLimited1"
+	  SID			  "415"
+	  Ports			  [1, 1]
+	  Position		  [1145, 130, 1175, 160]
+	  ZOrder		  435
+	  LimitOutput		  on
+	  UpperSaturationLimit	  "0.5"
+	  LowerSaturationLimit	  "-0.5"
+	}
+	Block {
+	  BlockType		  Integrator
+	  Name			  "Integrator\nLimited2"
+	  SID			  "416"
+	  Ports			  [1, 1]
+	  Position		  [375, 490, 405, 520]
+	  ZOrder		  267
+	  LimitOutput		  on
+	  UpperSaturationLimit	  "10"
+	  LowerSaturationLimit	  "0"
+	}
+	Block {
+	  BlockType		  Integrator
+	  Name			  "Integrator\nLimited3"
+	  SID			  "417"
+	  Ports			  [1, 1]
+	  Position		  [380, 125, 410, 155]
+	  ZOrder		  428
+	  LimitOutput		  on
+	  UpperSaturationLimit	  "0.5"
+	  LowerSaturationLimit	  "-0.5"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "P_X"
+	  SID			  "422"
+	  Position		  [460, 34, 510, 76]
+	  ZOrder		  377
+	  Gain			  "P_X"
+	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "P_Y"
+	  SID			  "419"
+	  Position		  [1225, 39, 1275, 81]
+	  ZOrder		  430
+	  Gain			  "P_Y"
+	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "P_Z"
+	  SID			  "420"
+	  Position		  [465, 399, 515, 441]
+	  ZOrder		  252
+	  Gain			  "P_Z"
+	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "P_pr1"
+	  SID			  "418"
+	  Position		  [1390, 69, 1440, 111]
+	  ZOrder		  423
+	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "P_pr8"
+	  SID			  "467"
+	  Position		  [635, 69, 685, 111]
+	  ZOrder		  438
+	  Gain			  "-1"
+	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Saturate
+	  Name			  "Saturation"
+	  SID			  "515"
+	  Ports			  [1, 1]
+	  Position		  [720, 75, 750, 105]
+	  ZOrder		  444
+	  InputPortMap		  "u0"
+	  UpperLimit		  "2"
+	  LowerLimit		  "-2"
+	}
+	Block {
+	  BlockType		  Saturate
+	  Name			  "Saturation1"
+	  SID			  "516"
+	  Ports			  [1, 1]
+	  Position		  [1470, 75, 1500, 105]
+	  ZOrder		  445
+	  InputPortMap		  "u0"
+	  UpperLimit		  "2"
+	  LowerLimit		  "-2"
+	}
+	Block {
+	  BlockType		  Scope
+	  Name			  "Scope"
+	  SID			  "517"
+	  Ports			  [4]
+	  Position		  [680, 296, 735, 429]
+	  ZOrder		  446
+	  ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extmgr."
+	  "Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('Sources"
+	  "','WiredSimulink',true,'DataLoggingVariableName','ScopeData1'),extmgr.Configuration('Visuals','Time Domain',true,'S"
+	  "erializedDisplays',{struct('MinYLimReal','3.53924','MaxYLimReal','26.72734','YLabelReal','','MinYLimMag','3.53924',"
+	  "'MaxYLimMag','26.72734','LegendVisibility','Off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0]"
+	  ",'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.074"
+	  "5098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.074509"
+	  "8039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Ti"
+	  "tle','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',0,'LineNames',{{[]}},'Sh"
+	  "owContent',true,'Placement',1),struct('MinYLimReal','-5.84467','MaxYLimReal','52.60207','YLabelReal','','MinYLimMag"
+	  "','0','MaxYLimMag','10','LegendVisibility','off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0]"
+	  ",'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.074"
+	  "5098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.074509"
+	  "8039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Ti"
+	  "tle','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',0,'LineNames',{{[]}},'Sh"
+	  "owContent',true,'Placement',2),struct('MinYLimReal','-1.00000','MaxYLimReal','1.00000','YLabelReal','','MinYLimMag'"
+	  ",'0','MaxYLimMag','10','LegendVisibility','off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],"
+	  "'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745"
+	  "098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098"
+	  "039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Tit"
+	  "le','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',0,'LineNames',{{[]}},'Sho"
+	  "wContent',true,'Placement',3),struct('MinYLimReal','-2.30544','MaxYLimReal','79.32941','YLabelReal','','MinYLimMag'"
+	  ",'0','MaxYLimMag','10','LegendVisibility','off','XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],"
+	  "'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745"
+	  "098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098"
+	  "039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Tit"
+	  "le','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',0,'LineNames',{{[]}},'Sho"
+	  "wContent',true,'Placement',4)},'DisplayPropertyDefaults',struct('YLabelReal','','AxesColor',[0 0 0],'AxesTickColor'"
+	  ",[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder',[0.0745098039215686 0.623529411764706 1;1 0.4"
+	  "11764705882353 0.16078431372549;1 1 0.0666666666666667;0.717647058823529 0.274509803921569 1;0.392156862745098 0.83"
+	  "1372549019608 0.0745098039215686;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863]),'DisplayLayoutDime"
+	  "nsions',[4 1],'DisplayContentCache',[]),extmgr.Configuration('Tools','Plot Navigation',true),extmgr.Configuration('"
+	  "Tools','Measurements',true,'Version','2016a')),'Version','2016a','Position',[706 1 657 634])"
+	  NumInputPorts		  "4"
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum1"
+	  SID			  "425"
+	  Ports			  [3, 1]
+	  Position		  [1330, 42, 1355, 138]
+	  ZOrder		  432
+	  ShowName		  off
+	  Inputs		  "+--"
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum2"
+	  SID			  "426"
+	  Ports			  [3, 1]
+	  Position		  [570, 402, 595, 508]
+	  ZOrder		  255
+	  ShowName		  off
+	  Inputs		  "++-"
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum3"
+	  SID			  "427"
+	  Ports			  [2, 1]
+	  Position		  [295, 410, 315, 430]
+	  ZOrder		  251
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "|+-"
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum4"
+	  SID			  "428"
+	  Ports			  [2, 1]
+	  Position		  [1055, 50, 1075, 70]
+	  ZOrder		  429
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "|+-"
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum5"
+	  SID			  "429"
+	  Ports			  [3, 1]
+	  Position		  [570, 39, 595, 141]
+	  ZOrder		  379
+	  ShowName		  off
+	  Inputs		  "+--"
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum6"
+	  SID			  "430"
+	  Ports			  [2, 1]
+	  Position		  [290, 45, 310, 65]
+	  ZOrder		  376
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "|+-"
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "pitch_ctrl"
+	  SID			  "432"
+	  Position		  [855, 83, 885, 97]
+	  ZOrder		  64
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "roll_ctrl"
+	  SID			  "431"
+	  Position		  [1585, 83, 1615, 97]
+	  ZOrder		  373
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "yaw_ctrl"
+	  SID			  "433"
+	  Position		  [1410, 448, 1440, 462]
+	  ZOrder		  361
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "altura_ctrl"
+	  SID			  "481"
+	  Position		  [695, 448, 725, 462]
+	  ZOrder		  439
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  ZOrder		  1
+	  SrcBlock		  "Sum3"
+	  SrcPort		  1
+	  Points		  [15, 0]
+	  Branch {
+	    ZOrder		    2
+	    Points		    [0, 85]
+	    DstBlock		    "Integrator\nLimited2"
+	    DstPort		    1
+	  }
+	  Branch {
+	    ZOrder		    3
+	    DstBlock		    "P_Z"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  ZOrder		  4
+	  SrcBlock		  "Integrator\nLimited2"
+	  SrcPort		  1
+	  DstBlock		  "I_Z"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  5
+	  SrcBlock		  "P_Z"
+	  SrcPort		  1
+	  Points		  [8, 0]
+	  Branch {
+	    ZOrder		    115
+	    DstBlock		    "Sum2"
+	    DstPort		    1
+	  }
+	  Branch {
+	    ZOrder		    111
+	    Points		    [0, -110]
+	    DstBlock		    "Scope"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  ZOrder		  7
+	  SrcBlock		  "D_Z"
+	  SrcPort		  1
+	  Points		  [35, 0; 0, -95]
+	  Branch {
+	    ZOrder		    118
+	    Points		    [0, -110]
+	    DstBlock		    "Scope"
+	    DstPort		    3
+	  }
+	  Branch {
+	    ZOrder		    117
+	    DstBlock		    "Sum2"
+	    DstPort		    3
+	  }
+	}
+	Line {
+	  ZOrder		  66
+	  SrcBlock		  "actual_Zi"
+	  SrcPort		  1
+	  Points		  [80, 0]
+	  Branch {
+	    ZOrder		    9
+	    DstBlock		    "Sum3"
+	    DstPort		    2
+	  }
+	  Branch {
+	    ZOrder		    10
+	    DstBlock		    "Band-limited\nDerivative3"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  ZOrder		  11
+	  SrcBlock		  "Band-limited\nDerivative3"
+	  SrcPort		  1
+	  DstBlock		  "D_Z"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  65
+	  SrcBlock		  "desired_Zi"
+	  SrcPort		  1
+	  DstBlock		  "Sum3"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  14
+	  SrcBlock		  "Desired_Yaw"
+	  SrcPort		  1
+	  DstBlock		  "yaw_ctrl"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  15
+	  SrcBlock		  "Sum6"
+	  SrcPort		  1
+	  Points		  [25, 0]
+	  Branch {
+	    ZOrder		    16
+	    Points		    [0, 85]
+	    DstBlock		    "Integrator\nLimited3"
+	    DstPort		    1
+	  }
+	  Branch {
+	    ZOrder		    17
+	    DstBlock		    "P_X"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  ZOrder		  18
+	  SrcBlock		  "Integrator\nLimited3"
+	  SrcPort		  1
+	  DstBlock		  "I_X"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  19
+	  SrcBlock		  "P_X"
+	  SrcPort		  1
+	  DstBlock		  "Sum5"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  20
+	  SrcBlock		  "D_X"
+	  SrcPort		  1
+	  Points		  [39, 0; 0, -95]
+	  DstBlock		  "Sum5"
+	  DstPort		  3
+	}
+	Line {
+	  ZOrder		  64
+	  SrcBlock		  "actual_Xi"
+	  SrcPort		  1
+	  Points		  [75, 0]
+	  Branch {
+	    ZOrder		    22
+	    DstBlock		    "Band-limited\nDerivative2"
+	    DstPort		    1
+	  }
+	  Branch {
+	    ZOrder		    23
+	    DstBlock		    "Sum6"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  ZOrder		  24
+	  SrcBlock		  "Band-limited\nDerivative2"
+	  SrcPort		  1
+	  DstBlock		  "D_X"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  25
+	  SrcBlock		  "desired_Xi"
+	  SrcPort		  1
+	  DstBlock		  "Sum6"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  28
+	  SrcBlock		  "I_X"
+	  SrcPort		  1
+	  Points		  [23, 0; 0, -50]
+	  DstBlock		  "Sum5"
+	  DstPort		  2
+	}
+	Line {
+	  ZOrder		  29
+	  SrcBlock		  "Sum4"
+	  SrcPort		  1
+	  Points		  [25, 0]
+	  Branch {
+	    ZOrder		    30
+	    Points		    [0, 85]
+	    DstBlock		    "Integrator\nLimited1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    ZOrder		    31
+	    DstBlock		    "P_Y"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  ZOrder		  32
+	  SrcBlock		  "Integrator\nLimited1"
+	  SrcPort		  1
+	  DstBlock		  "I_Y"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  33
+	  SrcBlock		  "P_Y"
+	  SrcPort		  1
+	  DstBlock		  "Sum1"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  34
+	  SrcBlock		  "D_Y"
+	  SrcPort		  1
+	  Points		  [35, 0]
+	  DstBlock		  "Sum1"
+	  DstPort		  3
+	}
+	Line {
+	  ZOrder		  67
+	  SrcBlock		  "actual_Yi"
+	  SrcPort		  1
+	  Points		  [65, 0]
+	  Branch {
+	    ZOrder		    69
+	    DstBlock		    "Sum4"
+	    DstPort		    2
+	  }
+	  Branch {
+	    ZOrder		    68
+	    DstBlock		    "Band-limited\nDeriv ative1"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  ZOrder		  38
+	  SrcBlock		  "Band-limited\nDeriv ative1"
+	  SrcPort		  1
+	  DstBlock		  "D_Y"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  39
+	  SrcBlock		  "desired_Yi"
+	  SrcPort		  1
+	  DstBlock		  "Sum4"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  40
+	  SrcBlock		  "I_Y"
+	  SrcPort		  1
+	  Points		  [23, 0; 0, -55]
+	  DstBlock		  "Sum1"
+	  DstPort		  2
+	}
+	Line {
+	  ZOrder		  51
+	  SrcBlock		  "Degrees to\nRadians"
+	  SrcPort		  1
+	  DstBlock		  "roll_ctrl"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  52
+	  SrcBlock		  "Degrees to\nRadians1"
+	  SrcPort		  1
+	  DstBlock		  "pitch_ctrl"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  54
+	  SrcBlock		  "Sum1"
+	  SrcPort		  1
+	  DstBlock		  "P_pr1"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  56
+	  SrcBlock		  "I_Z"
+	  SrcPort		  1
+	  Points		  [23, 0; 0, -50]
+	  Branch {
+	    ZOrder		    116
+	    DstBlock		    "Sum2"
+	    DstPort		    2
+	  }
+	  Branch {
+	    ZOrder		    113
+	    Points		    [0, -110]
+	    DstBlock		    "Scope"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  ZOrder		  59
+	  SrcBlock		  "Sum5"
+	  SrcPort		  1
+	  DstBlock		  "P_pr8"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  61
+	  SrcBlock		  "Sum2"
+	  SrcPort		  1
+	  Points		  [19, 0]
+	  Branch {
+	    ZOrder		    120
+	    Points		    [0, -40]
+	    DstBlock		    "Scope"
+	    DstPort		    4
+	  }
+	  Branch {
+	    ZOrder		    119
+	    DstBlock		    "altura_ctrl"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  ZOrder		  104
+	  SrcBlock		  "P_pr8"
+	  SrcPort		  1
+	  DstBlock		  "Saturation"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  105
+	  SrcBlock		  "Saturation"
+	  SrcPort		  1
+	  DstBlock		  "Degrees to\nRadians1"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  106
+	  SrcBlock		  "P_pr1"
+	  SrcPort		  1
+	  DstBlock		  "Saturation1"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  107
+	  SrcBlock		  "Saturation1"
+	  SrcPort		  1
+	  DstBlock		  "Degrees to\nRadians"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "POS_Controller"
+      SID		      "479"
+      Ports		      [2]
+      Position		      [650, 161, 680, 194]
+      ZOrder		      182
+      ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extm"
+      "gr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('S"
+      "ources','WiredSimulink',true,'DataLoggingLimitDataPoints',true,'DataLoggingSaveFormat','Array','DataLoggingDecim"
+      "ation','1','DataLoggingDecimateData',true,'DataLoggingVariableName','ScopeData2'),extmgr.Configuration('Visuals'"
+      ",'Time Domain',true,'SerializedDisplays',{struct('MinYLimReal','-1.77189','MaxYLimReal','0.19688','YLabelReal','"
+      "','MinYLimMag','0.00000','MaxYLimMag','1.77189','LegendVisibility','off','XGrid',true,'YGrid',true,'PlotMagPhase"
+      "',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOrder'"
+      ",[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.392156862"
+      "745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0.074"
+      "5098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelNames',{"
+      "{}},'NumLines',2,'LineNames',{{'Ref Y','Demux1/2'}},'ShowContent',true,'Placement',1),struct('MinYLimReal','-0.0"
+      "0059','MaxYLimReal','0.00065','YLabelReal','','MinYLimMag','0','MaxYLimMag','10','LegendVisibility','off','XGrid"
+      "',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.68627450980392"
+      "2 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.41176470588"
+      "2353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569"
+      " 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache'"
+      ",{{}},'UserDefinedChannelNames',{{}},'NumLines',1,'LineNames',{{'Sample and Hold1'}},'ShowContent',true,'Placeme"
+      "nt',2)},'DisplayPropertyDefaults',struct('YLabelReal','','LegendVisibility','off','XGrid',true,'YGrid',true,'Plo"
+      "tMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'Co"
+      "lorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0."
+      "392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 "
+      "1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChanne"
+      "lNames',{{}},'NumLines',0,'LineNames',{{[]}},'ShowContent',true,'Placement',1),'DisplayLayoutDimensions',[2 1]),"
+      "extmgr.Configuration('Tools','Plot Navigation',true,'OnceAtStop',false,'PreviousAutoscale','XY'),extmgr.Configur"
+      "ation('Tools','Measurements',true,'Version','2016a')),'Version','2016a','Location',[54 78 1367 767])"
+      NumInputPorts	      "2"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Polar to\nCartesian"
+      SID		      "502"
+      Ports		      [2, 2]
+      Position		      [-10, 386, 60, 484]
+      ZOrder		      200
+      LibraryVersion	      "1.58"
+      SourceBlock	      "simulink_extras/Transformations/Polar to\nCartesian"
+      SourceType	      "Polar2Cart"
+      ContentPreviewEnabled   off
+    }
+    Block {
+      BlockType		      Product
+      Name		      "Product"
+      SID		      "508"
+      Ports		      [2, 1]
+      Position		      [120, 387, 150, 418]
+      ZOrder		      206
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
+      Port {
+	PortNumber		1
+	Name			"Ref X"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      Product
+      Name		      "Product1"
+      SID		      "509"
+      Ports		      [2, 1]
+      Position		      [120, 437, 150, 468]
+      ZOrder		      207
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
+      Port {
+	PortNumber		1
+	Name			"Ref Y"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+    }
+    Block {
+      BlockType		      DiscretePulseGenerator
+      Name		      "Pulse\nGenerator"
+      SID		      "435"
+      Ports		      [0, 1]
+      Position		      [475, 194, 505, 226]
+      ZOrder		      153
+      PulseType		      "Time based"
+      Period		      "0.1"
+      PulseWidth	      "10"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Quadrotor"
+      SID		      "85"
+      Ports		      [1, 7]
+      Position		      [1025, 249, 1140, 621]
+      ZOrder		      -21
+      DropShadow	      on
+      AncestorBlock	      "roblocks/Dynamics/Quadrotor"
+      LibraryVersion	      "*1.69"
+      RequestExecContextInheritance off
+      Variant		      off
+      Object {
+	$PropName		"MaskObject"
+	$ObjectID		21
+	$ClassName		"Simulink.Mask"
+	Description		"Quadrotor dynamics"
+	Help			"Integrate spatial velocity to update pose represented as a homogeneous\ntransformation.\n \n<b>Parameters::</"
+	"b>\n \nq (struct)  A structure containing quadrotor dynamics\n\nThe elements of q are:\n\n J         Flyer rotational"
+	" inertia matrix (3x3)\n h         Height of rotors above CoG (1x1)\n d         Length of flyer arms (1x1)\n nb       "
+	" Number of blades per rotor (1x1)\n r         Rotor radius (1x1)\n c         Blade chord (1x1)\n e         Flapping h"
+	"inge offset (1x1)\n Mb        Rotor blade mass (1x1)\n Mc        Estimated hub clamp mass (1x1)\n ec        Blade roo"
+	"t clamp displacement (1x1)\n Ib        Rotor blade rotational inertia (1x1)\n Ic        Estimated root clamp inertia "
+	"(1x1)\n mb        Static blade moment (1x1)\n Ir        Total rotor inertia (1x1)\n Ct        Non-dim. thrust coeffic"
+	"ient (1x1)\n Cq        Non-dim. torque coefficient (1x1)\n sigma     Rotor solidity ratio (1x1)\n thetat    Blade tip"
+	" angle (1x1)\n theta0    Blade root angle (1x1)\n theta1    Blade twist angle (1x1)\n theta75   3/4 blade angle (1x1)"
+	"\n thetai    Blade ideal root approximation (1x1)\n a         Lift slope gradient (1x1)\n A         Rotor disc area ("
+	"1x1)\n gamma     Lock number (1x1)\n\n \n<b>Inputs::</b>\n \nw1 (1x1) angular velocity of rotor 1 [rad]\nw2 (1x1) ang"
+	"ular velocity of rotor 2 [rad]\nw3 (1x1) angular velocity of rotor 3 [rad]\nw4 (1x1) angular velocity of rotor 4 [rad"
+	"]\n\n<b>Outputs::</b>\n \nX (1x12) state vector (x, y, z, thr, thp, thy, xd, yd, zd, thrd, thpd, thyd)\n\n(x,y,z) is "
+	"the position in the world frame [m]\n(thr, thp, thy) the roll/pitch/yaw orientation in the world frame [rad]\n(xd,yd,"
+	"zd) is the velocity in the body frame [m]\n(thrd,thpd,thyd) is the roll/pitch/yaw rates in the body frame [rad/s]\n \n"
+	"<b>Notes::</b>\n \n- See also mdl_quadrotor which defines parameters for the ANU X4 flyer.\n"
+	Object {
+	  $PropName		  "Parameters"
+	  $ObjectID		  22
+	  $ClassName		  "Simulink.MaskParameter"
+	  Type			  "edit"
+	  Name			  "quad"
+	  Prompt		  "Quadrotor params"
+	  Value			  "quad"
+	}
+      }
+      Port {
+	PortNumber		1
+	Name			"X atual"
+	PropagatedSignals	"X"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+      Port {
+	PortNumber		2
+	Name			"Y atual"
+	PropagatedSignals	"Y"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+      Port {
+	PortNumber		3
+	Name			"Z atual"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+      System {
+	Name			"Quadrotor"
+	Location		[-8, 0, 1603, 876]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	SIDHighWatermark	"269"
+	SIDPrevWatermark	"244"
+	Block {
+	  BlockType		  Inport
+	  Name			  "omega"
+	  SID			  "85:250"
+	  Position		  [215, 523, 245, 537]
+	  ZOrder		  17
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  BusCreator
+	  Name			  "Bus\nCreator"
+	  SID			  "85:251"
+	  Ports			  [12, 1]
+	  Position		  [1060, 367, 1065, 688]
+	  ZOrder		  16
+	  ShowName		  off
+	  Inputs		  "'X','Y','Z','yaw','pitch','roll','dx','dy','dz','dyaw','dpitch','droll'"
+	  DisplayOption		  "bar"
+	  InheritFromInputs	  on
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  "Demux"
+	  SID			  "85:252"
+	  Ports			  [1, 12]
+	  Position		  [600, 387, 605, 668]
+	  ZOrder		  15
+	  BackgroundColor	  "black"
+	  ShowName		  off
+	  Outputs		  "12"
+	  Port {
+	    PortNumber		    1
+	    Name		    "X"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    2
+	    Name		    "Y"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    3
+	    Name		    "Z"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    4
+	    Name		    "yaw"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    5
+	    Name		    "pitch"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    6
+	    Name		    "roll"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    7
+	    Name		    "dx"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    8
+	    Name		    "dy"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    9
+	    Name		    "dz"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    10
+	    Name		    "dyaw"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    11
+	    Name		    "dpitch"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  Port {
+	    PortNumber		    12
+	    Name		    "droll"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  S-Function
+	  Name			  "Dynamics"
+	  SID			  "85:253"
+	  Ports			  [1, 1]
+	  Position		  [340, 497, 475, 563]
+	  ZOrder		  14
+	  FunctionName		  "quadrotor_dynamics"
+	  Parameters		  "quad"
+	  SFunctionDeploymentMode off
+	  EnableBusSupport	  off
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "P_z1"
+	  SID			  "85:269"
+	  Position		  [1010, 262, 1050, 298]
+	  ZOrder		  118
+	  ForegroundColor	  "red"
+	  Gain			  "-1"
+	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "P_z2"
+	  SID			  "85:268"
+	  Position		  [1000, 117, 1040, 153]
+	  ZOrder		  117
+	  ForegroundColor	  "red"
+	  Gain			  "-1"
+	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "X"
+	  SID			  "85:260"
+	  Position		  [1145, 58, 1175, 72]
+	  ZOrder		  116
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Y"
+	  SID			  "85:261"
+	  Position		  [1145, 93, 1175, 107]
+	  ZOrder		  115
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Z"
+	  SID			  "85:262"
+	  Position		  [1145, 128, 1175, 142]
+	  ZOrder		  114
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "dx"
+	  SID			  "85:263"
+	  Position		  [1145, 183, 1175, 197]
+	  ZOrder		  113
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "dy"
+	  SID			  "85:264"
+	  Position		  [1145, 228, 1175, 242]
+	  ZOrder		  112
+	  Port			  "5"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "dz"
+	  SID			  "85:265"
+	  Position		  [1145, 273, 1175, 287]
+	  ZOrder		  111
+	  Port			  "6"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "DATA"
+	  SID			  "85:254"
+	  Position		  [1145, 523, 1175, 537]
+	  ZOrder		  13
+	  Port			  "7"
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  Name			  "X"
+	  ZOrder		  67
+	  Labels		  [0, 0]
+	  SrcBlock		  "Demux"
+	  SrcPort		  1
+	  Points		  [35, 0]
+	  Branch {
+	    ZOrder		    83
+	    Points		    [0, -325]
+	    DstBlock		    "X"
+	    DstPort		    1
+	  }
+	  Branch {
+	    ZOrder		    82
+	    DstBlock		    "Bus\nCreator"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  Name			  "Z"
+	  ZOrder		  68
+	  Labels		  [0, 0]
+	  SrcBlock		  "Demux"
+	  SrcPort		  3
+	  Points		  [72, 0]
+	  Branch {
+	    ZOrder		    88
+	    DstBlock		    "Bus\nCreator"
+	    DstPort		    3
+	  }
+	  Branch {
+	    ZOrder		    87
+	    Points		    [0, -305]
+	    DstBlock		    "P_z2"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  Name			  "yaw"
+	  ZOrder		  69
+	  Labels		  [0, 0]
+	  SrcBlock		  "Demux"
+	  SrcPort		  4
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  4
+	}
+	Line {
+	  Name			  "pitch"
+	  ZOrder		  70
+	  Labels		  [0, 0]
+	  SrcBlock		  "Demux"
+	  SrcPort		  5
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  5
+	}
+	Line {
+	  ZOrder		  71
+	  SrcBlock		  "omega"
+	  SrcPort		  1
+	  DstBlock		  "Dynamics"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "dx"
+	  ZOrder		  72
+	  Labels		  [0, 0]
+	  SrcBlock		  "Demux"
+	  SrcPort		  7
+	  Points		  [89, 0]
+	  Branch {
+	    ZOrder		    90
+	    Points		    [0, -350]
+	    DstBlock		    "dx"
+	    DstPort		    1
+	  }
+	  Branch {
+	    ZOrder		    89
+	    DstBlock		    "Bus\nCreator"
+	    DstPort		    7
+	  }
+	}
+	Line {
+	  Name			  "dz"
+	  ZOrder		  73
+	  Labels		  [0, 0]
+	  SrcBlock		  "Demux"
+	  SrcPort		  9
+	  Points		  [124, 0]
+	  Branch {
+	    ZOrder		    94
+	    Points		    [0, -310]
+	    DstBlock		    "P_z1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    ZOrder		    93
+	    DstBlock		    "Bus\nCreator"
+	    DstPort		    9
+	  }
+	}
+	Line {
+	  Name			  "Y"
+	  ZOrder		  74
+	  Labels		  [0, 0]
+	  SrcBlock		  "Demux"
+	  SrcPort		  2
+	  Points		  [54, 0]
+	  Branch {
+	    ZOrder		    85
+	    Points		    [0, -315]
+	    DstBlock		    "Y"
+	    DstPort		    1
+	  }
+	  Branch {
+	    ZOrder		    84
+	    DstBlock		    "Bus\nCreator"
+	    DstPort		    2
+	  }
+	}
+	Line {
+	  Name			  "roll"
+	  ZOrder		  75
+	  Labels		  [0, 0]
+	  SrcBlock		  "Demux"
+	  SrcPort		  6
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  6
+	}
+	Line {
+	  Name			  "dy"
+	  ZOrder		  76
+	  Labels		  [0, 0]
+	  SrcBlock		  "Demux"
+	  SrcPort		  8
+	  Points		  [107, 0]
+	  Branch {
+	    ZOrder		    92
+	    Points		    [0, -330]
+	    DstBlock		    "dy"
+	    DstPort		    1
+	  }
+	  Branch {
+	    ZOrder		    91
+	    DstBlock		    "Bus\nCreator"
+	    DstPort		    8
+	  }
+	}
+	Line {
+	  ZOrder		  77
+	  SrcBlock		  "Bus\nCreator"
+	  SrcPort		  1
+	  DstBlock		  "DATA"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  78
+	  SrcBlock		  "Dynamics"
+	  SrcPort		  1
+	  DstBlock		  "Demux"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "dyaw"
+	  ZOrder		  79
+	  Labels		  [0, 0]
+	  SrcBlock		  "Demux"
+	  SrcPort		  10
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  10
+	}
+	Line {
+	  Name			  "dpitch"
+	  ZOrder		  80
+	  Labels		  [0, 0]
+	  SrcBlock		  "Demux"
+	  SrcPort		  11
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  11
+	}
+	Line {
+	  Name			  "droll"
+	  ZOrder		  81
+	  Labels		  [0, 0]
+	  SrcBlock		  "Demux"
+	  SrcPort		  12
+	  DstBlock		  "Bus\nCreator"
+	  DstPort		  12
+	}
+	Line {
+	  ZOrder		  95
+	  SrcBlock		  "P_z2"
+	  SrcPort		  1
+	  DstBlock		  "Z"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  96
+	  SrcBlock		  "P_z1"
+	  SrcPort		  1
+	  DstBlock		  "dz"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Ref Direction"
+      SID		      "221"
+      Position		      [120, 540, 150, 570]
+      ZOrder		      35
+      Value		      "0"
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Ref POS - training"
+      SID		      "507"
+      Tag		      "STV Subsys"
+      Ports		      [0, 1]
+      Position		      [-15, 307, 60, 343]
+      ZOrder		      205
+      CopyFcn		      "sigbuilder_block('copy');"
+      DeleteFcn		      "sigbuilder_block('delete');"
+      LoadFcn		      "sigbuilder_block('load');"
+      ModelCloseFcn	      "sigbuilder_block('modelClose');"
+      PreSaveFcn	      "sigbuilder_block('preSave');"
+      StartFcn		      "sigbuilder_block('start');"
+      PauseFcn		      "sigbuilder_block('pause')"
+      ContinueFcn	      "sigbuilder_block('continue')"
+      StopFcn		      "sigbuilder_block('stop');"
+      NameChangeFcn	      "sigbuilder_block('namechange');"
+      ClipboardFcn	      "sigbuilder_block('clipboard');"
+      OpenFcn		      "sigbuilder_block('open',[201 234.75 744 256.5 ]);"
+      CloseFcn		      "sigbuilder_block('close');"
+      RequestExecContextInheritance off
+      MaskHideContents	      on
+      Variant		      off
+      Object {
+	$PropName		"MaskObject"
+	$ObjectID		23
+	$ClassName		"Simulink.Mask"
+	Type			"Sigbuilder block"
+	Description		"Sigbuilder GUI"
+	Initialization		"if ~strcmp(get_param(bdroot(gcbh),'SimulationStatus'),'stopped') tuvar = sigbuilder_block('maskInit'"
+	"); end"
+	SelfModifiable		"on"
+	Display			"plot(0,0,100,100,[10,10,40,40,10],[80,20,20,80,80],[40,10],[50,50], [40,27,10],[65,72,56],[40,25,25,10],[2"
+	"8,28,43,43]);"
+	IconRotate		"port"
+	Capabilities		"slmaskedcaps(gcbh)"
+      }
+      System {
+	Name			"Ref POS - training"
+	Location		[450, 52, 1006, 537]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	SIDHighWatermark	"4"
+	Block {
+	  BlockType		  Demux
+	  Name			  "Demux"
+	  SID			  "507:1"
+	  Tag			  "STV Demux"
+	  Ports			  [1, 1]
+	  Position		  [150, 38, 160, 612]
+	  ZOrder		  -1
+	  Outputs		  "1"
+	}
+	Block {
+	  BlockType		  FromWorkspace
+	  Name			  "FromWs"
+	  SID			  "507:2"
+	  Tag			  "STV FromWs"
+	  Position		  [30, 300, 115, 350]
+	  ZOrder		  -2
+	  VariableName		  "tuvar"
+	  SampleTime		  "0"
+	  ZeroCross		  on
+	  SigBuilderData	  "DataTag0"
+	  VnvData		  "DataTag1"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Signal 1"
+	  SID			  "507:3"
+	  Tag			  "STV Outport"
+	  Position		  [280, 30, 300, 40]
+	  ZOrder		  -3
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  ZOrder		  1
+	  SrcBlock		  "Demux"
+	  SrcPort		  1
+	  DstBlock		  "Signal 1"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  2
+	  SrcBlock		  "FromWs"
+	  SrcPort		  1
+	  DstBlock		  "Demux"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Ref X"
+      SID		      "210"
+      Tag		      "STV Subsys"
+      Ports		      [0, 1]
+      Position		      [-15, 112, 60, 148]
+      ZOrder		      100
+      CopyFcn		      "sigbuilder_block('copy');"
+      DeleteFcn		      "sigbuilder_block('delete');"
+      LoadFcn		      "sigbuilder_block('load');"
+      ModelCloseFcn	      "sigbuilder_block('modelClose');"
+      PreSaveFcn	      "sigbuilder_block('preSave');"
+      StartFcn		      "sigbuilder_block('start');"
+      PauseFcn		      "sigbuilder_block('pause')"
+      ContinueFcn	      "sigbuilder_block('continue')"
+      StopFcn		      "sigbuilder_block('stop');"
+      NameChangeFcn	      "sigbuilder_block('namechange');"
+      ClipboardFcn	      "sigbuilder_block('clipboard');"
+      OpenFcn		      "sigbuilder_block('open',[199.5 0 520.5 309.75 ]);"
+      CloseFcn		      "sigbuilder_block('close');"
+      RequestExecContextInheritance off
+      MaskHideContents	      on
+      Variant		      off
+      Object {
+	$PropName		"MaskObject"
+	$ObjectID		24
+	$ClassName		"Simulink.Mask"
+	Type			"Sigbuilder block"
+	Description		"Sigbuilder GUI"
+	Initialization		"if ~strcmp(get_param(bdroot(gcbh),'SimulationStatus'),'stopped') tuvar = sigbuilder_block('maskInit'"
+	"); end"
+	SelfModifiable		"on"
+	Display			"plot(0,0,100,100,[10,10,40,40,10],[80,20,20,80,80],[40,10],[50,50], [40,27,10],[65,72,56],[40,25,25,10],[2"
+	"8,28,43,43]);"
+	IconRotate		"port"
+	Capabilities		"slmaskedcaps(gcbh)"
+      }
+      Port {
+	PortNumber		1
+	Name			"Ref X"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+      System {
+	Name			"Ref X"
+	Location		[450, 52, 1006, 537]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	SIDHighWatermark	"4"
+	Block {
+	  BlockType		  Demux
+	  Name			  "Demux"
+	  SID			  "210:1"
+	  Tag			  "STV Demux"
+	  Ports			  [1, 1]
+	  Position		  [150, 38, 160, 612]
+	  ZOrder		  -1
+	  Outputs		  "1"
+	}
+	Block {
+	  BlockType		  FromWorkspace
+	  Name			  "FromWs"
+	  SID			  "210:2"
+	  Tag			  "STV FromWs"
+	  Position		  [30, 300, 115, 350]
+	  ZOrder		  -2
+	  VariableName		  "tuvar"
+	  SampleTime		  "0"
+	  ZeroCross		  on
+	  SigBuilderData	  "DataTag2"
+	  VnvData		  "DataTag3"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Signal 1"
+	  SID			  "210:3"
+	  Tag			  "STV Outport"
+	  Position		  [280, 30, 300, 40]
+	  ZOrder		  -3
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  ZOrder		  1
+	  SrcBlock		  "FromWs"
+	  SrcPort		  1
+	  DstBlock		  "Demux"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  2
+	  SrcBlock		  "Demux"
+	  SrcPort		  1
+	  DstBlock		  "Signal 1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Ref Y"
+      SID		      "211"
+      Tag		      "STV Subsys"
+      Ports		      [0, 1]
+      Position		      [-15, 162, 60, 198]
+      ZOrder		      99
+      CopyFcn		      "sigbuilder_block('copy');"
+      DeleteFcn		      "sigbuilder_block('delete');"
+      LoadFcn		      "sigbuilder_block('load');"
+      ModelCloseFcn	      "sigbuilder_block('modelClose');"
+      PreSaveFcn	      "sigbuilder_block('preSave');"
+      StartFcn		      "sigbuilder_block('start');"
+      PauseFcn		      "sigbuilder_block('pause')"
+      ContinueFcn	      "sigbuilder_block('continue')"
+      StopFcn		      "sigbuilder_block('stop');"
+      NameChangeFcn	      "sigbuilder_block('namechange');"
+      ClipboardFcn	      "sigbuilder_block('clipboard');"
+      OpenFcn		      "sigbuilder_block('open',[268.5 4.5 565.5 444.75 ]);"
+      CloseFcn		      "sigbuilder_block('close');"
+      RequestExecContextInheritance off
+      MaskHideContents	      on
+      Variant		      off
+      Object {
+	$PropName		"MaskObject"
+	$ObjectID		25
+	$ClassName		"Simulink.Mask"
+	Type			"Sigbuilder block"
+	Description		"Sigbuilder GUI"
+	Initialization		"if ~strcmp(get_param(bdroot(gcbh),'SimulationStatus'),'stopped') tuvar = sigbuilder_block('maskInit'"
+	"); end"
+	SelfModifiable		"on"
+	Display			"plot(0,0,100,100,[10,10,40,40,10],[80,20,20,80,80],[40,10],[50,50], [40,27,10],[65,72,56],[40,25,25,10],[2"
+	"8,28,43,43]);"
+	IconRotate		"port"
+	Capabilities		"slmaskedcaps(gcbh)"
+      }
+      Port {
+	PortNumber		1
+	Name			"Ref Y"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+      System {
+	Name			"Ref Y"
+	Location		[450, 52, 1006, 537]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	SIDHighWatermark	"3"
+	Block {
+	  BlockType		  Demux
+	  Name			  "Demux"
+	  SID			  "211:1"
+	  Tag			  "STV Demux"
+	  Ports			  [1, 1]
+	  Position		  [150, 38, 160, 612]
+	  ZOrder		  -1
+	  Outputs		  "1"
+	}
+	Block {
+	  BlockType		  FromWorkspace
+	  Name			  "FromWs"
+	  SID			  "211:2"
+	  Tag			  "STV FromWs"
+	  Position		  [30, 300, 115, 350]
+	  ZOrder		  -2
+	  VariableName		  "tuvar"
+	  SampleTime		  "0"
+	  ZeroCross		  on
+	  SigBuilderData	  "DataTag4"
+	  VnvData		  "DataTag5"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Signal 1"
+	  SID			  "211:3"
+	  Tag			  "STV Outport"
+	  Position		  [280, 30, 300, 40]
+	  ZOrder		  -3
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  ZOrder		  1
+	  SrcBlock		  "Demux"
+	  SrcPort		  1
+	  Points		  [50, 0; 0, -290]
+	  DstBlock		  "Signal 1"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  2
+	  SrcBlock		  "FromWs"
+	  SrcPort		  1
+	  DstBlock		  "Demux"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Ref Z"
+      SID		      "398"
+      Tag		      "STV Subsys"
+      Ports		      [0, 1]
+      Position		      [-15, 212, 60, 248]
+      ZOrder		      140
+      CopyFcn		      "sigbuilder_block('copy');"
+      DeleteFcn		      "sigbuilder_block('delete');"
+      LoadFcn		      "sigbuilder_block('load');"
+      ModelCloseFcn	      "sigbuilder_block('modelClose');"
+      PreSaveFcn	      "sigbuilder_block('preSave');"
+      StartFcn		      "sigbuilder_block('start');"
+      PauseFcn		      "sigbuilder_block('pause')"
+      ContinueFcn	      "sigbuilder_block('continue')"
+      StopFcn		      "sigbuilder_block('stop');"
+      NameChangeFcn	      "sigbuilder_block('namechange');"
+      ClipboardFcn	      "sigbuilder_block('clipboard');"
+      OpenFcn		      "sigbuilder_block('open',[272.25 73.5 542.25 375.75 ]);"
+      CloseFcn		      "sigbuilder_block('close');"
+      RequestExecContextInheritance off
+      MaskHideContents	      on
+      Variant		      off
+      Object {
+	$PropName		"MaskObject"
+	$ObjectID		26
+	$ClassName		"Simulink.Mask"
+	Type			"Sigbuilder block"
+	Description		"Sigbuilder GUI"
+	Initialization		"if ~strcmp(get_param(bdroot(gcbh),'SimulationStatus'),'stopped') tuvar = sigbuilder_block('maskInit'"
+	"); end"
+	SelfModifiable		"on"
+	Display			"plot(0,0,100,100,[10,10,40,40,10],[80,20,20,80,80],[40,10],[50,50], [40,27,10],[65,72,56],[40,25,25,10],[2"
+	"8,28,43,43]);"
+	IconRotate		"port"
+	Capabilities		"slmaskedcaps(gcbh)"
+      }
+      Port {
+	PortNumber		1
+	Name			"Ref Z"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+      System {
+	Name			"Ref Z"
+	Location		[450, 52, 1006, 537]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	SIDHighWatermark	"3"
+	Block {
+	  BlockType		  Demux
+	  Name			  "Demux"
+	  SID			  "398:1"
+	  Tag			  "STV Demux"
+	  Ports			  [1, 1]
+	  Position		  [150, 38, 160, 612]
+	  ZOrder		  -1
+	  Outputs		  "1"
+	}
+	Block {
+	  BlockType		  FromWorkspace
+	  Name			  "FromWs"
+	  SID			  "398:2"
+	  Tag			  "STV FromWs"
+	  Position		  [30, 300, 115, 350]
+	  ZOrder		  -2
+	  VariableName		  "tuvar"
+	  SampleTime		  "0"
+	  ZeroCross		  on
+	  SigBuilderData	  "DataTag6"
+	  VnvData		  "DataTag7"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Signal 1"
+	  SID			  "398:3"
+	  Tag			  "STV Outport"
+	  Position		  [280, 30, 300, 40]
+	  ZOrder		  -3
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  ZOrder		  1
+	  SrcBlock		  "Demux"
+	  SrcPort		  1
+	  Points		  [50, 0; 0, -290]
+	  DstBlock		  "Signal 1"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  2
+	  SrcBlock		  "FromWs"
+	  SrcPort		  1
+	  DstBlock		  "Demux"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Ref Z - training"
+      SID		      "505"
+      Tag		      "STV Subsys"
+      Ports		      [0, 1]
+      Position		      [95, 487, 170, 523]
+      ZOrder		      204
+      CopyFcn		      "sigbuilder_block('copy');"
+      DeleteFcn		      "sigbuilder_block('delete');"
+      LoadFcn		      "sigbuilder_block('load');"
+      ModelCloseFcn	      "sigbuilder_block('modelClose');"
+      PreSaveFcn	      "sigbuilder_block('preSave');"
+      StartFcn		      "sigbuilder_block('start');"
+      PauseFcn		      "sigbuilder_block('pause')"
+      ContinueFcn	      "sigbuilder_block('continue')"
+      StopFcn		      "sigbuilder_block('stop');"
+      NameChangeFcn	      "sigbuilder_block('namechange');"
+      ClipboardFcn	      "sigbuilder_block('clipboard');"
+      OpenFcn		      "sigbuilder_block('open',[188.25 0 746.25 219.75 ]);"
+      CloseFcn		      "sigbuilder_block('close');"
+      RequestExecContextInheritance off
+      MaskHideContents	      on
+      Variant		      off
+      Object {
+	$PropName		"MaskObject"
+	$ObjectID		27
+	$ClassName		"Simulink.Mask"
+	Type			"Sigbuilder block"
+	Description		"Sigbuilder GUI"
+	Initialization		"if ~strcmp(get_param(bdroot(gcbh),'SimulationStatus'),'stopped') tuvar = sigbuilder_block('maskInit'"
+	"); end"
+	SelfModifiable		"on"
+	Display			"plot(0,0,100,100,[10,10,40,40,10],[80,20,20,80,80],[40,10],[50,50], [40,27,10],[65,72,56],[40,25,25,10],[2"
+	"8,28,43,43]);"
+	IconRotate		"port"
+	Capabilities		"slmaskedcaps(gcbh)"
+      }
+      Port {
+	PortNumber		1
+	Name			"Ref Z"
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
+      System {
+	Name			"Ref Z - training"
+	Location		[450, 52, 1006, 537]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	SIDHighWatermark	"3"
+	Block {
+	  BlockType		  Demux
+	  Name			  "Demux"
+	  SID			  "505:1"
+	  Tag			  "STV Demux"
+	  Ports			  [1, 1]
+	  Position		  [150, 38, 160, 612]
+	  ZOrder		  -1
+	  Outputs		  "1"
+	}
+	Block {
+	  BlockType		  FromWorkspace
+	  Name			  "FromWs"
+	  SID			  "505:2"
+	  Tag			  "STV FromWs"
+	  Position		  [30, 300, 115, 350]
+	  ZOrder		  -2
+	  VariableName		  "tuvar"
+	  SampleTime		  "0"
+	  ZeroCross		  on
+	  SigBuilderData	  "DataTag8"
+	  VnvData		  "DataTag9"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Signal 1"
+	  SID			  "505:3"
+	  Tag			  "STV Outport"
+	  Position		  [280, 30, 300, 40]
+	  ZOrder		  -3
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  ZOrder		  1
+	  SrcBlock		  "FromWs"
+	  SrcPort		  1
+	  DstBlock		  "Demux"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  2
+	  SrcBlock		  "Demux"
+	  SrcPort		  1
+	  Points		  [50, 0; 0, -290]
+	  DstBlock		  "Signal 1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "Respostas_Quad"
+      SID		      "448"
+      Ports		      [2]
+      Position		      [1505, 366, 1560, 479]
+      ZOrder		      160
+      ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extm"
+      "gr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('S"
+      "ources','WiredSimulink',true,'DataLoggingSaveFormat','Array','DataLoggingDecimation','1','DataLoggingDecimateDat"
+      "a',true),extmgr.Configuration('Visuals','Time Domain',true,'SerializedDisplays',{struct('MinYLimReal','-1.58277'"
+      ",'MaxYLimReal','0.06167','YLabelReal','','MinYLimMag','0.00000','MaxYLimMag','1.58277','LegendVisibility','On','"
+      "XGrid',true,'YGrid',true,'PlotMagPhase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509"
+      "803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764"
+      "705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.2745098039"
+      "21569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesC"
+      "ache',{{}},'UserDefinedChannelNames',{{}},'NumLines',6,'LineNames',{{'Ref_X','X atual','Ref_Y','Y atual','Ref_Z'"
+      ",'Z atual'}},'ShowContent',true,'Placement',1),struct('MinYLimReal','-1.21382','MaxYLimReal','1.08411','YLabelRe"
+      "al','','MinYLimMag','0.00000','MaxYLimMag','1.00000','LegendVisibility','On','XGrid',true,'YGrid',true,'PlotMagP"
+      "hase',false,'AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686274509803922 0.686274509803922],'ColorOr"
+      "der',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0.411764705882353 0.16078431372549;0.39215"
+      "6862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.274509803921569 1;0.0588235294117647 1 1;1 0"
+      ".0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePropertiesCache',{{}},'UserDefinedChannelName"
+      "s',{{}},'NumLines',3,'LineNames',{{'r2d1','r2d2','r2d3'}},'ShowContent',true,'Placement',2)},'TimeUnits','second"
+      "s','DisplayPropertyDefaults',struct('YLabelReal','','AxesColor',[0 0 0],'AxesTickColor',[0.686274509803922 0.686"
+      "274509803922 0.686274509803922],'ColorOrder',[1 1 0.0666666666666667;0.0745098039215686 0.623529411764706 1;1 0."
+      "411764705882353 0.16078431372549;0.392156862745098 0.831372549019608 0.0745098039215686;0.717647058823529 0.2745"
+      "09803921569 1;0.0588235294117647 1 1;1 0.0745098039215686 0.650980392156863],'Title','%<SignalLabel>','LinePrope"
+      "rtiesCache',{{}},'UserDefinedChannelNames',{{}},'NumLines',0,'LineNames',{{[]}},'ShowContent',true,'Placement',1"
+      "),'DisplayLayoutDimensions',[2 1]),extmgr.Configuration('Tools','Plot Navigation',true,'PreviousAutoscale','XY',"
+      "'OnceAtStop',false),extmgr.Configuration('Tools','Measurements',true,'Version','2016a')),'Version','2016a','Loca"
+      "tion',[1420 78 2807 899],'OpenAtMdlStart',true)"
+      NumInputPorts	      "2"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Sample\nand Hold"
+      SID		      "436"
+      Ports		      [1, 1, 0, 1]
+      Position		      [535, 339, 585, 381]
+      ZOrder		      152
+      LibraryVersion	      "1.772"
+      SourceBlock	      "dspsigops/Sample\nand Hold"
+      SourceType	      "Sample and Hold"
+      ContentPreviewEnabled   off
+      trig		      "Rising edge"
+      initCond		      "0"
+      latchinput	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Sample\nand Hold1"
+      SID		      "437"
+      Ports		      [1, 1, 0, 1]
+      Position		      [535, 249, 585, 291]
+      ZOrder		      154
+      LibraryVersion	      "1.772"
+      SourceBlock	      "dspsigops/Sample\nand Hold"
+      SourceType	      "Sample and Hold"
+      ContentPreviewEnabled   off
+      trig		      "Rising edge"
+      initCond		      "0"
+      latchinput	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Sample\nand Hold2"
+      SID		      "438"
+      Ports		      [1, 1, 0, 1]
+      Position		      [535, 429, 585, 471]
+      ZOrder		      155
+      LibraryVersion	      "1.772"
+      SourceBlock	      "dspsigops/Sample\nand Hold"
+      SourceType	      "Sample and Hold"
+      ContentPreviewEnabled   off
+      trig		      "Rising edge"
+      initCond		      "0"
+      latchinput	      off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Sample\nand Hold3"
+      SID		      "439"
+      Ports		      [1, 1, 0, 1]
+      Position		      [535, 519, 585, 561]
+      ZOrder		      156
+      LibraryVersion	      "1.772"
+      SourceBlock	      "dspsigops/Sample\nand Hold"
+      SourceType	      "Sample and Hold"
+      ContentPreviewEnabled   off
+      trig		      "Rising edge"
+      initCond		      "0"
+      latchinput	      off
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator"
+      SID		      "470"
+      Position		      [1165, 425, 1185, 445]
+      ZOrder		      176
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator1"
+      SID		      "471"
+      Position		      [1165, 480, 1185, 500]
+      ZOrder		      177
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator2"
+      SID		      "472"
+      Position		      [1165, 535, 1185, 555]
+      ZOrder		      178
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator3"
+      SID		      "510"
+      Position		      [120, 120, 140, 140]
+      ZOrder		      208
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator4"
+      SID		      "511"
+      Position		      [120, 170, 140, 190]
+      ZOrder		      209
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "Terminator5"
+      SID		      "512"
+      Position		      [120, 220, 140, 240]
+      ZOrder		      210
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "angulo"
+      SID		      "503"
+      Position		      [-125, 450, -55, 470]
+      ZOrder		      202
+      Value		      "rand_ang"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "r2d1"
+      SID		      "498"
+      Ports		      [1, 1]
+      Position		      [1390, 460, 1420, 490]
+      ZOrder		      196
+      LibraryVersion	      "1.58"
+      SourceBlock	      "simulink_extras/Transformations/Radians\nto Degrees"
+      SourceType	      "RadiansToDegrees"
+      ContentPreviewEnabled   off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "r2d2"
+      SID		      "499"
+      Ports		      [1, 1]
+      Position		      [1390, 505, 1420, 535]
+      ZOrder		      197
+      LibraryVersion	      "1.58"
+      SourceBlock	      "simulink_extras/Transformations/Radians\nto Degrees"
+      SourceType	      "RadiansToDegrees"
+      ContentPreviewEnabled   off
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "r2d3"
+      SID		      "500"
+      Ports		      [1, 1]
+      Position		      [1390, 550, 1420, 580]
+      ZOrder		      198
+      LibraryVersion	      "1.58"
+      SourceBlock	      "simulink_extras/Transformations/Radians\nto Degrees"
+      SourceType	      "RadiansToDegrees"
+      ContentPreviewEnabled   off
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "raio"
+      SID		      "504"
+      Position		      [-105, 397, -80, 423]
+      ZOrder		      201
+      Value		      "1.5"
+    }
+    Block {
+      BlockType		      Outport
+      Name		      "X_response"
+      SID		      "488"
+      Position		      [1380, 253, 1410, 267]
+      ZOrder		      186
+      IconDisplay	      "Port number"
+    }
+    Block {
+      BlockType		      Outport
+      Name		      "Y_response"
+      SID		      "489"
+      Position		      [1380, 308, 1410, 322]
+      ZOrder		      187
+      Port		      "2"
+      IconDisplay	      "Port number"
+    }
+    Block {
+      BlockType		      Outport
+      Name		      "Z_response"
+      SID		      "490"
+      Position		      [1380, 363, 1410, 377]
+      ZOrder		      188
+      Port		      "3"
+      IconDisplay	      "Port number"
+    }
+    Line {
+      ZOrder		      147
+      SrcBlock		      "Quadrotor"
+      SrcPort		      7
+      Points		      [104, 0]
+      Branch {
+	ZOrder			1013
+	Points			[0, -80]
+	DstBlock		"Bus\nSelector"
+	DstPort			1
+      }
+      Branch {
+	ZOrder			744
+	Points			[0, 95; -601, 0; 0, -200]
+	Branch {
+	  ZOrder		  1351
+	  DstBlock		  "Inner Controller"
+	  DstPort		  6
+	}
+	Branch {
+	  ZOrder		  1012
+	  Points		  [0, -45]
+	  Branch {
+	    ZOrder		    1352
+	    DstBlock		    "Inner Controller"
+	    DstPort		    5
+	  }
+	  Branch {
+	    ZOrder		    1011
+	    Points		    [0, -45]
+	    DstBlock		    "Inner Controller"
+	    DstPort		    4
+	  }
+	}
+      }
+    }
+    Line {
+      ZOrder		      1350
+      SrcBlock		      "Sample\nand Hold3"
+      SrcPort		      1
+      Points		      [31, 0; 0, 35]
+      DstBlock		      "Control Mixer"
+      DstPort		      4
+    }
+    Line {
+      ZOrder		      133
+      SrcBlock		      "Control Mixer"
+      SrcPort		      1
+      DstBlock		      "Quadrotor"
+      DstPort		      1
+    }
+    Line {
+      Name		      "Ref Z"
+      ZOrder		      1168
+      SrcBlock		      "Ref Z - training"
+      SrcPort		      1
+      Points		      [45, 0]
+      Branch {
+	ZOrder			1049
+	Labels			[1, 1]
+	DstBlock		"Outer Control Loop"
+	DstPort			6
+      }
+      Branch {
+	ZOrder			1043
+	DstBlock		"Mux4"
+	DstPort			3
+      }
+    }
+    Line {
+      ZOrder		      983
+      SrcBlock		      "Ref Direction"
+      SrcPort		      1
+      DstBlock		      "Outer Control Loop"
+      DstPort		      7
+    }
+    Line {
+      ZOrder		      704
+      SrcBlock		      "Sample\nand Hold2"
+      SrcPort		      1
+      Points		      [34, 0; 0, -90]
+      DstBlock		      "Inner Controller"
+      DstPort		      3
+    }
+    Line {
+      Name		      "Ref Y"
+      ZOrder		      1345
+      SrcBlock		      "Product1"
+      SrcPort		      1
+      Points		      [45, 0]
+      Branch {
+	ZOrder			1349
+	DstBlock		"Mux4"
+	DstPort			2
+      }
+      Branch {
+	ZOrder			1348
+	Labels			[1, 1]
+	Points			[95, 0]
+	Branch {
+	  ZOrder		  1118
+	  Points		  [0, -300]
+	  DstBlock		  "Mux5"
+	  DstPort		  1
+	}
+	Branch {
+	  ZOrder		  1117
+	  DstBlock		  "Outer Control Loop"
+	  DstPort		  5
+	}
+      }
+    }
+    Line {
+      ZOrder		      313
+      SrcBlock		      "Mux1"
+      SrcPort		      1
+      Points		      [31, 0]
+      Branch {
+	ZOrder			1122
+	DstBlock		"X_response"
+	DstPort			1
+      }
+      Branch {
+	ZOrder			1075
+	Points			[0, 23; 90, 0; 0, 87]
+	DstBlock		"Mux9"
+	DstPort			1
+      }
+    }
+    Line {
+      ZOrder		      1060
+      SrcBlock		      "Mux2"
+      SrcPort		      1
+      Points		      [31, 0]
+      Branch {
+	ZOrder			1069
+	DstBlock		"Y_response"
+	DstPort			1
+      }
+      Branch {
+	ZOrder			1068
+	Points			[0, 34; 79, 0; 0, 46]
+	DstBlock		"Mux9"
+	DstPort			2
+      }
+    }
+    Line {
+      Name		      "Ref_X"
+      ZOrder		      561
+      Labels		      [-1, 0]
+      SrcBlock		      "Demux2"
+      SrcPort		      1
+      Points		      [0, 65]
+      DstBlock		      "Mux1"
+      DstPort		      1
+    }
+    Line {
+      Name		      "Ref_Y"
+      ZOrder		      562
+      Labels		      [-1, 0]
+      SrcBlock		      "Demux2"
+      SrcPort		      2
+      Points		      [0, 120]
+      DstBlock		      "Mux2"
+      DstPort		      1
+    }
+    Line {
+      Name		      "Ref_Z"
+      ZOrder		      563
+      Labels		      [-1, 0]
+      SrcBlock		      "Demux2"
+      SrcPort		      3
+      Points		      [0, 175]
+      DstBlock		      "Mux3"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      564
+      SrcBlock		      "Mux4"
+      SrcPort		      1
+      Points		      [0, -56; 1045, 0]
+      DstBlock		      "Demux2"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      1372
+      SrcBlock		      "Outer Control Loop"
+      SrcPort		      2
+      DstBlock		      "Sample\nand Hold"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      1371
+      SrcBlock		      "Outer Control Loop"
+      SrcPort		      1
+      DstBlock		      "Sample\nand Hold1"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      1373
+      SrcBlock		      "Outer Control Loop"
+      SrcPort		      3
+      DstBlock		      "Sample\nand Hold2"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      679
+      SrcBlock		      "Pulse\nGenerator"
+      SrcPort		      1
+      Points		      [8, 0; 0, 27]
+      Branch {
+	ZOrder			1008
+	Points			[42, 0]
+	DstBlock		"Sample\nand Hold1"
+	DstPort			trigger
+      }
+      Branch {
+	ZOrder			1007
+	Points			[0, 86]
+	Branch {
+	  ZOrder		  678
+	  Points		  [42, 0]
+	  DstBlock		  "Sample\nand Hold"
+	  DstPort		  trigger
+	}
+	Branch {
+	  ZOrder		  677
+	  Points		  [0, 92]
+	  Branch {
+	    ZOrder		    675
+	    Points		    [42, 0]
+	    DstBlock		    "Sample\nand Hold2"
+	    DstPort		    trigger
+	  }
+	  Branch {
+	    ZOrder		    674
+	    Points		    [0, 88; 42, 0]
+	    DstBlock		    "Sample\nand Hold3"
+	    DstPort		    trigger
+	  }
+	}
+      }
+    }
+    Line {
+      ZOrder		      964
+      SrcBlock		      "Outer Control Loop"
+      SrcPort		      4
+      DstBlock		      "Sample\nand Hold3"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      726
+      SrcBlock		      "Mux9"
+      SrcPort		      1
+      DstBlock		      "Respostas_Quad"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      727
+      SrcBlock		      "Mux10"
+      SrcPort		      1
+      Points		      [14, 0; 0, -70]
+      DstBlock		      "Respostas_Quad"
+      DstPort		      2
+    }
+    Line {
+      Name		      "<pitch>"
+      ZOrder		      1107
+      Labels		      [-1, 1]
+      SrcBlock		      "Bus\nSelector"
+      SrcPort		      2
+      DstBlock		      "r2d2"
+      DstPort		      1
+    }
+    Line {
+      Name		      "<roll>"
+      ZOrder		      1105
+      Labels		      [0, 0]
+      SrcBlock		      "Bus\nSelector"
+      SrcPort		      1
+      DstBlock		      "r2d1"
+      DstPort		      1
+    }
+    Line {
+      Name		      "X atual"
+      ZOrder		      555
+      SrcBlock		      "Quadrotor"
+      SrcPort		      1
+      Points		      [15, 0]
+      Branch {
+	ZOrder			1182
+	Labels			[1, 1]
+	DstBlock		"Mux1"
+	DstPort			2
+      }
+      Branch {
+	ZOrder			1026
+	DstBlock		"Mux6"
+	DstPort			1
+      }
+    }
+    Line {
+      Name		      "Z atual"
+      ZOrder		      553
+      SrcBlock		      "Quadrotor"
+      SrcPort		      3
+      Points		      [45, 0]
+      Branch {
+	ZOrder			1180
+	Labels			[1, 0]
+	DstBlock		"Mux3"
+	DstPort			2
+      }
+      Branch {
+	ZOrder			1033
+	DstBlock		"Mux6"
+	DstPort			3
+      }
+    }
+    Line {
+      Name		      "<yaw>"
+      ZOrder		      1109
+      Labels		      [1, 0]
+      SrcBlock		      "Bus\nSelector"
+      SrcPort		      3
+      DstBlock		      "r2d3"
+      DstPort		      1
+    }
+    Line {
+      Name		      "Y atual"
+      ZOrder		      554
+      SrcBlock		      "Quadrotor"
+      SrcPort		      2
+      Points		      [30, 0]
+      Branch {
+	ZOrder			1181
+	Labels			[1, 1]
+	DstBlock		"Mux2"
+	DstPort			2
+      }
+      Branch {
+	ZOrder			1031
+	DstBlock		"Mux6"
+	DstPort			2
+      }
+    }
+    Line {
+      ZOrder		      820
+      SrcBlock		      "Sample\nand Hold"
+      SrcPort		      1
+      Points		      [17, 0; 0, -45]
+      DstBlock		      "Inner Controller"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      829
+      SrcBlock		      "Sample\nand Hold1"
+      SrcPort		      1
+      Points		      [22, 0]
+      Branch {
+	ZOrder			1133
+	Points			[0, -85]
+	DstBlock		"POS_Controller"
+	DstPort			2
+      }
+      Branch {
+	ZOrder			1132
+	DstBlock		"Inner Controller"
+	DstPort			1
+      }
+    }
+    Line {
+      ZOrder		      839
+      SrcBlock		      "Quadrotor"
+      SrcPort		      4
+      DstBlock		      "Terminator"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      840
+      SrcBlock		      "Quadrotor"
+      SrcPort		      5
+      DstBlock		      "Terminator1"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      841
+      SrcBlock		      "Quadrotor"
+      SrcPort		      6
+      DstBlock		      "Terminator2"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      954
+      SrcBlock		      "Mux5"
+      SrcPort		      1
+      DstBlock		      "POS_Controller"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      1047
+      SrcBlock		      "Mux6"
+      SrcPort		      1
+      Points		      [0, -48; -910, 0]
+      DstBlock		      "Demux1"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      1051
+      SrcBlock		      "Demux1"
+      SrcPort		      1
+      Points		      [0, 80]
+      DstBlock		      "Outer Control Loop"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      1054
+      SrcBlock		      "Demux1"
+      SrcPort		      2
+      Points		      [0, 5]
+      Branch {
+	ZOrder			1184
+	Points			[0, 125]
+	DstBlock		"Outer Control Loop"
+	DstPort			2
+      }
+      Branch {
+	ZOrder			1176
+	DstBlock		"Mux5"
+	DstPort			2
+      }
+    }
+    Line {
+      ZOrder		      1055
+      SrcBlock		      "Demux1"
+      SrcPort		      3
+      Points		      [0, 180]
+      DstBlock		      "Outer Control Loop"
+      DstPort		      3
+    }
+    Line {
+      ZOrder		      1059
+      SrcBlock		      "Mux3"
+      SrcPort		      1
+      Points		      [35, 0]
+      Branch {
+	ZOrder			1071
+	DstBlock		"Z_response"
+	DstPort			1
+      }
+      Branch {
+	ZOrder			1070
+	Points			[0, 50]
+	DstBlock		"Mux9"
+	DstPort			3
+      }
+    }
+    Line {
+      ZOrder		      1139
+      SrcBlock		      "Inner Controller"
+      SrcPort		      2
+      DstBlock		      "Control Mixer"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      1140
+      SrcBlock		      "Inner Controller"
+      SrcPort		      3
+      DstBlock		      "Control Mixer"
+      DstPort		      3
+    }
+    Line {
+      ZOrder		      1104
+      SrcBlock		      "r2d1"
+      SrcPort		      1
+      DstBlock		      "Mux10"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      1106
+      SrcBlock		      "r2d2"
+      SrcPort		      1
+      DstBlock		      "Mux10"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      1108
+      SrcBlock		      "r2d3"
+      SrcPort		      1
+      DstBlock		      "Mux10"
+      DstPort		      3
+    }
+    Line {
+      ZOrder		      1141
+      SrcBlock		      "Inner Controller"
+      SrcPort		      1
+      DstBlock		      "Control Mixer"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      1151
+      SrcBlock		      "angulo"
+      SrcPort		      1
+      DstBlock		      "Polar to\nCartesian"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      1152
+      SrcBlock		      "raio"
+      SrcPort		      1
+      DstBlock		      "Polar to\nCartesian"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      1162
+      SrcBlock		      "Polar to\nCartesian"
+      SrcPort		      2
+      DstBlock		      "Product1"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      1163
+      SrcBlock		      "Polar to\nCartesian"
+      SrcPort		      1
+      DstBlock		      "Product"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      1164
+      SrcBlock		      "Ref POS - training"
+      SrcPort		      1
+      Points		      [33, 0; 0, 70]
+      Branch {
+	ZOrder			1166
+	Points			[0, 50]
+	DstBlock		"Product1"
+	DstPort			1
+      }
+      Branch {
+	ZOrder			1165
+	DstBlock		"Product"
+	DstPort			1
+      }
+    }
+    Line {
+      Name		      "Ref X"
+      ZOrder		      1169
+      Labels		      [0, 0]
+      SrcBlock		      "Ref X"
+      SrcPort		      1
+      DstBlock		      "Terminator3"
+      DstPort		      1
+    }
+    Line {
+      Name		      "Ref Y"
+      ZOrder		      1170
+      Labels		      [0, 0]
+      SrcBlock		      "Ref Y"
+      SrcPort		      1
+      DstBlock		      "Terminator4"
+      DstPort		      1
+    }
+    Line {
+      Name		      "Ref Z"
+      ZOrder		      1171
+      Labels		      [0, 0]
+      SrcBlock		      "Ref Z"
+      SrcPort		      1
+      DstBlock		      "Terminator5"
+      DstPort		      1
+    }
+    Line {
+      Name		      "Ref X"
+      ZOrder		      1344
+      SrcBlock		      "Product"
+      SrcPort		      1
+      Points		      [25, 0]
+      Branch {
+	ZOrder			1347
+	Labels			[1, 1]
+	DstBlock		"Outer Control Loop"
+	DstPort			4
+      }
+      Branch {
+	ZOrder			1346
+	DstBlock		"Mux4"
+	DstPort			1
+      }
+    }
+  }
+}
+MatData {
+  NumRecords		  10
+  DataRecord {
+    Tag			    DataTag0
+    Data		    "  %)30     .    * H   8    (     @         %    \"     $    !     0         %  0 %@    $   \"P    9W)I9"
+    "%-E='1I;F<              &-H86YN96QS                  !A>&5S                        8V]M;6]N                     &1"
+    "A=&%3970                   !D871A4V5T261X                :7-697)I9FEC871I;VY6:7-I8FQE '-B;V)J                     "
+    "  .    ,     8    (    !          %    \"     $    \"     0         0  ( ;VX   X   #@ @  !@    @    \"          4 "
+    "   (     0    $    !          4 !  *     0   %H   !S=&5P6       <W1E<%D      'E-:6X       !Y36%X        8V]L;W(   "
+    "   &QI;F53='EL90!L:6YE5VED=&@ ;&%B96P      &]U=$EN9&5X           .    .     8    (    !@         %    \"     $    "
+    "!     0         )    \"               #@   #@    &    \"     8         !0    @    !     0    $         \"0    @   "
+    "            X    X    !@    @    &          4    (     0    $    !          D    (            \\/\\.    .     8   "
+    " (    !@         %    \"     $    !     0         )    \"            /!_#@   $@    &    \"     8         !0    @  "
+    "  !     P    $         \"0   !@   !\"/NC9K/KJ/P                     .    ,     8    (    !          %    \"     $ "
+    "   !     0         0  $ +0    X    X    !@    @    &          4    (     0    $    !          D    (            ^#"
+    "\\.    .     8    (    !          %    \"     $    (     0         0    \"    %-I9VYA;\" Q#@   #@    &    \"     8"
+    "         !0    @    !     0    $         \"0    @           #P/PX    8 0  !@    @    \"          4    (     0    $"
+    "    !          4 !  )     0   !L   !C:&%N;F5L<P!Y3&EM      !L86)E;%!O<P        X    X    !@    @    &          4  "
+    "  (     0    $    !          D    (            \\#\\.    0     8    (    !@         %    \"     $    \"     0     "
+    "    )    $    )J9F9F9F;F_FIF9F9F9\\3\\.    ,     8    (    !          %    \"     $    \"     0         0  ( 5$P  "
+    " X   !H @  !@    @    \"          4    (     0    $    !          4 !  .     0   &(   !D:7-P5&EM90       &1I<W!-;V"
+    "1E        ;6EN5&EM90        !M87A4:6UE         &%F=&5R1FEN86Q3='( <V%M<&QE5&EM90    !Z97)O0W)O<W,               X "
+    "  !     !@    @    &          4    (     0    (    !          D    0                      !$0 X    X    !@    @   "
+    " &          4    (     0    $    !          D    (            \\#\\.    .     8    (    !@         %    \"     $  "
+    "  !     0         )    \"               #@   #@    &    \"     8         !0    @    !     0    $         \"0    @ "
+    "          !$0 X   !     !@    @    $          4    (     0    L    !         !     +    17AT<F%P;VQA=&4       X   "
+    " X    !@    @    &          4    (     0    $    !          D    (               .    ,     8    (    !          %"
+    "    \"     $    \"     0         0  ( ;VX   X   \"  0  !@    @    \"          4    (     0    $    !          4 ! "
+    " .     0   #@   !A8W1I=F5$:7-P261X '1I;65286YG90      ;F%M90            !D:7-P;&%Y4F%N9V4   X    X    !@    @    &"
+    "          4    (     0    $    !          D    (            \\#\\.    0     8    (    !@         %    \"     $    "
+    "\"     0         )    $                       1$ .    .     8    (    !          %    \"     $    '     0         "
+    "0    !P   $=R;W5P(#$ #@   $     &    \"     8         !0    @    !     @    $         \"0   !                     "
+    "  $1 #@   #@    &    \"     8         !0    @    !     0    $         \"0    @           #P/PX    X    !@    @    "
+    "&          4    (     0    $    !          D    (               .    @     8    (    $0         !          $ ! !-0"
+    "T]3 0    @   !3:6=3=6ET90X   !(    !@    @    -          4    (    !@    $    !          8    8        W0(    !   "
+    "  0    $    #    #@   %@+   &    \"     D         !0    @    !    * L   $          @   \"@+     4E-      X   \"(\""
+    "@  !@    @    \"          4    (     0    $    !          4 !  %     0    4   !-0T]3      X   ! \"@  !@    @    1 "
+    "         $          0 $ $U#3U,!    #0   $9I;&57<F%P<&5R7U\\    .      H   8    (     0         %    \"     L    ! "
+    "    0         .    & (   8    (    \"0         %    \"    .@!   !     0         \"    Z $   (    -    L    /    #P"
+    "    4 $  ,@!  #H 0            !.86UE $=R;W5P<P!3:6=N86QS %A$871A %E$871A %-I9U-U:71E4VEG;F%L %5S97)$871A %1I;65286"
+    "YG90!3:6=3=6ET94=R;W5P $%C=&EV95-I9VYA; !297%U:7)E;65N=$EN9F\\ 4VEG4W5I=&4 06-T:79E1W)O=7                         "
+    "            &                    \"0                    P                                               ,         "
+    "           !     P    (                    \"     @    $                    #     0               @    $    !     "
+    "     (    !    !P         #     0    $    !     P    $    %    \"     $    &     P    $    !     @    0    !     P"
+    "    4    !    !                                               #@         .    0     8    (    !          %    \"  "
+    "   $    .     0         0    #@   %-I9VYA;\"!\"=6EL9&5R   .    .     8    (    !          %    \"     $    '     0"
+    "         0    !P   $=R;W5P(#$ #@   #@    &    \"     0         !0    @    !    \"     $         $     @   !3:6=N86"
+    "P@,0X   !8    !@    @    &          4    (     0    4    !          D    H                       40        \"Y    "
+    "     +D        !$0 X   !8    !@    @    &          4    (     0    4    !          D    H                        @"
+    "        / _        \\#\\       #P/PX   !(    !@    @    -          4    (    !@    $    !          8    8        W"
+    "0(    !     0    ,    !    #@   $     &    \"     8         !0    @    !     @    $         \"0   !               "
+    "        $1 #@   $@    &    \"     T         !0    @    &     0    $         !@   !@       #= @    $    !     @    "
+    "(    .    . 4   8    (     0         %    \"     0    !     0         .    .     8    (     @         %    \"     "
+    "$          0         %  0  0    $         #@   $ !   &    \"     (         !0    @    !     0    $         !0 $  D"
+    "    !    )    $YA;64      %A$871A     %E$871A     %5S97)$871A       .    ,     8    (    !          %    \"       "
+    "         0         0          X    P    !@    @    &          4    (               !          D         #@   #    "
+    " &    \"     8         !0    @               $         \"0         .    ,     8    (    !@         %    \"        "
+    "        0         )          X    0 @  !@    @    \"          4    (     0    $    !          4 !  0     0   &    "
+    "!.86UE                4VEG;F%L<P           $%C=&EV95-I9VYA;     !297%U:7)E;65N=$EN9F\\ 57-E<D1A=&$          %1I;65"
+    "286YG90         .    ,     8    (    !          %    \"                0         0          X   !(    !@    @    -"
+    "          4    (    !0    $    !          8    4        W0(               $         #@   #     &    \"     8      "
+    "   !0    @               $         \"0         .    ,     8    (    !          %    \"                0         0 "
+    "         X    P    !@    @    &          4    (               !          D         #@   $     &    \"     8       "
+    "  !0    @    !     @    $         \"0   !                       \"1 #@   &@!   &    \"     (         !0    @    ! "
+    "    0    $         !0 $  P    !    ,    $YA;64          $=R;W5P<P       $%C=&EV94=R;W5P %5S97)$871A      X    P   "
+    " !@    @    $          4    (               !         !          #@   $@    &    \"     T         !0    @    %    "
+    " 0    $         !@   !0       #= @               @         .    .     8    (    !@         %    \"     $    !     "
+    "0         )    \"            / _#@   #     &    \"     8         !0    @               $         \"0         .    "
+    "B     8    (    \"0         %    \"     $   !8     0         \"    6      !24T     #@   $@    &    \"     (       "
+    "  !0    @    !     0    $         !0 $  4    !    !0   $U#3U,     #@         "
+  }
+  DataRecord {
+    Tag			    DataTag1
+    Data		    "  %)30     .    N ,   8    (     @         %    \"     $    !     0         %  0 $0    $   #,    =F5R:6"
+    "9Y0FQK4&%T:',   !V97)I9GE\";&M(86YD;&5S '9N=DUG<DED>           86-T:79E1W)O=7        !R97%$:7-P4')C;G0      &)L:T1"
+    "I<W!-;V1E        9W)O=7!#;G0           !G<F]U<%)E<4-N=        &=R;W5P1$]/4E-I9       ;6]D96Q(              !B;&]C:"
+    "T@              &]V97)I9&53971T:6YG<P        X    P    !@    @    &          4    (               !          D    "
+    "     #@   #     &    \"     8         !0    @               $         \"0         .    ,     8    (    !@         "
+    "%    \"                0         )          X    X    !@    @    &          4    (     0    $    !          D    ("
+    "            \\#\\.    ,     8    (    !@         %    \"                0         )          X    P    !@    @    "
+    "&          4    (               !          D         #@   #@    &    \"     8         !0    @    !     0    $     "
+    "    \"0    @           #P/PX    P    !@    @    &          4    (               !          D         #@   #     & "
+    "   \"     8         !0    @               $         \"0         .    ,     8    (    !@         %    \"           "
+    "     0         )          X    P    !@    @    &          4    (               !          D         #@   #     &  "
+    "  \"     8         !0    @               $         \"0         "
+  }
+  DataRecord {
+    Tag			    DataTag2
+    Data		    "  %)30     .    * H   8    (     @         %    \"     $    !     0         %  0 %@    $   \"P    9W)I9"
+    "%-E='1I;F<              &-H86YN96QS                  !A>&5S                        8V]M;6]N                     &1"
+    "A=&%3970                   !D871A4V5T261X                :7-697)I9FEC871I;VY6:7-I8FQE '-B;V)J                     "
+    "  .    ,     8    (    !          %    \"     $    \"     0         0  ( ;VX   X   #@ @  !@    @    \"          4 "
+    "   (     0    $    !          4 !  *     0   %H   !S=&5P6       <W1E<%D      'E-:6X       !Y36%X        8V]L;W(   "
+    "   &QI;F53='EL90!L:6YE5VED=&@ ;&%B96P      &]U=$EN9&5X           .    .     8    (    !@         %    \"     $    "
+    "!     0         )    \"               #@   #@    &    \"     8         !0    @    !     0    $         \"0    @   "
+    "            X    X    !@    @    &          4    (     0    $    !          D    (            \\/\\.    .     8   "
+    " (    !@         %    \"     $    !     0         )    \"            /!_#@   $@    &    \"     8         !0    @  "
+    "  !     P    $         \"0   !@   !\"/NC9K/KJ/P                     .    ,     8    (    !          %    \"     $ "
+    "   !     0         0  $ +0    X    X    !@    @    &          4    (     0    $    !          D    (            ^#"
+    "\\.    .     8    (    !          %    \"     $    (     0         0    \"    %-I9VYA;\" Q#@   #@    &    \"     8"
+    "         !0    @    !     0    $         \"0    @           #P/PX    8 0  !@    @    \"          4    (     0    $"
+    "    !          4 !  )     0   !L   !C:&%N;F5L<P!Y3&EM      !L86)E;%!O<P        X    X    !@    @    &          4  "
+    "  (     0    $    !          D    (            \\#\\.    0     8    (    !@         %    \"     $    \"     0     "
+    "    )    $    )J9F9F9F;F_FIF9F9F9\\3\\.    ,     8    (    !          %    \"     $    \"     0         0  ( 5$P  "
+    " X   !H @  !@    @    \"          4    (     0    $    !          4 !  .     0   &(   !D:7-P5&EM90       &1I<W!-;V"
+    "1E        ;6EN5&EM90        !M87A4:6UE         &%F=&5R1FEN86Q3='( <V%M<&QE5&EM90    !Z97)O0W)O<W,               X "
+    "  !     !@    @    &          4    (     0    (    !          D    0                       ^0 X    X    !@    @   "
+    " &          4    (     0    $    !          D    (            \\#\\.    .     8    (    !@         %    \"     $  "
+    "  !     0         )    \"               #@   #@    &    \"     8         !0    @    !     0    $         \"0    @ "
+    "           ^0 X   !     !@    @    $          4    (     0    L    !         !     +    17AT<F%P;VQA=&4       X   "
+    " X    !@    @    &          4    (     0    $    !          D    (               .    ,     8    (    !          %"
+    "    \"     $    \"     0         0  ( ;VX   X   \"  0  !@    @    \"          4    (     0    $    !          4 ! "
+    " .     0   #@   !A8W1I=F5$:7-P261X '1I;65286YG90      ;F%M90            !D:7-P;&%Y4F%N9V4   X    X    !@    @    &"
+    "          4    (     0    $    !          D    (            \\#\\.    0     8    (    !@         %    \"     $    "
+    "\"     0         )    $                       /D .    .     8    (    !          %    \"     $    '     0         "
+    "0    !P   $=R;W5P(#$ #@   $     &    \"     8         !0    @    !     @    $         \"0   !                     "
+    "  #Y #@   #@    &    \"     8         !0    @    !     0    $         \"0    @           #P/PX    X    !@    @    "
+    "&          4    (     0    $    !          D    (               .    @     8    (    $0         !          $ ! !-0"
+    "T]3 0    @   !3:6=3=6ET90X   !(    !@    @    -          4    (    !@    $    !          8    8        W0(    !   "
+    "  0    $    #    #@   $@+   &    \"     D         !0    @    !    & L   $          @   !@+     4E-      X   !X\"@ "
+    " !@    @    \"          4    (     0    $    !          4 !  %     0    4   !-0T]3      X    P\"@  !@    @    1   "
+    "       $          0 $ $U#3U,!    #0   $9I;&57<F%P<&5R7U\\    .    \\ D   8    (     0         %    \"     L    !  "
+    "   0         .    & (   8    (    \"0         %    \"    .@!   !     0         \"    Z $   (    -    L    /    #P "
+    "   4 $  ,@!  #H 0            !.86UE $=R;W5P<P!3:6=N86QS %A$871A %E$871A %-I9U-U:71E4VEG;F%L %5S97)$871A %1I;65286Y"
+    "G90!3:6=3=6ET94=R;W5P $%C=&EV95-I9VYA; !297%U:7)E;65N=$EN9F\\ 4VEG4W5I=&4 06-T:79E1W)O=7                          "
+    "           &                    \"0                    P                                               ,          "
+    "          !     P    (                    \"     @    $                    #     0               @    $    !      "
+    "    (    !    !P         #     0    $    !     P    $    %    \"     $    &     P    $    !     @    0    !     P "
+    "   4    !    !                                               #@         .    0     8    (    !          %    \"   "
+    "  $    .     0         0    #@   %-I9VYA;\"!\"=6EL9&5R   .    .     8    (    !          %    \"     $    '     0 "
+    "        0    !P   $=R;W5P(#$ #@   #@    &    \"     0         !0    @    !    \"     $         $     @   !3:6=N86P"
+    "@,0X   !0    !@    @    &          4    (     0    0    !          D    @                       D0        \"Y     "
+    "    /D .    4     8    (    !@         %    \"     $    $     0         )    (                        (        #P/"
+    "P       / _#@   $@    &    \"     T         !0    @    &     0    $         !@   !@       #= @    $    !     P    "
+    "$    .    0     8    (    !@         %    \"     $    \"     0         )    $                       /D .    2     "
+    "8    (    #0         %    \"     8    !     0         &    &        -T\"     0    $    \"     @    X    X!0  !@   "
+    " @    !          4    (    !     $    !          X    X    !@    @    \"          4    (     0         !          "
+    "4 !  !     0         .    0 $   8    (     @         %    \"     $    !     0         %  0 \"0    $    D    3F%M90"
+    "      6$1A=&$     641A=&$     57-E<D1A=&$       X    P    !@    @    $          4    (               !         !  "
+    "        #@   #     &    \"     8         !0    @               $         \"0         .    ,     8    (    !@      "
+    "   %    \"                0         )          X    P    !@    @    &          4    (               !          D  "
+    "       #@   ! \"   &    \"     (         !0    @    !     0    $         !0 $ !     !    8    $YA;64              "
+    " !3:6=N86QS            06-T:79E4VEG;F%L     %)E<75I<F5M96YT26YF;P!5<V5R1&%T80          5&EM95)A;F=E          X    "
+    "P    !@    @    $          4    (               !         !          #@   $@    &    \"     T         !0    @    %"
+    "     0    $         !@   !0       #= @               0         .    ,     8    (    !@         %    \"            "
+    "    0         )          X    P    !@    @    $          4    (               !         !          #@   #     &   "
+    " \"     8         !0    @               $         \"0         .    0     8    (    !@         %    \"     $    \" "
+    "    0         )    $                       )$ .    : $   8    (     @         %    \"     $    !     0         %  "
+    "0 #     $    P    3F%M90          1W)O=7!S        06-T:79E1W)O=7  57-E<D1A=&$     #@   #     &    \"     0        "
+    " !0    @               $         $          .    2     8    (    #0         %    \"     4    !     0         &    "
+    "%        -T\"               \"          X    X    !@    @    &          4    (     0    $    !          D    (    "
+    "        \\#\\.    ,     8    (    !@         %    \"                0         )          X   \"(    !@    @    )  "
+    "        4    (     0   %@    !          (   !8      %)30     .    2     8    (     @         %    \"     $    !   "
+    "  0         %  0 !0    $    %    34-/4P     .          "
+  }
+  DataRecord {
+    Tag			    DataTag3
+    Data		    "  %)30     .    N ,   8    (     @         %    \"     $    !     0         %  0 $0    $   #,    =F5R:6"
+    "9Y0FQK4&%T:',   !V97)I9GE\";&M(86YD;&5S '9N=DUG<DED>           86-T:79E1W)O=7        !R97%$:7-P4')C;G0      &)L:T1"
+    "I<W!-;V1E        9W)O=7!#;G0           !G<F]U<%)E<4-N=        &=R;W5P1$]/4E-I9       ;6]D96Q(              !B;&]C:"
+    "T@              &]V97)I9&53971T:6YG<P        X    P    !@    @    &          4    (               !          D    "
+    "     #@   #     &    \"     8         !0    @               $         \"0         .    ,     8    (    !@         "
+    "%    \"                0         )          X    X    !@    @    &          4    (     0    $    !          D    ("
+    "            \\#\\.    ,     8    (    !@         %    \"                0         )          X    P    !@    @    "
+    "&          4    (               !          D         #@   #@    &    \"     8         !0    @    !     0    $     "
+    "    \"0    @           #P/PX    P    !@    @    &          4    (               !          D         #@   #     & "
+    "   \"     8         !0    @               $         \"0         .    ,     8    (    !@         %    \"           "
+    "     0         )          X    P    !@    @    &          4    (               !          D         #@   #     &  "
+    "  \"     8         !0    @               $         \"0         "
+  }
+  DataRecord {
+    Tag			    DataTag4
+    Data		    "  %)30     .    * H   8    (     @         %    \"     $    !     0         %  0 %@    $   \"P    9W)I9"
+    "%-E='1I;F<              &-H86YN96QS                  !A>&5S                        8V]M;6]N                     &1"
+    "A=&%3970                   !D871A4V5T261X                :7-697)I9FEC871I;VY6:7-I8FQE '-B;V)J                     "
+    "  .    ,     8    (    !          %    \"     $    \"     0         0  ( ;VX   X   #@ @  !@    @    \"          4 "
+    "   (     0    $    !          4 !  *     0   %H   !S=&5P6       <W1E<%D      'E-:6X       !Y36%X        8V]L;W(   "
+    "   &QI;F53='EL90!L:6YE5VED=&@ ;&%B96P      &]U=$EN9&5X           .    .     8    (    !@         %    \"     $    "
+    "!     0         )    \"               #@   #@    &    \"     8         !0    @    !     0    $         \"0    @   "
+    "            X    X    !@    @    &          4    (     0    $    !          D    (            \\/\\.    .     8   "
+    " (    !@         %    \"     $    !     0         )    \"            /!_#@   $@    &    \"     8         !0    @  "
+    "  !     P    $         \"0   !@   !\"/NC9K/KJ/P                     .    ,     8    (    !          %    \"     $ "
+    "   !     0         0  $ +0    X    X    !@    @    &          4    (     0    $    !          D    (            ^#"
+    "\\.    .     8    (    !          %    \"     $    (     0         0    \"    %-I9VYA;\" Q#@   #@    &    \"     8"
+    "         !0    @    !     0    $         \"0    @           #P/PX    8 0  !@    @    \"          4    (     0    $"
+    "    !          4 !  )     0   !L   !C:&%N;F5L<P!Y3&EM      !L86)E;%!O<P        X    X    !@    @    &          4  "
+    "  (     0    $    !          D    (            \\#\\.    0     8    (    !@         %    \"     $    \"     0     "
+    "    )    $            .\"_         $ .    ,     8    (    !          %    \"     $    \"     0         0  ( 5$P   "
+    "X   !H @  !@    @    \"          4    (     0    $    !          4 !  .     0   &(   !D:7-P5&EM90       &1I<W!-;V1"
+    "E        ;6EN5&EM90        !M87A4:6UE         &%F=&5R1FEN86Q3='( <V%M<&QE5&EM90    !Z97)O0W)O<W,               X  "
+    " !     !@    @    &          4    (     0    (    !          D    0                       ^0 X    X    !@    @    "
+    "&          4    (     0    $    !          D    (            \\#\\.    .     8    (    !@         %    \"     $   "
+    " !     0         )    \"               #@   #@    &    \"     8         !0    @    !     0    $         \"0    @  "
+    "          ^0 X   !     !@    @    $          4    (     0    L    !         !     +    17AT<F%P;VQA=&4       X    "
+    "X    !@    @    &          4    (     0    $    !          D    (               .    ,     8    (    !          % "
+    "   \"     $    \"     0         0  ( ;VX   X   \"  0  !@    @    \"          4    (     0    $    !          4 !  "
+    ".     0   #@   !A8W1I=F5$:7-P261X '1I;65286YG90      ;F%M90            !D:7-P;&%Y4F%N9V4   X    X    !@    @    & "
+    "         4    (     0    $    !          D    (            \\#\\.    0     8    (    !@         %    \"     $    \""
+    "     0         )    $                       /D .    .     8    (    !          %    \"     $    '     0         0 "
+    "   !P   $=R;W5P(#$ #@   $     &    \"     8         !0    @    !     @    $         \"0   !                       "
+    "#Y #@   #@    &    \"     8         !0    @    !     0    $         \"0    @           #P/PX    X    !@    @    & "
+    "         4    (     0    $    !          D    (               .    @     8    (    $0         !          $ ! !-0T]"
+    "3 0    @   !3:6=3=6ET90X   !(    !@    @    -          4    (    !@    $    !          8    8        W0(    !     "
+    "0    $    #    #@   $@+   &    \"     D         !0    @    !    & L   $          @   !@+     4E-      X   !X\"@  !"
+    "@    @    \"          4    (     0    $    !          4 !  %     0    4   !-0T]3      X    P\"@  !@    @    1     "
+    "     $          0 $ $U#3U,!    #0   $9I;&57<F%P<&5R7U\\    .    \\ D   8    (     0         %    \"     L    !    "
+    " 0         .    & (   8    (    \"0         %    \"    .@!   !     0         \"    Z $   (    -    L    /    #P   "
+    " 4 $  ,@!  #H 0            !.86UE $=R;W5P<P!3:6=N86QS %A$871A %E$871A %-I9U-U:71E4VEG;F%L %5S97)$871A %1I;65286YG9"
+    "0!3:6=3=6ET94=R;W5P $%C=&EV95-I9VYA; !297%U:7)E;65N=$EN9F\\ 4VEG4W5I=&4 06-T:79E1W)O=7                            "
+    "         &                    \"0                    P                                               ,            "
+    "        !     P    (                    \"     @    $                    #     0               @    $    !        "
+    "  (    !    !P         #     0    $    !     P    $    %    \"     $    &     P    $    !     @    0    !     P   "
+    " 4    !    !                                               #@         .    0     8    (    !          %    \"     "
+    "$    .     0         0    #@   %-I9VYA;\"!\"=6EL9&5R   .    .     8    (    !          %    \"     $    '     0   "
+    "      0    !P   $=R;W5P(#$ #@   #@    &    \"     0         !0    @    !    \"     $         $     @   !3:6=N86P@,"
+    "0X   !0    !@    @    &          4    (     0    0    !          D    @                       40        \"1       "
+    "  /D .    4     8    (    !@         %    \"     $    $     0         )    (                                 #X/P "
+    "      /@_#@   $@    &    \"     T         !0    @    &     0    $         !@   !@       #= @    $    !     P    $ "
+    "   .    0     8    (    !@         %    \"     $    \"     0         )    $                       /D .    2     8 "
+    "   (    #0         %    \"     8    !     0         &    &        -T\"     0    $    \"     @    X    X!0  !@    @"
+    "    !          4    (    !     $    !          X    X    !@    @    \"          4    (     0         !          4 "
+    "!  !     0         .    0 $   8    (     @         %    \"     $    !     0         %  0 \"0    $    D    3F%M90  "
+    "    6$1A=&$     641A=&$     57-E<D1A=&$       X    P    !@    @    $          4    (               !         !    "
+    "      #@   #     &    \"     8         !0    @               $         \"0         .    ,     8    (    !@        "
+    " %    \"                0         )          X    P    !@    @    &          4    (               !          D    "
+    "     #@   ! \"   &    \"     (         !0    @    !     0    $         !0 $ !     !    8    $YA;64               !"
+    "3:6=N86QS            06-T:79E4VEG;F%L     %)E<75I<F5M96YT26YF;P!5<V5R1&%T80          5&EM95)A;F=E          X    P "
+    "   !@    @    $          4    (               !         !          #@   $@    &    \"     T         !0    @    %  "
+    "   0    $         !@   !0       #= @               0         .    ,     8    (    !@         %    \"              "
+    "  0         )          X    P    !@    @    $          4    (               !         !          #@   #     &    \""
+    "     8         !0    @               $         \"0         .    0     8    (    !@         %    \"     $    \"    "
+    " 0         )    $                       )$ .    : $   8    (     @         %    \"     $    !     0         %  0 #"
+    "     $    P    3F%M90          1W)O=7!S        06-T:79E1W)O=7  57-E<D1A=&$     #@   #     &    \"     0         !0"
+    "    @               $         $          .    2     8    (    #0         %    \"     4    !     0         &    %  "
+    "      -T\"               \"          X    X    !@    @    &          4    (     0    $    !          D    (       "
+    "     \\#\\.    ,     8    (    !@         %    \"                0         )          X   \"(    !@    @    )     "
+    "     4    (     0   %@    !          (   !8      %)30     .    2     8    (     @         %    \"     $    !     0"
+    "         %  0 !0    $    %    34-/4P     .          "
+  }
+  DataRecord {
+    Tag			    DataTag5
+    Data		    "  %)30     .    N ,   8    (     @         %    \"     $    !     0         %  0 $0    $   #,    =F5R:6"
+    "9Y0FQK4&%T:',   !V97)I9GE\";&M(86YD;&5S '9N=DUG<DED>           86-T:79E1W)O=7        !R97%$:7-P4')C;G0      &)L:T1"
+    "I<W!-;V1E        9W)O=7!#;G0           !G<F]U<%)E<4-N=        &=R;W5P1$]/4E-I9       ;6]D96Q(              !B;&]C:"
+    "T@              &]V97)I9&53971T:6YG<P        X    P    !@    @    &          4    (               !          D    "
+    "     #@   #     &    \"     8         !0    @               $         \"0         .    ,     8    (    !@         "
+    "%    \"                0         )          X    X    !@    @    &          4    (     0    $    !          D    ("
+    "            \\#\\.    ,     8    (    !@         %    \"                0         )          X    P    !@    @    "
+    "&          4    (               !          D         #@   #@    &    \"     8         !0    @    !     0    $     "
+    "    \"0    @           #P/PX    P    !@    @    &          4    (               !          D         #@   #     & "
+    "   \"     8         !0    @               $         \"0         .    ,     8    (    !@         %    \"           "
+    "     0         )          X    P    !@    @    &          4    (               !          D         #@   #     &  "
+    "  \"     8         !0    @               $         \"0         "
+  }
+  DataRecord {
+    Tag			    DataTag6
+    Data		    "  %)30     .    * H   8    (     @         %    \"     $    !     0         %  0 %@    $   \"P    9W)I9"
+    "%-E='1I;F<              &-H86YN96QS                  !A>&5S                        8V]M;6]N                     &1"
+    "A=&%3970                   !D871A4V5T261X                :7-697)I9FEC871I;VY6:7-I8FQE '-B;V)J                     "
+    "  .    ,     8    (    !          %    \"     $    \"     0         0  ( ;VX   X   #@ @  !@    @    \"          4 "
+    "   (     0    $    !          4 !  *     0   %H   !S=&5P6       <W1E<%D      'E-:6X       !Y36%X        8V]L;W(   "
+    "   &QI;F53='EL90!L:6YE5VED=&@ ;&%B96P      &]U=$EN9&5X           .    .     8    (    !@         %    \"     $    "
+    "!     0         )    \"               #@   #@    &    \"     8         !0    @    !     0    $         \"0    @   "
+    "            X    X    !@    @    &          4    (     0    $    !          D    (            \\/\\.    .     8   "
+    " (    !@         %    \"     $    !     0         )    \"            /!_#@   $@    &    \"     8         !0    @  "
+    "  !     P    $         \"0   !@   !\"/NC9K/KJ/P                     .    ,     8    (    !          %    \"     $ "
+    "   !     0         0  $ +0    X    X    !@    @    &          4    (     0    $    !          D    (            ^#"
+    "\\.    .     8    (    !          %    \"     $    (     0         0    \"    %-I9VYA;\" Q#@   #@    &    \"     8"
+    "         !0    @    !     0    $         \"0    @           #P/PX    8 0  !@    @    \"          4    (     0    $"
+    "    !          4 !  )     0   !L   !C:&%N;F5L<P!Y3&EM      !L86)E;%!O<P        X    X    !@    @    &          4  "
+    "  (     0    $    !          D    (            \\#\\.    0     8    (    !@         %    \"     $    \"     0     "
+    "    )    $            .\"_        !$ .    ,     8    (    !          %    \"     $    \"     0         0  ( 5$P   "
+    "X   !H @  !@    @    \"          4    (     0    $    !          4 !  .     0   &(   !D:7-P5&EM90       &1I<W!-;V1"
+    "E        ;6EN5&EM90        !M87A4:6UE         &%F=&5R1FEN86Q3='( <V%M<&QE5&EM90    !Z97)O0W)O<W,               X  "
+    " !     !@    @    &          4    (     0    (    !          D    0                      !)0 X    X    !@    @    "
+    "&          4    (     0    $    !          D    (            \\#\\.    .     8    (    !@         %    \"     $   "
+    " !     0         )    \"               #@   #@    &    \"     8         !0    @    !     0    $         \"0    @  "
+    "         !)0 X   !     !@    @    $          4    (     0    L    !         !     +    17AT<F%P;VQA=&4       X    "
+    "X    !@    @    &          4    (     0    $    !          D    (               .    ,     8    (    !          % "
+    "   \"     $    \"     0         0  ( ;VX   X   \"  0  !@    @    \"          4    (     0    $    !          4 !  "
+    ".     0   #@   !A8W1I=F5$:7-P261X '1I;65286YG90      ;F%M90            !D:7-P;&%Y4F%N9V4   X    X    !@    @    & "
+    "         4    (     0    $    !          D    (            \\#\\.    0     8    (    !@         %    \"     $    \""
+    "     0         )    $                       24 .    .     8    (    !          %    \"     $    '     0         0 "
+    "   !P   $=R;W5P(#$ #@   $     &    \"     8         !0    @    !     @    $         \"0   !                       "
+    "$E #@   #@    &    \"     8         !0    @    !     0    $         \"0    @           #P/PX    X    !@    @    & "
+    "         4    (     0    $    !          D    (               .    @     8    (    $0         !          $ ! !-0T]"
+    "3 0    @   !3:6=3=6ET90X   !(    !@    @    -          4    (    !@    $    !          8    8        W0(    !     "
+    "0    $    #    #@   %@+   &    \"     D         !0    @    !    * L   $          @   \"@+     4E-      X   \"(\"@ "
+    " !@    @    \"          4    (     0    $    !          4 !  %     0    4   !-0T]3      X   ! \"@  !@    @    1   "
+    "       $          0 $ $U#3U,!    #0   $9I;&57<F%P<&5R7U\\    .      H   8    (     0         %    \"     L    !   "
+    "  0         .    & (   8    (    \"0         %    \"    .@!   !     0         \"    Z $   (    -    L    /    #P  "
+    "  4 $  ,@!  #H 0            !.86UE $=R;W5P<P!3:6=N86QS %A$871A %E$871A %-I9U-U:71E4VEG;F%L %5S97)$871A %1I;65286YG"
+    "90!3:6=3=6ET94=R;W5P $%C=&EV95-I9VYA; !297%U:7)E;65N=$EN9F\\ 4VEG4W5I=&4 06-T:79E1W)O=7                           "
+    "          &                    \"0                    P                                               ,           "
+    "         !     P    (                    \"     @    $                    #     0               @    $    !       "
+    "   (    !    !P         #     0    $    !     P    $    %    \"     $    &     P    $    !     @    0    !     P  "
+    "  4    !    !                                               #@         .    0     8    (    !          %    \"    "
+    " $    .     0         0    #@   %-I9VYA;\"!\"=6EL9&5R   .    .     8    (    !          %    \"     $    '     0  "
+    "       0    !P   $=R;W5P(#$ #@   #@    &    \"     0         !0    @    !    \"     $         $     @   !3:6=N86P@"
+    ",0X   !8    !@    @    &          4    (     0    4    !          D    H                       $0        #1       "
+    "  1$        !)0 X   !8    !@    @    &          4    (     0    4    !          D    H                        0   "
+    "      !          $          0 X   !(    !@    @    -          4    (    !@    $    !          8    8        W0(   "
+    " !     0    ,    !    #@   $     &    \"     8         !0    @    !     @    $         \"0   !                    "
+    "   $E #@   $@    &    \"     T         !0    @    &     0    $         !@   !@       #= @    $    !     @    (    "
+    ".    . 4   8    (     0         %    \"     0    !     0         .    .     8    (     @         %    \"     $    "
+    "      0         %  0  0    $         #@   $ !   &    \"     (         !0    @    !     0    $         !0 $  D    !"
+    "    )    $YA;64      %A$871A     %E$871A     %5S97)$871A       .    ,     8    (    !          %    \"            "
+    "    0         0          X    P    !@    @    &          4    (               !          D         #@   #     &   "
+    " \"     8         !0    @               $         \"0         .    ,     8    (    !@         %    \"             "
+    "   0         )          X    0 @  !@    @    \"          4    (     0    $    !          4 !  0     0   &    !.86U"
+    "E                4VEG;F%L<P           $%C=&EV95-I9VYA;     !297%U:7)E;65N=$EN9F\\ 57-E<D1A=&$          %1I;65286YG"
+    "90         .    ,     8    (    !          %    \"                0         0          X   !(    !@    @    -     "
+    "     4    (    !0    $    !          8    4        W0(               $         #@   #     &    \"     8         !0"
+    "    @               $         \"0         .    ,     8    (    !          %    \"                0         0      "
+    "    X    P    !@    @    &          4    (               !          D         #@   $     &    \"     8         !0 "
+    "   @    !     @    $         \"0   !                       \"1 #@   &@!   &    \"     (         !0    @    !     0"
+    "    $         !0 $  P    !    ,    $YA;64          $=R;W5P<P       $%C=&EV94=R;W5P %5S97)$871A      X    P    !@  "
+    "  @    $          4    (               !         !          #@   $@    &    \"     T         !0    @    %     0   "
+    " $         !@   !0       #= @               @         .    .     8    (    !@         %    \"     $    !     0    "
+    "     )    \"            / _#@   #     &    \"     8         !0    @               $         \"0         .    B    "
+    " 8    (    \"0         %    \"     $   !8     0         \"    6      !24T     #@   $@    &    \"     (         !0 "
+    "   @    !     0    $         !0 $  4    !    !0   $U#3U,     #@         "
+  }
+  DataRecord {
+    Tag			    DataTag7
+    Data		    "  %)30     .    N ,   8    (     @         %    \"     $    !     0         %  0 $0    $   #,    =F5R:6"
+    "9Y0FQK4&%T:',   !V97)I9GE\";&M(86YD;&5S '9N=DUG<DED>           86-T:79E1W)O=7        !R97%$:7-P4')C;G0      &)L:T1"
+    "I<W!-;V1E        9W)O=7!#;G0           !G<F]U<%)E<4-N=        &=R;W5P1$]/4E-I9       ;6]D96Q(              !B;&]C:"
+    "T@              &]V97)I9&53971T:6YG<P        X    P    !@    @    &          4    (               !          D    "
+    "     #@   #     &    \"     8         !0    @               $         \"0         .    ,     8    (    !@         "
+    "%    \"                0         )          X    X    !@    @    &          4    (     0    $    !          D    ("
+    "            \\#\\.    ,     8    (    !@         %    \"                0         )          X    P    !@    @    "
+    "&          4    (               !          D         #@   #@    &    \"     8         !0    @    !     0    $     "
+    "    \"0    @           #P/PX    P    !@    @    &          4    (               !          D         #@   #     & "
+    "   \"     8         !0    @               $         \"0         .    ,     8    (    !@         %    \"           "
+    "     0         )          X    P    !@    @    &          4    (               !          D         #@   #     &  "
+    "  \"     8         !0    @               $         \"0         "
+  }
+  DataRecord {
+    Tag			    DataTag8
+    Data		    "  %)30     .    * H   8    (     @         %    \"     $    !     0         %  0 %@    $   \"P    9W)I9"
+    "%-E='1I;F<              &-H86YN96QS                  !A>&5S                        8V]M;6]N                     &1"
+    "A=&%3970                   !D871A4V5T261X                :7-697)I9FEC871I;VY6:7-I8FQE '-B;V)J                     "
+    "  .    ,     8    (    !          %    \"     $    \"     0         0  ( ;VX   X   #@ @  !@    @    \"          4 "
+    "   (     0    $    !          4 !  *     0   %H   !S=&5P6       <W1E<%D      'E-:6X       !Y36%X        8V]L;W(   "
+    "   &QI;F53='EL90!L:6YE5VED=&@ ;&%B96P      &]U=$EN9&5X           .    .     8    (    !@         %    \"     $    "
+    "!     0         )    \"               #@   #@    &    \"     8         !0    @    !     0    $         \"0    @   "
+    "            X    X    !@    @    &          4    (     0    $    !          D    (            \\/\\.    .     8   "
+    " (    !@         %    \"     $    !     0         )    \"            /!_#@   $@    &    \"     8         !0    @  "
+    "  !     P    $         \"0   !@   !\"/NC9K/KJ/P                     .    ,     8    (    !          %    \"     $ "
+    "   !     0         0  $ +0    X    X    !@    @    &          4    (     0    $    !          D    (            ^#"
+    "\\.    .     8    (    !          %    \"     $    (     0         0    \"    %-I9VYA;\" Q#@   #@    &    \"     8"
+    "         !0    @    !     0    $         \"0    @           #P/PX    8 0  !@    @    \"          4    (     0    $"
+    "    !          4 !  )     0   !L   !C:&%N;F5L<P!Y3&EM      !L86)E;%!O<P        X    X    !@    @    &          4  "
+    "  (     0    $    !          D    (            \\#\\.    0     8    (    !@         %    \"     $    \"     0     "
+    "    )    $               FIF9F9F9X3\\.    ,     8    (    !          %    \"     $    \"     0         0  ( 5$P   "
+    "X   !H @  !@    @    \"          4    (     0    $    !          4 !  .     0   &(   !D:7-P5&EM90       &1I<W!-;V1"
+    "E        ;6EN5&EM90        !M87A4:6UE         &%F=&5R1FEN86Q3='( <V%M<&QE5&EM90    !Z97)O0W)O<W,               X  "
+    " !     !@    @    &          4    (     0    (    !          D    0                      !$0 X    X    !@    @    "
+    "&          4    (     0    $    !          D    (            \\#\\.    .     8    (    !@         %    \"     $   "
+    " !     0         )    \"               #@   #@    &    \"     8         !0    @    !     0    $         \"0    @  "
+    "         !$0 X   !     !@    @    $          4    (     0    L    !         !     +    17AT<F%P;VQA=&4       X    "
+    "X    !@    @    &          4    (     0    $    !          D    (               .    ,     8    (    !          % "
+    "   \"     $    \"     0         0  ( ;VX   X   \"  0  !@    @    \"          4    (     0    $    !          4 !  "
+    ".     0   #@   !A8W1I=F5$:7-P261X '1I;65286YG90      ;F%M90            !D:7-P;&%Y4F%N9V4   X    X    !@    @    & "
+    "         4    (     0    $    !          D    (            \\#\\.    0     8    (    !@         %    \"     $    \""
+    "     0         )    $                       1$ .    .     8    (    !          %    \"     $    '     0         0 "
+    "   !P   $=R;W5P(#$ #@   $     &    \"     8         !0    @    !     @    $         \"0   !                       "
+    "$1 #@   #@    &    \"     8         !0    @    !     0    $         \"0    @           #P/PX    X    !@    @    & "
+    "         4    (     0    $    !          D    (               .    @     8    (    $0         !          $ ! !-0T]"
+    "3 0    @   !3:6=3=6ET90X   !(    !@    @    -          4    (    !@    $    !          8    8        W0(    !     "
+    "0    $    #    #@   '@+   &    \"     D         !0    @    !    2 L   $          @   $@+     4E-      X   \"H\"@  "
+    "!@    @    \"          4    (     0    $    !          4 !  %     0    4   !-0T]3      X   !@\"@  !@    @    1    "
+    "      $          0 $ $U#3U,!    #0   $9I;&57<F%P<&5R7U\\    .    ( H   8    (     0         %    \"     L    !    "
+    " 0         .    & (   8    (    \"0         %    \"    .@!   !     0         \"    Z $   (    -    L    /    #P   "
+    " 4 $  ,@!  #H 0            !.86UE $=R;W5P<P!3:6=N86QS %A$871A %E$871A %-I9U-U:71E4VEG;F%L %5S97)$871A %1I;65286YG9"
+    "0!3:6=3=6ET94=R;W5P $%C=&EV95-I9VYA; !297%U:7)E;65N=$EN9F\\ 4VEG4W5I=&4 06-T:79E1W)O=7                            "
+    "         &                    \"0                    P                                               ,            "
+    "        !     P    (                    \"     @    $                    #     0               @    $    !        "
+    "  (    !    !P         #     0    $    !     P    $    %    \"     $    &     P    $    !     @    0    !     P   "
+    " 4    !    !                                               #@         .    0     8    (    !          %    \"     "
+    "$    .     0         0    #@   %-I9VYA;\"!\"=6EL9&5R   .    .     8    (    !          %    \"     $    '     0   "
+    "      0    !P   $=R;W5P(#$ #@   #@    &    \"     0         !0    @    !    \"     $         $     @   !3:6=N86P@,"
+    "0X   !H    !@    @    &          4    (     0    <    !          D    X                       40        #1        "
+    " .4         ^0       @$%         1$ .    :     8    (    !@         %    \"     $    '     0         )    .    +@>"
+    "A>M1N+X_        X#\\       #@/S,S,S,S,\\,_,S,S,S,SPS\\       #@/P       . _#@   $@    &    \"     T         !0    "
+    "@    &     0    $         !@   !@       #= @    $    !     P    $    .    0     8    (    !@         %    \"     $"
+    "    \"     0         )    $                       1$ .    2     8    (    #0         %    \"     8    !     0     "
+    "    &    &        -T\"     0    $    \"     @    X    X!0  !@    @    !          4    (    !     $    !          X"
+    "    X    !@    @    \"          4    (     0         !          4 !  !     0         .    0 $   8    (     @      "
+    "   %    \"     $    !     0         %  0 \"0    $    D    3F%M90      6$1A=&$     641A=&$     57-E<D1A=&$       X "
+    "   P    !@    @    $          4    (               !         !          #@   #     &    \"     8         !0    @  "
+    "             $         \"0         .    ,     8    (    !@         %    \"                0         )          X  "
+    "  P    !@    @    &          4    (               !          D         #@   ! \"   &    \"     (         !0    @  "
+    "  !     0    $         !0 $ !     !    8    $YA;64               !3:6=N86QS            06-T:79E4VEG;F%L     %)E<75"
+    "I<F5M96YT26YF;P!5<V5R1&%T80          5&EM95)A;F=E          X    P    !@    @    $          4    (               ! "
+    "        !          #@   $@    &    \"     T         !0    @    %     0    $         !@   !0       #= @            "
+    "   0         .    ,     8    (    !@         %    \"                0         )          X    P    !@    @    $   "
+    "       4    (               !         !          #@   #     &    \"     8         !0    @               $         "
+    "\"0         .    0     8    (    !@         %    \"     $    \"     0         )    $                       )$ .   "
+    " : $   8    (     @         %    \"     $    !     0         %  0 #     $    P    3F%M90          1W)O=7!S        "
+    "06-T:79E1W)O=7  57-E<D1A=&$     #@   #     &    \"     0         !0    @               $         $          .    2"
+    "     8    (    #0         %    \"     4    !     0         &    %        -T\"               \"          X    X    "
+    "!@    @    &          4    (     0    $    !          D    (            \\#\\.    ,     8    (    !@         %    "
+    "\"                0         )          X   \"(    !@    @    )          4    (     0   %@    !          (   !8    "
+    "  %)30     .    2     8    (     @         %    \"     $    !     0         %  0 !0    $    %    34-/4P     .     "
+    "     "
+  }
+  DataRecord {
+    Tag			    DataTag9
+    Data		    "  %)30     .    N ,   8    (     @         %    \"     $    !     0         %  0 $0    $   #,    =F5R:6"
+    "9Y0FQK4&%T:',   !V97)I9GE\";&M(86YD;&5S '9N=DUG<DED>           86-T:79E1W)O=7        !R97%$:7-P4')C;G0      &)L:T1"
+    "I<W!-;V1E        9W)O=7!#;G0           !G<F]U<%)E<4-N=        &=R;W5P1$]/4E-I9       ;6]D96Q(              !B;&]C:"
+    "T@              &]V97)I9&53971T:6YG<P        X    P    !@    @    &          4    (               !          D    "
+    "     #@   #     &    \"     8         !0    @               $         \"0         .    ,     8    (    !@         "
+    "%    \"                0         )          X    X    !@    @    &          4    (     0    $    !          D    ("
+    "            \\#\\.    ,     8    (    !@         %    \"                0         )          X    P    !@    @    "
+    "&          4    (               !          D         #@   #@    &    \"     8         !0    @    !     0    $     "
+    "    \"0    @           #P/PX    P    !@    @    &          4    (               !          D         #@   #     & "
+    "   \"     8         !0    @               $         \"0         .    ,     8    (    !@         %    \"           "
+    "     0         )          X    P    !@    @    &          4    (               !          D         #@   #     &  "
+    "  \"     8         !0    @               $         \"0         "
+  }
+}
