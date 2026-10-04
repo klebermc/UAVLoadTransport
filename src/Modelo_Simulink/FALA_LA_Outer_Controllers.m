@@ -2,11 +2,11 @@
 %**************************************************************************
 %**************************************************************************
 
-%               INSTITUTO TECNOL�GICO DE AERON�UTICA (ITA)
-%                AUTOR: S�RGIO RONALDO BARROS DOS SANTOS
+%               INSTITUTO TECNOLÓGICO DE AERONÁUTICA (ITA)
+%                AUTOR: SÉRGIO RONALDO BARROS DOS SANTOS
 %                             Ph.D STUDENT
 
-%                          APRENDIZADO POR REFOR�O 
+%                          APRENDIZADO POR REFORÇO 
 %                      ALGORITMO LEARNING AUTOMATA (LA)
 %             TREINAMENTO DA MALHA DE CONTROLE DE ESTABILIZAçãO
 %                                 01/08/2011
@@ -29,7 +29,7 @@ clc; clear; close all;
 NIterMax=5000; % Número máximo de iterações. 
 NIter_Media = 10; % Número de iterações para a média.
 REC_Media = 10;    
-Novo_aprendizado = 0; % Se igual a '1' Aproveita o conhecimento j� existente.
+Novo_aprendizado = 0; % Se igual a '1' Aproveita o conhecimento já existente.
 
 RP = -20; % Penalidade.
 RG = 20; % Gratificação.
@@ -135,7 +135,7 @@ end
 %                     INICIALIZA O LOOP DE TREINAMENTO
 %-------------------------------------------------------------------------%
 %-------------------------------------------------------------------------%
-%                     GERA AS MATRIZES DE SOMAT�RIAS                      %
+%                     GERA AS MATRIZES DE SOMATÓRIAS                      %
 %-------------------------------------------------------------------------%
 
  
@@ -236,7 +236,7 @@ for iter=1:NIterMax; % Inicializa o loop de treinamento
 %%  
 %-------------------------------------------------------------------------%     
 %  APLICA OS parâmetros ESCOLHIDOS NOS CONTROLADORES DE ESTABILIZAçãO 
-%  E OBTEM OS ESTADOS DO SISTEMA N�O LINEAR. 
+%  E OBTEM OS ESTADOS DO SISTEMA NÃO LINEAR. 
 %-------------------------------------------------------------------------%
    try 
 	  selected_gains = [selected_gains; P_x I_x D_x P_y I_y D_y P_z I_z D_z];
@@ -257,7 +257,7 @@ for iter=1:NIterMax; % Inicializa o loop de treinamento
    sinal_output = X_response(pos_vetor_t :tam_t,2);
    tam_sinal_output =  length(sinal_output);
    for i = 1 : tam_sinal_output
-        square_erro(i) = (((sinal_desejado(i)-sinal_output(i)).^2)/tam_sinal_output); % Calcula o erro quadr�tico m�dio
+        square_erro(i) = (((sinal_desejado(i)-sinal_output(i)).^2)/tam_sinal_output); % Calcula o erro quadrático médio
    end                                                                                % em regime da resposta de pitch
    mse = sum(square_erro(1:tam_sinal_output));
        
@@ -265,7 +265,7 @@ for iter=1:NIterMax; % Inicializa o loop de treinamento
    sinal_output_roll = Y_response(pos_vetor_t :tam_t,2);
    tam_sinal_output_roll =  length(sinal_output_roll);
    for i = 1 : tam_sinal_output_roll
-        square_erro_roll(i) = (((sinal_desejado_roll(i)-sinal_output_roll(i)).^2)/tam_sinal_output_roll); % Calcula o erro quadr�tico m�dio
+        square_erro_roll(i) = (((sinal_desejado_roll(i)-sinal_output_roll(i)).^2)/tam_sinal_output_roll); % Calcula o erro quadrático médio
    end                                                                                                    % em regime da resposta de roll
    mse_roll = sum(square_erro_roll(1:tam_sinal_output_roll));
  
@@ -273,14 +273,14 @@ for iter=1:NIterMax; % Inicializa o loop de treinamento
    sinal_output_yaw = Z_response(pos_vetor_t :tam_t,2);
    tam_sinal_output_yaw =  length(sinal_output_yaw);
    for i = 1 : tam_sinal_output_yaw
-        square_erro_yaw(i) = (((sinal_desejado_yaw(i)-sinal_output_yaw(i)).^2)/tam_sinal_output_yaw); % Calcula o erro quadr�tico m�dio
+        square_erro_yaw(i) = (((sinal_desejado_yaw(i)-sinal_output_yaw(i)).^2)/tam_sinal_output_yaw); % Calcula o erro quadrático médio
    end                                                                                                % em regime da resposta de yaw
    mse_yaw = sum(square_erro_yaw(1:tam_sinal_output_yaw));
         
       
 %%  
 %-------------------------------------------------------------------------%
-%              ARMAZENA O HISTORICO DO ERRO QUADR�TICO M�DIO              %
+%              ARMAZENA O HISTORICO DO ERRO QUADRÁTICO MÉDIO              %
 %-------------------------------------------------------------------------%
  
    corte_pitch = 0.005; 

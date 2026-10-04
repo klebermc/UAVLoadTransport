@@ -1,6 +1,6 @@
 # UAVLoadTransport
 
-> **Note:** The simulation setup, controller models and learning-automata tuning experiments in this repository are by Kleber Cabral, built on third-party code credited below, including FALA training scripts by coauthor Sérgio R. Barros dos Santos, shared with his consent. The README documentation and the 2026-10-03 cleanup were done with AI assistance (Claude).
+> **Note:** The simulation setup, controller models and learning-automata tuning experiments in this repository are by Kleber Cabral, built on third-party code credited below, including the FALA learning-automata training scripts and base quadrotor control model written by coauthor Prof. Sérgio Ronaldo Barros dos Santos (now at the Federal University of São Paulo, UNIFESP; at ITA when this work was done), shared with his consent. The README documentation and the 2026-10-03 cleanup were done with AI assistance (Claude).
 
 Code for the **2017 IEEE SysCon** paper "Design of Model Predictive Control via Learning
 Automata for a Single UAV Load Transportation", by Kleber Macedo Cabral, Sérgio R. Barros
@@ -74,8 +74,11 @@ MATLAB/Simulink (some models also have an R2015a export), V-REP PRO EDU 3.3.2.
   `mep.m`, `ucp.m`, `show.m` — CARLA implementation by Mark Howell (Loughborough
   University), free to use and modify with acknowledgement.
 - `FALA_LA_*_Controllers.m`, `FALA_OUTER_CONTROLLERS.m` and
-  `Modelo_Simulink/controle.mdl` — learning-automata training code and base model by
-  coauthor Sérgio R. Barros dos Santos, adapted here and shared with his consent.
+  `Modelo_Simulink/controle.mdl` — FALA learning-automata training code (2011) and
+  base control model by coauthor Prof. Sérgio Ronaldo Barros dos Santos (now at the
+  Federal University of São Paulo, UNIFESP), adapted here for the ELEV-8 and load
+  transportation, and shared with his consent. His author header is kept in each
+  script; these files are his and are not covered by this repo's MIT license.
 
 The MIT license in this repo covers the remaining files only.
 

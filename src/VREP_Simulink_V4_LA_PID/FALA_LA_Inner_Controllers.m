@@ -2,13 +2,13 @@
 %**************************************************************************
 %**************************************************************************
 
-%               INSTITUTO TECNOL�GICO DE AERON�UTICA (ITA)
-%                AUTOR: S�RGIO RONALDO BARROS DOS SANTOS
+%               INSTITUTO TECNOLÓGICO DE AERONÁUTICA (ITA)
+%                AUTOR: SÉRGIO RONALDO BARROS DOS SANTOS
 %                             Ph.D STUDENT
 
-%                          APRENDIZADO POR REFOR�O 
+%                          APRENDIZADO POR REFORÇO 
 %                      ALGORITMO LEARNING AUTOMATA (LA)
-%             TREINAMENTO DA MALHA DE CONTROLE DE ESTABILIZA��O
+%             TREINAMENTO DA MALHA DE CONTROLE DE ESTABILIZAÇÃO
 %                                 01/08/2011
 
 %**************************************************************************
@@ -19,51 +19,51 @@
 %run mdl_quadrotor.m
 
 %-------------------------------------------------------------------------%
-%                        INICIALIZA��O DOS PARAMETROS                     %
+%                        INICIALIZAÇÃO DOS PARAMETROS                     %
 %-------------------------------------------------------------------------%
 
 %function Valores_Saida = Algoritmo_aprendizagem(NIterMax,NIter_Media,t_inicio,t_final)
 warning off;
 clc; clear; close all;
 
-NIterMax=5000; % N�mero m�ximo de itera��es. 
-NIter_Media = 10; % N�mero de itera��es para a m�dia.
+NIterMax=5000; % Número máximo de iterações. 
+NIter_Media = 10; % Número de iterações para a média.
 REC_Media = 10;    
-Novo_aprendizado = 0; % Se igual a '1' Aproveita o conhecimento j� existente.
+Novo_aprendizado = 0; % Se igual a '1' Aproveita o conhecimento já existente.
 
 RP = -20; % Penalidade.
-RG = 20; % Gratifica��o.
+RG = 20; % Gratificação.
 
-t_inicio = 0; % Tempo inicial para a simula��o de cada itera��o.
-t_final = 10; % Tempo final para a simula��o de cada itera��o.
+t_inicio = 0; % Tempo inicial para a simulação de cada iteração.
+t_final = 10; % Tempo final para a simulação de cada iteração.
 t_regime = 5; % Tempo inicial de regime. 
-nl = 20; % N�mero de linhas das matrizes ou o n�mero de poss�veis pontos.
+nl = 20; % Número de linhas das matrizes ou o número de possíveis pontos.
 selected_gains = [0 0 0 0 0 0 0 0 0];
 
-Pitch_controller_coef = 3; % N�mero de colunas das matrizes ou 
-Roll_controller_coef = 3;  % n�mero de par�metros dos controladores
-Yaw_controller_coef = 3;   % de estabiliza��o.
+Pitch_controller_coef = 3; % Número de colunas das matrizes ou 
+Roll_controller_coef = 3;  % número de parâmetros dos controladores
+Yaw_controller_coef = 3;   % de estabilização.
 %Altitude_controller_coef = 3;
 
 % Pitch_controller_coef_inicial = [0.1 0.001 2];   % Faixa de valores ajustados para os  
-% Pitch_controller_coef_final   = [0.1 0.001 2]; % par�metros do controlador de pitch 
+% Pitch_controller_coef_final   = [0.1 0.001 2]; % parâmetros do controlador de pitch 
 % 
 % Roll_controller_coef_inicial = [0.1 0.001 2];    % Faixa de valores ajustados para os
-% Roll_controller_coef_final   = [0.1 0.001 2];  % par�metros do controlador de roll
+% Roll_controller_coef_final   = [0.1 0.001 2];  % parâmetros do controlador de roll
 % 
 % Yaw_controller_coef_inicial = [40 0.01 2];      % Faixa de valores ajustados para os
-% Yaw_controller_coef_final   = [40 0.01 2];  % par�metros do controlador de yaw
+% Yaw_controller_coef_final   = [40 0.01 2];  % parâmetros do controlador de yaw
 
 Pitch_controller_coef_inicial = [0 0 0];   % Faixa de valores ajustados para os  
-Pitch_controller_coef_final   = [5 0.1 2]; % par�metros do controlador de pitch 
+Pitch_controller_coef_final   = [5 0.1 2]; % parâmetros do controlador de pitch 
 
 Roll_controller_coef_inicial = [0 0 0];    % Faixa de valores ajustados para os
-Roll_controller_coef_final   = [5 0.1 2];  % par�metros do controlador de roll
+Roll_controller_coef_final   = [5 0.1 2];  % parâmetros do controlador de roll
 
 Yaw_controller_coef_inicial = [0 0 0];      % Faixa de valores ajustados para os
-Yaw_controller_coef_final   = [10 0.1 4];  % par�metros do controlador de yaw
+Yaw_controller_coef_final   = [10 0.1 4];  % parâmetros do controlador de yaw
 
-iter_ant = 0; % Inicializa a variavel do loop de itera��es
+iter_ant = 0; % Inicializa a variavel do loop de iterações
 contador = 0;
 rec_avg_pitch =0;rec_avg_roll =0;rec_avg_yaw =0;rec_avg_altitude =0;  
 i0=1;
@@ -71,13 +71,13 @@ inicio = 0;
 
 %%
 %-------------------------------------------------------------------------%
-%        CONFIGURA��O DAS MATRIZES (COEFICIENTES E PROBABILIDADES)        %
+%        CONFIGURAÇÃO DAS MATRIZES (COEFICIENTES E PROBABILIDADES)        %
 %-------------------------------------------------------------------------%
 
 if Novo_aprendizado == 0;
     
    if(Pitch_controller_coef >= 1) 
-        Pitch_controller_mat_coef = zeros(nl,Pitch_controller_coef); % Gera a matriz de par�metros
+        Pitch_controller_mat_coef = zeros(nl,Pitch_controller_coef); % Gera a matriz de parâmetros
         Pitch_controller_mat_prob = (1/nl) + zeros(nl,Pitch_controller_coef); %Gera a matriz de probabilidade
         for j = 1 : Pitch_controller_coef  
             Pitch_controller_mat_coef(1,j) = Pitch_controller_coef_inicial(1,j)+((Pitch_controller_coef_final(1,j)-...
@@ -90,7 +90,7 @@ if Novo_aprendizado == 0;
     end
 
    if(Roll_controller_coef>= 1) 
-        Roll_controller_mat_coef = zeros(nl,Roll_controller_coef); % Gera a matriz de par�metros
+        Roll_controller_mat_coef = zeros(nl,Roll_controller_coef); % Gera a matriz de parâmetros
         Roll_controller_mat_prob= (1/nl) + zeros(nl,Roll_controller_coef); %Gera a matriz de probabilidade
         for j = 1 : Roll_controller_coef 
             Roll_controller_mat_coef(1,j) = Roll_controller_coef_inicial(1,j)+((Roll_controller_coef_final(1,j)-...
@@ -102,7 +102,7 @@ if Novo_aprendizado == 0;
         end
    end
     
-   if(Yaw_controller_coef>= 1) % Gera a matriz de par�metros
+   if(Yaw_controller_coef>= 1) % Gera a matriz de parâmetros
         Yaw_controller_mat_coef = zeros(nl,Yaw_controller_coef); % Gera a matriz de probabilidade
         Yaw_controller_mat_prob = (1/nl) + zeros(nl,Yaw_controller_coef);
         for j = 1 : Yaw_controller_coef  
@@ -115,7 +115,7 @@ if Novo_aprendizado == 0;
         end
    end
 
-%    if(Altitude_controller_coef >= 1) % Gera a matriz de par�metros
+%    if(Altitude_controller_coef >= 1) % Gera a matriz de parâmetros
 %         Altitude_controller_mat_coef = zeros(nl,Altitude_controller_coef); % Gera a matriz de probabilidade
 %         Altitude_controller_mat_prob = (1/nl) + zeros(nl,Altitude_controller_coef);
 %         for j = 1 : Altitude_controller_coef  
@@ -135,7 +135,7 @@ end
 %                     INICIALIZA O LOOP DE TREINAMENTO
 %-------------------------------------------------------------------------%
 %-------------------------------------------------------------------------%
-%                     GERA AS MATRIZES DE SOMAT�RIAS                      %
+%                     GERA AS MATRIZES DE SOMATÓRIAS                      %
 %-------------------------------------------------------------------------%
 
  
@@ -178,7 +178,7 @@ for iter=1:NIterMax; % Inicializa o loop de treinamento
 %    end
     
    if floor(iter/5)==iter/5
-        fprintf( 'Itera��o = %d\n', iter);
+        fprintf( 'Iteração = %d\n', iter);
    end
     
    iter_ant = iter;
@@ -235,8 +235,8 @@ for iter=1:NIterMax; % Inicializa o loop de treinamento
      
 %%  
 %-------------------------------------------------------------------------%     
-%  APLICA OS PAR�METROS ESCOLHIDOS NOS CONTROLADORES DE ESTABILIZA��O 
-%  E OBTEM OS ESTADOS DO SISTEMA N�O LINEAR. 
+%  APLICA OS PARÂMETROS ESCOLHIDOS NOS CONTROLADORES DE ESTABILIZAÇÃO 
+%  E OBTEM OS ESTADOS DO SISTEMA NÃO LINEAR. 
 %-------------------------------------------------------------------------%
    try 
      disp('Roll:')
@@ -263,7 +263,7 @@ for iter=1:NIterMax; % Inicializa o loop de treinamento
    sinal_output = X_response(pos_vetor_t :tam_t,2);
    tam_sinal_output =  length(sinal_output);
    for i = 1 : tam_sinal_output
-        square_erro(i) = (((sinal_desejado(i)-sinal_output(i)).^2)/tam_sinal_output); % Calcula o erro quadr�tico m�dio
+        square_erro(i) = (((sinal_desejado(i)-sinal_output(i)).^2)/tam_sinal_output); % Calcula o erro quadrático médio
    end                                                                                % em regime da resposta de pitch
    mse = sum(square_erro(1:tam_sinal_output));
        
@@ -271,7 +271,7 @@ for iter=1:NIterMax; % Inicializa o loop de treinamento
    sinal_output_roll = Y_response(pos_vetor_t :tam_t,2);
    tam_sinal_output_roll =  length(sinal_output_roll);
    for i = 1 : tam_sinal_output_roll
-        square_erro_roll(i) = (((sinal_desejado_roll(i)-sinal_output_roll(i)).^2)/tam_sinal_output_roll); % Calcula o erro quadr�tico m�dio
+        square_erro_roll(i) = (((sinal_desejado_roll(i)-sinal_output_roll(i)).^2)/tam_sinal_output_roll); % Calcula o erro quadrático médio
    end                                                                                                    % em regime da resposta de roll
    mse_roll = sum(square_erro_roll(1:tam_sinal_output_roll));
  
@@ -279,61 +279,61 @@ for iter=1:NIterMax; % Inicializa o loop de treinamento
    sinal_output_yaw = Z_response(pos_vetor_t :tam_t,2);
    tam_sinal_output_yaw =  length(sinal_output_yaw);
    for i = 1 : tam_sinal_output_yaw
-        square_erro_yaw(i) = (((sinal_desejado_yaw(i)-sinal_output_yaw(i)).^2)/tam_sinal_output_yaw); % Calcula o erro quadr�tico m�dio
+        square_erro_yaw(i) = (((sinal_desejado_yaw(i)-sinal_output_yaw(i)).^2)/tam_sinal_output_yaw); % Calcula o erro quadrático médio
    end                                                                                                % em regime da resposta de yaw
    mse_yaw = sum(square_erro_yaw(1:tam_sinal_output_yaw));
         
       
 %%  
 %-------------------------------------------------------------------------%
-%              ARMAZENA O HISTORICO DO ERRO QUADR�TICO M�DIO              %
+%              ARMAZENA O HISTORICO DO ERRO QUADRÁTICO MÉDIO              %
 %-------------------------------------------------------------------------%
  
    corte_pitch = 0.05; 
-   if mse <= corte_pitch % Valor m�ximo de corte
-       Hist_mse_regime(iter) = mse; % Armazena avalia��o da resposta de pitch
+   if mse <= corte_pitch % Valor máximo de corte
+       Hist_mse_regime(iter) = mse; % Armazena avaliação da resposta de pitch
    else
        Hist_mse_regime(iter) = corte_pitch; 
    end
      
    corte_roll = 0.05;
-   if mse_roll <= corte_roll % Valor m�ximo de corte
-       Hist_mse_regime_roll(iter) = mse_roll; % Armazena avalia��o da resposta de roll
+   if mse_roll <= corte_roll % Valor máximo de corte
+       Hist_mse_regime_roll(iter) = mse_roll; % Armazena avaliação da resposta de roll
    else
        Hist_mse_regime_roll(iter) = corte_roll; 
    end
   
    corte_yaw = 0.05;
-   if mse_yaw <= corte_yaw % Valor m�ximo de corte
-       Hist_mse_regime_yaw(iter) = mse_yaw; % Armazena avalia��o da resposta de yaw
+   if mse_yaw <= corte_yaw % Valor máximo de corte
+       Hist_mse_regime_yaw(iter) = mse_yaw; % Armazena avaliação da resposta de yaw
    else
        Hist_mse_regime_yaw(iter) = corte_yaw; 
    end
    
 %%
 %-------------------------------------------------------------------------%  
-%                 CALCULA A MEDIA DAS ULTIMAS 20 ITERA��ES                %
+%                 CALCULA A MEDIA DAS ULTIMAS 20 ITERAÇÕES                %
 %-------------------------------------------------------------------------%
  
-   if iter <= NIter_Media % Define intervalo para a m�dia
+   if iter <= NIter_Media % Define intervalo para a média
       Intervalo_Medio_A = iter;
    else
       Intervalo_Medio_A = NIter_Media;
    end
  
-   Hist_1 = Hist_mse_regime(iter-(Intervalo_Medio_A - 1):iter); % Calcula a m�dia do erro da resposta de pitch
-   Hist_media_mse_regime(iter) = mean(Hist_1); % Armazena m�dia calculada
+   Hist_1 = Hist_mse_regime(iter-(Intervalo_Medio_A - 1):iter); % Calcula a média do erro da resposta de pitch
+   Hist_media_mse_regime(iter) = mean(Hist_1); % Armazena média calculada
          
-   Hist_roll = Hist_mse_regime_roll(iter-(Intervalo_Medio_A - 1):iter); % Calcula a m�dia do erro da resposta de roll
-   Hist_media_mse_regime_roll(iter) = mean(Hist_roll); % Armazena m�dia calculada
+   Hist_roll = Hist_mse_regime_roll(iter-(Intervalo_Medio_A - 1):iter); % Calcula a média do erro da resposta de roll
+   Hist_media_mse_regime_roll(iter) = mean(Hist_roll); % Armazena média calculada
        
-   Hist_yaw = Hist_mse_regime_yaw(iter-(Intervalo_Medio_A - 1):iter); % Calcula a m�dia do erro da resposta de yaw
-   Hist_media_mse_regime_yaw(iter) = mean(Hist_yaw); % Armazena m�dia calculada
+   Hist_yaw = Hist_mse_regime_yaw(iter-(Intervalo_Medio_A - 1):iter); % Calcula a média do erro da resposta de yaw
+   Hist_media_mse_regime_yaw(iter) = mean(Hist_yaw); % Armazena média calculada
      
 
 %% 
 %-------------------------------------------------------------------------%
-%        AVALIA��ES DOS ERROS OBTIDOS NOS ESTADOS (FUN��O OBJETIVO)       %
+%        AVALIAÇÕES DOS ERROS OBTIDOS NOS ESTADOS (FUNÇÃO OBJETIVO)       %
 %-------------------------------------------------------------------------%
   
        if Hist_mse_regime(iter) >= corte_pitch 
@@ -359,26 +359,26 @@ for iter=1:NIterMax; % Inicializa o loop de treinamento
        
 %%
 %-------------------------------------------------------------------------%      
-%                       CALCULA A M�DIA DA AVALIA��O                      %
+%                       CALCULA A MÉDIA DA AVALIAÇÃO                      %
 %-------------------------------------------------------------------------%
 
-   if iter < NIter_Media % Define intervalo para a m�dia
+   if iter < NIter_Media % Define intervalo para a média
         Intervalo_Medio_B = iter;
    else
         Intervalo_Medio_B = NIter_Media;
    end
 
    Hist_j_pitch(iter) = R_pitch;
-   Hist_j_2_pitch = Hist_j_pitch(iter-(Intervalo_Medio_B - 1):iter); % Calcula a m�dia do valor da recompensa
-   Hist_media_j_pitch(iter) = mean(Hist_j_2_pitch );                 % Armazena m�dia calculada
+   Hist_j_2_pitch = Hist_j_pitch(iter-(Intervalo_Medio_B - 1):iter); % Calcula a média do valor da recompensa
+   Hist_media_j_pitch(iter) = mean(Hist_j_2_pitch );                 % Armazena média calculada
      
    Hist_j_roll(iter) = R_roll;
-   Hist_j_2_roll = Hist_j_roll(iter-(Intervalo_Medio_B - 1):iter); % Calcula a m�dia do valor da recompensa 
-   Hist_media_j_roll(iter) = mean(Hist_j_2_roll);                  % Armazena m�dia calculada
+   Hist_j_2_roll = Hist_j_roll(iter-(Intervalo_Medio_B - 1):iter); % Calcula a média do valor da recompensa 
+   Hist_media_j_roll(iter) = mean(Hist_j_2_roll);                  % Armazena média calculada
        
    Hist_j_yaw(iter) = R_yaw;
-   Hist_j_2_yaw = Hist_j_yaw(iter-(Intervalo_Medio_B - 1):iter); % Calcula a m�dia do valor da recompensa 
-   Hist_media_j_yaw(iter) = mean(Hist_j_2_yaw);                  % Armazena m�dia calculada
+   Hist_j_2_yaw = Hist_j_yaw(iter-(Intervalo_Medio_B - 1):iter); % Calcula a média do valor da recompensa 
+   Hist_media_j_yaw(iter) = mean(Hist_j_2_yaw);                  % Armazena média calculada
        
          
 %%
@@ -386,7 +386,7 @@ for iter=1:NIterMax; % Inicializa o loop de treinamento
 %                   ATUALIZA A MATRIZ DE PROBABILIDADE                    %
 %-------------------------------------------------------------------------%
               
-   if(Pitch_controller_coef >= 1) % Atualiza a matriz de probabilidade relacionada os par�metros de controle de pitch
+   if(Pitch_controller_coef >= 1) % Atualiza a matriz de probabilidade relacionada os parâmetros de controle de pitch
         for j=1 : Pitch_controller_coef 
              Pitch_controller_mat_prob(Pitch_controller_sel_linha(j),j)= ((1+(R_pitch/100))*  Pitch_controller_mat_prob(Pitch_controller_sel_linha(j),j));
              if Pitch_controller_mat_prob(Pitch_controller_sel_linha(j),j) < 0
@@ -399,7 +399,7 @@ for iter=1:NIterMax; % Inicializa o loop de treinamento
    end
    Hist_rec_pitch(iter) = (R_pitch/RG);
        
-   if(Roll_controller_coef >= 1)  % Atualiza a matriz de probabilidade relacionada os par�metros de controle de roll
+   if(Roll_controller_coef >= 1)  % Atualiza a matriz de probabilidade relacionada os parâmetros de controle de roll
         for j=1 : Roll_controller_coef 
             Roll_controller_mat_prob(Roll_controller_sel_linha(j),j)= ((1+(R_roll/100))* Roll_controller_mat_prob(Roll_controller_sel_linha(j),j));
             if Roll_controller_mat_prob(Roll_controller_sel_linha(j),j) < 0
@@ -412,7 +412,7 @@ for iter=1:NIterMax; % Inicializa o loop de treinamento
    end
    Hist_rec_roll(iter) = (R_roll/RG);
    
-   if(Yaw_controller_coef >= 1) % Atualiza a matriz de probabilidade relacionada os par�metros de controle de yaw
+   if(Yaw_controller_coef >= 1) % Atualiza a matriz de probabilidade relacionada os parâmetros de controle de yaw
        for j=1 : Yaw_controller_coef 
              Yaw_controller_mat_prob(Yaw_controller_sel_linha(j),j)= ((1+(R_yaw/100))* Yaw_controller_mat_prob(Yaw_controller_sel_linha(j),j));
              if Yaw_controller_mat_prob(Yaw_controller_sel_linha(j),j) < 0
@@ -428,10 +428,10 @@ for iter=1:NIterMax; % Inicializa o loop de treinamento
    
  %%
 %-------------------------------------------------------------------------%      
-%                       CALCULA e A RECOMPENSA M�DIA                        %
+%                       CALCULA e A RECOMPENSA MÉDIA                        %
 %-------------------------------------------------------------------------%
 
-   if iter < NIter_Media % Define intervalo para a m�dia
+   if iter < NIter_Media % Define intervalo para a média
         Intervalo_Medio_C = iter;
    else
         Intervalo_Medio_C = NIter_Media;
@@ -471,7 +471,7 @@ for iter=1:NIterMax; % Inicializa o loop de treinamento
           hold off;
           plot(Hist_mse_regime(1:iter));
           ylim([0 corte_pitch])
-          xlabel(sprintf('No. de itera��es'))
+          xlabel(sprintf('No. de iterações'))
           ylabel(sprintf('Erro'));
           hold on;
           plot(Hist_media_mse_regime(1:iter),'r');
@@ -481,8 +481,8 @@ for iter=1:NIterMax; % Inicializa o loop de treinamento
           subplot 412;
           hold off;
           plot((Hist_funcao_j(1:iter)));
-          xlabel(sprintf('No. de itera��es'));
-          ylabel(sprintf('Refor�o'));
+          xlabel(sprintf('No. de iterações'));
+          ylabel(sprintf('Reforço'));
           hold on;
           plot(Hist_media_j_pitch(1:iter),'r');
           grid on;
@@ -492,15 +492,15 @@ for iter=1:NIterMax; % Inicializa o loop de treinamento
           plot(rec_avg_pitch,'-*');
           ylim([-1 1]);
           xlabel(sprintf('No. de intervalos'));
-          ylabel(sprintf('Recompensa\n m�dia'));
+          ylabel(sprintf('Recompensa\n média'));
           hold on;
           grid on;
           
           subplot 414;
           hold off;
           plot( Pitch_resposta_convergencia(1:iter));
-          xlabel(sprintf('No. de itera��es'));
-          ylabel(sprintf('Converg�ncia'));
+          xlabel(sprintf('No. de iterações'));
+          ylabel(sprintf('Convergência'));
           grid on;
       
           drawnow;
@@ -523,7 +523,7 @@ for iter=1:NIterMax; % Inicializa o loop de treinamento
           hold off;
           plot(Hist_mse_regime_roll(1:iter));
           ylim([0 corte_roll])
-          xlabel(sprintf('No. de itera��es'))
+          xlabel(sprintf('No. de iterações'))
           ylabel(sprintf('Erro'));
           hold on;
           plot( Hist_media_mse_regime_roll(1:iter),'r');
@@ -533,8 +533,8 @@ for iter=1:NIterMax; % Inicializa o loop de treinamento
           subplot 412;
           hold off;
           plot((Hist_funcao_j_roll(1:iter)));
-          xlabel(sprintf('No. de itera��es'));
-          ylabel(sprintf('Refor�o'));
+          xlabel(sprintf('No. de iterações'));
+          ylabel(sprintf('Reforço'));
           hold on;
           plot(Hist_media_j_roll(1:iter),'r');
           grid on;
@@ -544,15 +544,15 @@ for iter=1:NIterMax; % Inicializa o loop de treinamento
           plot(rec_avg_roll,'-*');
           ylim([-1 1]);
           xlabel(sprintf('No. de intervalos'));
-          ylabel(sprintf('Recompensa\n m�dia'));
+          ylabel(sprintf('Recompensa\n média'));
           hold on;
           grid on;
           
           subplot 414;
           hold off;
           plot( Roll_resposta_convergencia(1:iter));
-          xlabel(sprintf('No. de itera��es'));
-          ylabel(sprintf('Converg�ncia'));
+          xlabel(sprintf('No. de iterações'));
+          ylabel(sprintf('Convergência'));
           grid on;
       
           drawnow;
@@ -574,7 +574,7 @@ for iter=1:NIterMax; % Inicializa o loop de treinamento
           hold off;
           plot(Hist_mse_regime_yaw(1:iter));
           ylim([0 corte_yaw])
-          xlabel(sprintf('No. de itera��es'))
+          xlabel(sprintf('No. de iterações'))
           ylabel(sprintf('Erro'));
           hold on;
           plot( Hist_media_mse_regime_yaw(1:iter),'r');
@@ -584,8 +584,8 @@ for iter=1:NIterMax; % Inicializa o loop de treinamento
           subplot 412;
           hold off;
           plot((Hist_funcao_j_yaw(1:iter)));
-          xlabel(sprintf('No. de itera��es'));
-          ylabel(sprintf('Refor�o'));
+          xlabel(sprintf('No. de iterações'));
+          ylabel(sprintf('Reforço'));
           hold on;
           plot(Hist_media_j_yaw(1:iter),'r');
           grid on;
@@ -595,15 +595,15 @@ for iter=1:NIterMax; % Inicializa o loop de treinamento
           plot(rec_avg_yaw,'-*');
           ylim([-1 1]);
           xlabel(sprintf('No. de intervalos'));
-          ylabel(sprintf('Recompensa\n m�dia'));
+          ylabel(sprintf('Recompensa\n média'));
           hold on;
           grid on;
           
           subplot 414;
           hold off;
           plot( Yaw_resposta_convergencia(1:iter));
-          xlabel(sprintf('No. de itera��es'));
-          ylabel(sprintf('Converg�ncia'));
+          xlabel(sprintf('No. de iterações'));
+          ylabel(sprintf('Convergência'));
           grid on;
       
           drawnow;
