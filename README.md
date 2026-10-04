@@ -8,7 +8,7 @@ dos Santos, Sidney N. Givigi Jr., and Cairo L. Nascimento Jr.
 
 **Paper:** [doi:10.1109/SYSCON.2017.7934800](https://doi.org/10.1109/SYSCON.2017.7934800) ·
 **Slides:** [presentation/SysCon2017_slides.pdf](presentation/SysCon2017_slides.pdf) ·
-**Video:** [youtu.be/quqhFbn1ivM](https://youtu.be/quqhFbn1ivM)
+**Videos:** [load transportation with learned gains](https://youtu.be/quqhFbn1ivM), [single brick transportation](https://youtu.be/KIY6mjGaAMQ)
 
 ## What it does
 
@@ -40,7 +40,7 @@ PID on trajectory tracking with no load, a 250 g load, and an unbalanced 250 g l
 - `notes/` — learned gains, RMS comparison tables, and a V-REP + ROS + Simulink setup
   guide (in Portuguese).
 - `presentation/SysCon2017_slides.pdf` — the conference talk slides.
-- `videos/` — gitignored; the simulation videos shown in the talk. The main one is on YouTube (link above).
+- `videos/` — gitignored; the simulation videos shown in the talk. Both are on YouTube (links above).
 
 ## Not included
 
