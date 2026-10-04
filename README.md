@@ -7,7 +7,8 @@ Automata for a Single UAV Load Transportation", by Kleber Macedo Cabral, Sérgio
 dos Santos, Sidney N. Givigi Jr., and Cairo L. Nascimento Jr.
 
 **Paper:** [doi:10.1109/SYSCON.2017.7934800](https://doi.org/10.1109/SYSCON.2017.7934800) ·
-**Slides:** [presentation/SysCon2017_slides.pdf](presentation/SysCon2017_slides.pdf)
+**Slides:** [presentation/SysCon2017_slides.pdf](presentation/SysCon2017_slides.pdf) ·
+**Video:** [youtu.be/quqhFbn1ivM](https://youtu.be/quqhFbn1ivM)
 
 ## What it does
 
@@ -39,7 +40,7 @@ PID on trajectory tracking with no load, a 250 g load, and an unbalanced 250 g l
 - `notes/` — learned gains, RMS comparison tables, and a V-REP + ROS + Simulink setup
   guide (in Portuguese).
 - `presentation/SysCon2017_slides.pdf` — the conference talk slides.
-- `videos/` — gitignored; the simulation videos shown in the talk.
+- `videos/` — gitignored; the simulation videos shown in the talk. The main one is on YouTube (link above).
 
 ## Not included
 
