@@ -1,5 +1,7 @@
 # UAVLoadTransport
 
+> **Note:** The simulation setup, controller models and learning-automata tuning experiments in this repository are by Kleber Cabral, built on third-party code credited below, including FALA training scripts by coauthor Sérgio R. Barros dos Santos, shared with his consent. The README documentation and the 2026-10-03 cleanup were done with AI assistance (Claude).
+
 Code for the **2017 IEEE SysCon** paper "Design of Model Predictive Control via Learning
 Automata for a Single UAV Load Transportation", by Kleber Macedo Cabral, Sérgio R. Barros
 dos Santos, Sidney N. Givigi Jr., and Cairo L. Nascimento Jr.
@@ -71,8 +73,9 @@ MATLAB/Simulink (some models also have an R2015a export), V-REP PRO EDU 3.3.2.
 - `betamax.m`, `calcbeta.m`, `density.m`, `expcarla.m`, `expect.m`, `init_cla.m`,
   `mep.m`, `ucp.m`, `show.m` — CARLA implementation by Mark Howell (Loughborough
   University), free to use and modify with acknowledgement.
-- `FALA_LA_*_Controllers.m` — built on learning-automata training code by coauthor
-  Sérgio R. Barros dos Santos.
+- `FALA_LA_*_Controllers.m`, `FALA_OUTER_CONTROLLERS.m` and
+  `Modelo_Simulink/controle.mdl` — learning-automata training code and base model by
+  coauthor Sérgio R. Barros dos Santos, adapted here and shared with his consent.
 
 The MIT license in this repo covers the remaining files only.
 
