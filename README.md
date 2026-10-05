@@ -10,6 +10,10 @@ dos Santos, Sidney N. Givigi Jr., and Cairo L. Nascimento Jr.
 **Slides:** [presentation/SysCon2017_slides.pdf](presentation/SysCon2017_slides.pdf) ·
 **Videos:** [load transportation with learned gains](https://youtu.be/quqhFbn1ivM), [single brick transportation](https://youtu.be/KIY6mjGaAMQ)
 
+![Simulated quadrotor picking up a brick and carrying it to the drop area](figures/load_transport.gif)
+
+*Load transportation in V-REP with the learned gains, played at 6x speed.*
+
 ## What it does
 
 A quadrotor (Parallax ELEV-8 model) picks up and carries bricks of different mass and
